@@ -134,8 +134,7 @@ function Checkout() {
      product:item.item,
      quantity:item.quantity,
      gst:item.gst,
-     seller:item.user
-      
+     seller:item.sellerId
     })
   } 
     console.log(cartItems)

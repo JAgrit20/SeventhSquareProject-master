@@ -106,13 +106,14 @@ function Product() {
 
 
   const addtocart=async()=>{
-    
+    console.log(users)
     const config = {
       method:'POST',
       headers: {
         Authorization: "token " + localStorage.getItem("token"),
         'Content-Type': 'application/json',
       },
+      
       body:JSON.stringify({
         "title": users.name,
         "oldprice": users.markedPrice,
@@ -121,19 +122,21 @@ function Product() {
         "price": users.sellingPrice ,
         "quantity": quantity,
         "item": users.id,
-        "gst":users.gstRate
+        "gst":users.gstRate,
+        "sellerId":users.account
         
       })
       
     };
     console.log(config);
+    console.log(users)
     const res=await fetch('https://api.seventhsq.com/orders/add-to-cart/',config);
+
     window.alert("Added to Cart");
     const data= await res.json();
     console.log(data);
-    
-    
-    
+  
+  
 }
 
 const buynow=async()=>{
