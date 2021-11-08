@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
+  
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <!-- for offer slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab:300'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css'>
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+<!-- testimaonial link are here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- links for product page -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.css'>
+
+<!-- blog css links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css" />
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700,900italic,300italic,300,100italic,100,700italic,400italic,900'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+  <title>Seventh Square</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script> -->
+
+
+
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script> -->
+
+  <!-- product page js -->
+  <script src='https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+
+  <!-- blog links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+  <!-- <script src='https://cdn.jsdelivr.net/g/modernizr@2.8.3,jquery@2.1.4,jquery.lazyloadxt@1.0.4(jquery.lazyloadxt.min.js+jquery.lazyloadxt.video.js),jquery.owlcarousel@1.31,trianglify@0.3.1'></script> -->
+<script>
+  
+ var slides=document.querySelector('.slider-items').children;
+ var nextSlide=document.querySelector(".right-slide");
+var prevSlide=document.querySelector(".left-slide");
+var totalSlides=slides.length;
+var index=0;
+var i;
+
+nextSlide.onclick=function () {
+     next("next");
+}
+prevSlide.onclick=function () {
+     next("prev");
+}
+
+function next(direction){
+
+   if(direction==="next"){
+      index++;
+       if(index===totalSlides){
+        index=0;
+       }
+   } 
+   else{
+           if(index===0){
+            index=totalSlides-1;
+           }
+           else{
+            index--;
+           } 
+    }
+
+  for(i=0;i<slides.length;i++){
+          slides[i].classList.remove("active");
+  }
+  slides[index].classList.add("active");     
+
+}
+</script>
+<script>
+    
+  $(document).ready(function(){
+      $('.customer-logos').slick({
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 1500,
+          arrows: false,
+          dots: false,
+          pauseOnHover:false,
+          responsive: [{
+              breakpoint: 768,
+              setting: {
+                  slidesToShow:4
+              }
+          }, {
+              breakpoint: 520,
+              setting: {
+                  slidesToShow: 3
+              }
+          }]
+      });
+  });
+
+  </script>
+  <script src="">
+    $('#multi').mdbRange({
+  single: {
+    active: true,
+    multi: {
+      active: true,
+      rangeLength: 1
+    },
+  }
+});
+  </script>
+
+
+</body>
+
+</html>

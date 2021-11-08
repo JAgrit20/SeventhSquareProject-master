@@ -1,0 +1,121 @@
+
+.blogcontainer {
+    max-width: 100%;
+    margin: 0 10PX;
+    height: 100%;
+}
+
+.bloggrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3%;
+    margin: 5% 0;
+}
+
+.blogcard {
+    overflow: hidden;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    height: 300px !important;
+    overflow: hidden;
+}
+
+.card_body {
+    padding: 26px 20px 36px 20px;
+}
+
+.card_title {
+    font-family: "Crimson Text",
+        serif;
+    font-weight: 900;
+    text-transform: capitalize;
+text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.card_body p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+
+}
+
+p.card_author {
+    font-size: 15px;
+    padding-top: 5px;
+
+}
+
+p.card_author a {
+    color: #1B1C34;
+    font-style:normal;
+}
+
+
+@media only screen and (max-width: 1441px) and (min-width: 1025px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .grid {
+        gap: 2%;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card_body {
+        padding: 15px;
+    }
+
+    .card_title {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .card {
+        padding: 20px 10px;
+    }
+
+    .card_body {
+        padding: 7px;
+    }
+
+    .card_title {
+        font-size: 20px;
+        padding-bottom: 7px;
+    }
+
+
+}

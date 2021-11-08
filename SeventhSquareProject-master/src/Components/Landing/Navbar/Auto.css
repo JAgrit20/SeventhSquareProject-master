@@ -1,0 +1,23 @@
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    max-height: 160px;
+    overflow-y: auto;
+    width: 500px !important;
+    z-index: 1000 !important;
+    position: absolute;
+  }
+  .suggestion {
+    background-color: white !important;
+    padding: 10px;
+    color:black !important;
+    cursor: pointer;
+  }
+  .suggestion:hover {
+    background-color: black !important;
+    color: white !important;
+  }
+  .selected {
+   
+  }
+  

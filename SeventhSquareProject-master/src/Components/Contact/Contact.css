@@ -1,0 +1,339 @@
+.upperSection{
+    display: block;
+    width: 100%;
+    height: 50vh;
+    margin: 0% 0;
+}
+.upperSection .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.upperSection h3 {
+   margin-top: 110px !important;
+}
+
+@media (min-width: 768px) {
+    .upperSection .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .upperSection .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.upperSection .skills {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #ebebeb;
+    text-align: center;
+}
+
+.upperSection .skills .text {
+    padding-bottom: 20px;
+}
+
+.upperSection .skills h2 {
+    font-size: 30px;
+    color: #504e4e;
+    padding-bottom: 5px;
+}
+
+.upperSection .skills h2 span {
+    color: #242323;
+}
+
+.upperSection .skills p {
+    font-size: 16px;
+    color: #1b1b1b;
+    font-weight: 400;
+}
+
+.upperSection .skills .skill-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 60px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+}
+
+.upperSection .skills .skill-card .card{
+    padding: 25px;
+    text-align: center;
+    background-color: #1b1b1b;
+    border: 2px solid #000000;
+    color: #d4d4d4;
+    transition: 1s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+
+.upperSection .skills .card h4{
+    padding-top: 30px;
+    padding-bottom: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.upperSection .skills .card p{
+    line-height: 1.7;
+    font-size: 16px;
+    color: #d4d4d4;
+}
+
+.upperSection .skills .card i{
+    font-size: 42px;
+    padding: 15px;
+    width: 75px;
+    height: 75px;
+    color: #ffffff;
+    background-color: #000000;
+    position: absolute;
+    top: calc(-75px / 2);
+    transform: rotate(45deg);
+    left: 39%;
+    transition: 1s;
+    border: 1px solid #000000;
+}
+
+.upperSection .skills .card:hover{
+    background-color: transparent;
+}
+
+.upperSection .skills .card:hover i{
+    transform: rotate(0deg);
+    background-color: #ebebeb;
+    color: black;
+}
+
+.upperSection .skills .card:hover h4, .skills .card:hover p{
+    color: #1b1b1b;
+    transition: 1s;
+}
+
+.upperSection .skills a{
+    border: 1px solid #000000;
+    background-color: #000000;
+    border-radius: 2px;
+    color: #d6d5d5;
+    transition: background-color 0.8s;
+    padding: 15px 20px;
+    letter-spacing: 1.5px;
+    z-index: 50px;
+    text-decoration: none;
+}
+
+.upperSection .skills a:hover{
+    background-color: #1b1b1b;
+    color:#ffffff;
+}
+/* section 2 starts from here */
+.contactPage{
+    height: 60vh;
+    width: 100%;
+    margin: 15% auto;
+}
+#contact .social a{
+    padding: 20px;
+    color:#7b7c7c;
+    font-size:1.1rem;
+}
+#contact{
+    margin-top: 10%;
+    position: absolute;
+    left: 55%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+}
+#contact .social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+#contact .social a:hover{
+    color:#000000;
+    transition: all ease 0.3s;
+}
+#contact .contact-box{
+    background-color:#434445;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+    box-shadow: 2px 0px 30px rgba(0,0,0,0.1);
+}
+#contact .c-heading h1{
+    font-family: Roboto;
+    color: #e7eef3;
+    font-size: 2.5rem;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+}
+#contact .c-heading p{
+    font-family: Roboto;
+    color:#cecece;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#contact .c-inputs{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact .c-inputs input{
+    width:250px;
+    height: 45px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(251,251,251,0.1);
+    outline: none;
+    margin: 10px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #f4f4f4;
+    display: flex;
+}
+#contact .c-inputs textarea{
+    width:250px !important;
+    height: 200px !important;
+    outline: none;
+    background-color: transparent;
+    border:1px solid rgba(82,82,82,1);
+    color: #f4f4f4;
+    padding: 10px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+#contact .c-inputs button{
+    width:200px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+}
+#contact .c-inputs input:focus{
+    border-bottom: 1px solid rgba(252,252,252,1.00);
+    transition: all ease 0.5s;
+}
+#contact .c-inputs textarea:focus{
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,1.00);
+    transition: all ease 0.5s;
+    background-color: rgba(0,0,0,0.1);
+}
+#contact .c-inputs button:active{
+    transform: scale(1.02);
+}
+#contact .map{
+    filter: grayscale(0.2);
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    border: 2px solid #FFFFFF;
+}
+@media(max-width:1100px){
+    #contact .map{
+        display: none;
+    }
+}
+
+.contactQuotation{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 10vh;
+}
+ 
+@media (max-width:920px) {
+    .contactPage{
+        height: 120vh;
+        width: 100%;
+        margin: 15% auto;
+    }
+
+    #contact{
+        top: 155%;
+
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width:510px) {
+    .contactPage{
+        height: 220vh;
+        width: 100%;
+        margin: 15% auto;
+    }
+
+    #contact{
+        top: 255%;
+
+        display: flex;
+        justify-content: center;
+    }
+    
+.upperSection .skills a{
+    border: 1px solid transparent;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 2px;
+    color: #000000;
+    transition: background-color 0.8s;
+    padding: 6px 10px;
+    letter-spacing: 1.5px;
+    z-index: 10px;
+    font-size: 10px;
+        text-decoration: none;
+}
+}
+@media(max-width:450px){
+    #contact .social{
+        display: none;
+    }
+    
+    #contact{
+        position: absolute;
+        transform: translate(0,0);
+        width:100%;
+        top: 210%;
+        left: 0%;
+        margin-bottom: 3%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    #contact .c-heading h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+}
+ 

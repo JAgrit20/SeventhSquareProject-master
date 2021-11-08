@@ -1,0 +1,148 @@
+.quotationwrapper{
+    display: inline-block!important;
+    margin-top: 90px;
+}
+  .quotationwrapper .button,.quotationwrapper div{
+    display: inline-block!important;
+    height: 50px;
+    width: 160px;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 0px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+  }
+  .quotationwrapper div{
+    box-shadow: none;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .quotationHeading{
+      background-color: transparent!important;
+  }
+  .quotationwrapper div h2{
+    text-decoration: underline;
+  }
+  .quotationwrapper .button .icon{
+    display: inline-block;
+    height: 50px;
+    width: 160px;
+    text-align: center;
+    border-radius: 0px;
+    box-sizing: border-box;
+background-color: white;
+color: black;
+    transition: all 0.3s ease-out;
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .quotationwrapper .button:hover .icon{
+    background: #383838;
+    color: rgb(255, 255, 255);
+  }
+
+  @media (max-width:920px) {
+    .quotationwrapper{
+        display: flex;
+    }
+      .quotationwrapper .button,.quotationwrapper div{
+        display: flex;
+
+        height: auto;
+        width: 80px;
+        margin: 0 2px;
+      }
+      .quotationwrapper div{
+        box-shadow: none;
+        width: 100px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .quotationwrapper .button .icon{
+        display: flex;
+        height: 30px;
+        width: 90px;
+
+      }
+
+  }
+  .topics{
+    margin-top: 40px;
+}
+  .topics .button,.topics div{
+    display: inline-block!important;
+    height: 60px;
+    width: 160px;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 0px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+    
+  }
+  .topics div{
+    box-shadow: none;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .quotationHeading{
+      background-color: transparent!important;
+  }
+  .topics div h2{
+    text-decoration: underline;
+  }
+  .topics .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 160px;
+    text-align: center;
+    border-radius: 0px;
+    box-sizing: border-box;
+background-color: white;
+color: black(255, 255, 255);
+    transition: all 0.3s ease-out;
+    font-size: 12px;
+    line-height: 30px;
+    
+
+    
+  }
+
+  .topics .button:hover .icon{
+    
+   
+  }
+
+  @media (max-width:920px) {
+    .topics{
+        display: flex;
+    }
+      .topics .button,.topics div{
+        display: flex;
+
+        height: auto;
+        width: 80px;
+        margin: 0 2px;
+      }
+      .topics div{
+        box-shadow: none;
+        width: 100px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .topics .button .icon{
+        display: flex;
+        height: 30px;
+        width: 90px;
+
+      }
+
+  }
+  

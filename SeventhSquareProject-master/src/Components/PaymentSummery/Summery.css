@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+#proTeamScroll{
+    height: 400px;
+     overflow: hidden;
+      outline: none;}
+
+      .mainSummery{
+          display: flex;
+          flex-direction: row;
+          margin: 0;
+          padding: 0;
+
+      }
+      .mainSummery h2{
+          font-size: 24px;
+          font-weight: 600;
+          font-family: 'Merriweather', serif;
+      }
+      .mainSummery .upperPanel{
+          background-color: rgb(241, 241, 241);
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          min-height: 50px;
+          width: 100%;
+      }  
+.mainSummery .card-header{
+display: flex;
+flex-direction: row;
+font-size: 14px;
+}     
+.mainSummery .leftPanel{
+    margin: 10px 20px;
+background-color: rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} 
+.mainSummery .card-header .downloadPanel{
+    margin-left: 350px;
+}
+.mainSummery table th {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.mainSummery table tr td{
+    font-family: 'Open Sans', sans-serif;
+font-size: 12px;
+}
+.mainSummery .Insights{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+

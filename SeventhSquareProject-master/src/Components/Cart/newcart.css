@@ -1,0 +1,143 @@
+.main_cart {
+    background: rgb(255, 255, 255);
+  }
+  .cartcard {
+    border: none;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+  .cartcard .product_img{
+
+      height: 150px;
+      width: 150px;
+  }
+  .cartcard .product_img img {
+
+    min-width: 150px;
+    max-height: 150px;
+  }
+  .cartcard .product_name {
+    color: black;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  .cartcard .card-title p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0;
+    padding: 0%;
+  }
+  .cartcard .card-title .text-danger{
+    text-decoration: line-through;
+  }
+  .cartcard .card-title a{
+    color: cornflowerblue;
+  }
+  .cartcard .remove_wish{
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+  }
+  .cartcard .remove-and-wish p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .cartcard .price-money h3 {
+    float: right;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .cartcard .set_quantity {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .cartcard .set_quantity button{
+      height: 30px;
+  }
+  /* .cartcard .set_quantity::after {
+    content: "(Note, 1 piece)";
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    right: 1.5rem;
+    font-size: 0.8rem;
+  } */
+  .cartcard .page-link {
+    line-height: 16px;
+    width: 45px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #495057;
+  }
+  .cartcard .page-item input {
+    line-height: 22px;
+    padding: 3px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cartcard .page-link:hover {
+    text-decoration: none;
+    color: #495057;
+    outline: none !important;
+  }
+  .cartcard .page-link:focus {
+    box-shadow: none;
+  }
+  .price_indiv >  p {
+      margin: 10px 0;
+      padding: 0%;
+    font-size: 1.2rem;
+
+  }
+.cart-right_section{
+    display: flex;
+    flex-direction: column;
+}
+  .price_indiv p:nth-child(2){
+      margin-right: 30px;
+  }
+  .cart-checkbox{
+      display: flex;
+  }
+    
+  .cart-checkbox input{
+    margin-top: 8px;
+
+}
+  .cart-checkbox label{
+      margin: 10px;
+      margin-left: 20px;
+      font-size: 1.2rem;
+  }
+ .total-amt{
+     margin: 0%;
+     padding: 0%;
+     width: 100%;
+    background-color: black;  
+  }
+  .total-amt p:nth-child(2) {
+    float: right;
+    margin-left: 160px;
+  }
+
+  .total-amt p{
+    color: rgb(221, 219, 213)!important;
+    padding-top: 10px;
+  }
+  .total-amt .btn:hover{
+      background-color: black;
+color: cornsilk;
+  }
+  .btncheckoutbutton{
+    height: 40px;
+    border: black;
+  }

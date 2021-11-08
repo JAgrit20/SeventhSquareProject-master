@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
+.requestForQuote{
+    margin: auto 5rem !important;
+
+    
+}
+.requestForQuote h2{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    
+}
+.requestForQuote hr{
+    margin:  20px 150px 50px 150px;
+}
+.requestForQuote label{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+.requestForQuote input,.requestForQuote textarea{
+    font-size: 14px;
+    outline: none;
+}
+.requestForQuote .btn{
+    font-size: 12px;
+    float: inline-end;
+}
+.requests th,td{
+    font-size: small;
+}
+.modal-backdrop {display: none;}

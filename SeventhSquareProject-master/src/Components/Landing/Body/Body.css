@@ -1,0 +1,21 @@
+.offerImage{
+    width: 100%;
+    margin: 10px 5px;
+    height: 200px;
+}
+.title{
+    text-align: center!important;
+    margin: 10px 0;
+    font-family: "Crimson Text";
+    
+}
+.title .h2{
+    
+    color: rgb(83, 70, 73);
+   
+}
+.title .h1{
+    font-size: 30px !important;
+    color: rgb(83, 70, 73);
+   
+}

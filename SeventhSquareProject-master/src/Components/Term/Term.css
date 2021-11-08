@@ -1,0 +1,93 @@
+.termCondition{
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 26px;
+  background-color: #F6F6F6;
+    color: #818181; /* grey */
+    font-weight: 400;
+  
+  padding: 20px 130px;
+
+}
+
+.termCondition .h1,.termCondition .h2,.termCondition .h3,.termCondition .h4,.termCondition .h5,.termCondition .h6,.termCondition a,.termCondition h1,.termCondition h2,.termCondition h3,.termCondition h4,.termCondition h5,.termCondition h6,.termCondition p a {
+    color: #303030;
+}
+.termCondition .h1,.termCondition h1 {
+    font-size: 30px;
+    line-height: 1.25em;
+}
+.termCondition .h2,.termCondition h2{
+  font-size: 24px;
+}
+.termCondition .h3,.termCondition h3 {
+    font-size: 17px;
+}
+.termCondition h1,.termCondition  .h1,.termCondition .title h1,.termCondition h2,.termCondition .h2,.termCondition h3,.termCondition .h3 {
+    font-family: 'Roboto', sans-serif;
+}
+.termCondition a:hover,.termCondition p a:hover {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.termCondition .drop_down .wide .second .inner>ul>li>a,.termCondition .h2,.termCondition .h3,.termCondition .h5,.termCondition .h6,.termCondition h2,.termCondition h3,.termCondition h5,.termCondition h6,.termCondition nav.main_menu>ul>li>a {
+    text-transform: uppercase;
+}
+.termCondition .h2, .termCondition .h3,.termCondition h2,.termCondition h3 {
+    font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.termCondition p{
+      margin-bottom: 0;
+}
+
+
+
+
+
+/* code for arrow, page-up*/
+.termCondition #return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* I can add here some background-color */
+    border: 1px solid white;
+
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.termCondition #return-to-top i { /* inside arrow */
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.termCondition #return-to-top:hover {
+    background:  white /*rgba(0, 0, 0, 0.9)*/;
+}
+.termCondition #return-to-top:hover i { /* inside arrow */
+    color: rgb(95, 95, 95); /* grey */
+    top: 5px;
+}
+
+/* end of code for arrow, page-up*/

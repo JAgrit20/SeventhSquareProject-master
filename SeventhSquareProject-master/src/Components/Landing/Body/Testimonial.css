@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.customer-logos{
+    display:flex;
+    height: 150px!important;
+}
+.slick-slide{
+  width: 150px!important;
+
+    margin: 0 20px;
+}
+.slick-slide img{
+    width: 100%;
+}
+.slick-slider{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.slick-list{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 200px !important;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block
+}
+.slick-slide{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.slick-slide img{
+    display: block;
+}
+.slick-initialized .slick-slide{
+    display: block;
+}
+.copy{
+    padding-top: 25px;
+}
+
+.caraousel-container .container{
+  margin-top: 6rem;
+  width: 75rem;
+ 
+  background-color:white ;
+  
+}
+.carousel-control-prev-icon{
+  margin-top: 5rem;
+  color: #666;
+}
+.carousel-control-next-icon{
+  color: #666;
+  margin-top: 5rem;
+  
+}
+.carousel-indicators button{
+ 
+  background-color: #666 ;
+}
+@media(max-width: 768px) {
+  .caraousel-container .container{
+    width: 100%;
+  }
+  .caraousel-container .carousel-control-prev{
+    display: none;
+  }
+  .caraousel-container .carousel-control-next{
+    display: none;
+  }
+}
+
+@media (max-width:768px) {
+  .slick-slide{
+    margin: 0 20px;
+}
+ 
+}
+
+
+  /* review box data starting from here */
+.review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+  }
+  
+  .review .box-container .box{
+    flex:1 1 30rem;
+    text-align: center;
+    border:.1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    background:#f9f9f9;
+    padding:2rem;
+  }
+  
+  .review .box-container .box img{
+    border-radius: 50%;
+    object-fit: cover;
+    height:15rem;
+    width:15rem;
+    margin:1rem 0;
+  }
+  
+  .review .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+  }
+  
+  .review .box-container .box p{
+    font-size: 1.6rem;
+    color:#666;
+    padding:1rem 0;
+  }
+  
+  .review .box-container .box .stars i{
+    color:var(--orange);
+    font-size: 2rem;
+  }
+  

@@ -1,0 +1,129 @@
+
+  
+  .Bestproduct {
+    overflow: hidden;
+  }
+  
+  .Bestproduct .img-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    
+  }
+  
+  .Bestproduct .img-container img {
+   
+    background-size: cover;
+  }
+  
+  .Bestproduct .bottom {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Bestproduct .bottom a {
+    margin-bottom: 1rem;
+    font-weight: inherit;
+    font-size: 1.5rem;
+    color: black!important;
+  }
+  
+  .Bestproduct .bottom a:hover {
+    color: var(--primary);
+  }
+  
+  .Bestproduct .bottom span {
+    margin-top: 10px!important;
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+  
+  .Bestproduct .bottom .cancel {
+    font-size: 1.4rem;
+    color: var(--grey2);
+    text-decoration: line-through;
+  }
+  
+  .Bestproduct .addCart {
+    position: absolute;
+    right: 0;
+    bottom: 0.6rem;
+    background-color: black;
+    border-radius: 50%;
+    padding: 1.3rem 1.6rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    transition: all 300ms ease-in-out;
+  }
+  
+  .Bestproduct:hover .addCart {
+    border-radius: 1rem 0 0 0;
+  }
+  
+  .Bestproduct .addCart:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+  }
+  
+  .Bestproduct i {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .Bestproduct .side-icons {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    transform: translate(80%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    transition: all 500ms ease-in-out;
+  }
+  
+  .Bestproduct .side-icons span {
+    font-size: 1.4rem;
+    background-color: white;
+    margin: 0.3rem;
+    padding: 1rem 1.3rem;
+    border-radius: 50%;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .Bestproduct .side-icons span:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .Bestproduct:hover .side-icons {
+    transform: translate(0%, -50%);
+  }
+  
+  @media only screen and (max-width: 996px) {
+    .prodouct-layout {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .prodouct-layout {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 567px) {
+    .prodouct-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width:920px) {
+    .Bestproduct .img-container {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    
+    
+  }
+  

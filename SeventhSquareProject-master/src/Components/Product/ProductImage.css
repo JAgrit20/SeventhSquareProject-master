@@ -1,0 +1,25 @@
+.slider{
+  height: 100vh;
+  width: 80vh;
+  display:flex ;
+
+}
+.product img{
+  height: 14vh;
+  width: 15vh;
+  margin-bottom: 6px;
+  margin-right: 100px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.product img:hover{
+  opacity: 1;
+}
+
+
+.preview img{
+  height: 70%;
+ 
+  padding-right: 20px;
+}

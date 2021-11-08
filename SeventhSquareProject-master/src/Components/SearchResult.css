@@ -1,0 +1,9 @@
+.result-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.empty-results{
+    visibility: hidden;
+    height: 400px !important;
+}

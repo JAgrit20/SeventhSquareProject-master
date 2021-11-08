@@ -1,0 +1,10 @@
+.success-box{
+    width: 500px !important;
+    border-width: 1px ;
+    border-color: green;
+}
+.failure-box{
+    width: 500px !important;
+    border-width: 1px ;
+    border-color: red;
+}

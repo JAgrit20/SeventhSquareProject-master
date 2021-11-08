@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=PT+Serif&family=Uchen&display=swap');
+
+
+.aboutMainBody{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(247, 248, 248);
+}
+.aboutMainBody .aboutText
+{
+width: 55%;
+height: auto;
+display: flex;
+flex-direction: column;
+margin: 5% 7% ;
+}
+.aboutMainBody .aboutText h1{
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 60px;
+}
+.aboutMainBody span{
+    color: green;
+    
+}
+.aboutMainBody .aboutText p{
+    margin: 2% 0;
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
+}
+.aboutMainBody .aboutImage{
+    width: 45%;
+    height: auto;
+}
+.aboutMainBody .aboutImage img{
+    width: 600px;
+    margin: 20% 0% ;
+}
+hr{
+    margin: 2% 5%;
+}
+/* section 2 styling starts from here */
+
+
+.section2 .attribution { 
+    font-size: 11px; text-align: center; 
+}
+.section2 .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.section2 h1:first-of-type {
+    font-weight: 200;
+    color: hsl(212, 86%, 64%);
+
+}
+
+.section2 h1:last-of-type {
+    color: hsl(234, 12%, 34%);
+}
+
+@media (max-width: 400px) {
+    .section2 h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.section2 .header {
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.section2 .header p {
+    margin: 0 auto;
+    line-height: 2;
+    color: hsl(228, 20%, 24%);
+}
+
+
+.section2 .box p {
+    color: hsl(229, 6%, 66%);
+}
+
+.section2 .box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
+    padding: 30px;
+    margin: 20px;  
+}
+
+.section2 img {
+    float: right;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 450px) {
+    .section2 .box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .section2 .box {
+        text-align: center;
+        height: 180px;
+    }
+}
+
+.section2 .cyan {
+    border-top: 3px solid hsl(180, 62%, 55%);
+}
+.section2 .red {
+    border-top: 3px solid hsl(0, 78%, 62%);
+}
+.section2 .blue {
+    border-top: 3px solid hsl(212, 86%, 64%);
+}
+.section2 .orange {
+    border-top: 3px solid hsl(34, 97%, 64%);
+}
+
+.section2 h2 {
+    font-size: 16px;
+    color: hsl(234, 12%, 34%);
+    font-weight: 600;
+}
+
+
+@media (min-width: 950px) {
+    .section2 .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .section2 .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section2 .box-down {
+        position: relative;
+        top: 150px;
+    }
+    .section2 .box {
+        width: 20%;
+     
+    }
+    .section2 .header p {
+        width: 30%;
+    }
+    
+}
+.aboutContactSection{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aboutContactSection h1{
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.aboutContactSection  a{
+    margin-top: 50px;
+    width: 20%;
+height: 7vh;
+background-color: black;
+color: blanchedalmond;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+}
+.featureItem{
+    width: 15%;
+    margin: 10px 20px;
+    border-radius: 5px;
+    height: 200px;
+    background-color: rgb(238, 241, 241);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featureItem img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+.featureItem h3{
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1.1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width:920px) {
+    .aboutMainBody{
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutMainBody .aboutText
+{
+    margin: 0;
+    margin-top: 50px;
+width: 90%;
+
+}
+.aboutMainBody .aboutText h1{
+    font-size: 40px;
+}
+
+.aboutMainBody .aboutText p{
+
+    font-size: 20px;
+}
+.aboutMainBody .aboutImage{
+    width: 100%;
+
+}
+.aboutMainBody .aboutImage img{
+    width: 100%;
+    margin: 20% 0% ;
+}
+.featureBody
+{
+    display: flex;
+    flex-direction: column;
+}
+.featureItem{
+    width: 90%;
+    margin: 10px 20px;
+
+}
+.aboutContactSection h1{
+    font-size: 3rem;
+    
+
+}
+.aboutContactSection  a{
+
+    width: 50%;
+height: 5vh;
+
+}
+}

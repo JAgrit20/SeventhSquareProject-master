@@ -1,0 +1,227 @@
+.mainCategoryPanel{
+display: flex;
+flex-wrap: wrap;
+max-width: 100%;
+    height: 350px;
+    margin: 10px 60px;
+}
+.mainCategoryPanel .item{
+    margin: 0px 30px;
+    width: 100px;
+    
+}
+.mainCategoryPanel .item img{
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-bottom: auto;
+    margin-top: auto;
+    
+}
+.categoryLanding{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.categorySection{
+height: auto;
+width: 100%;
+display: flex;
+flex-direction: column;
+background-color: rgb(255, 255, 255);
+}
+.categorySection .categorySectionHeading{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categorySection .categorySectionHeading h3{
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.categorySectionOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    max-height: 100px;
+   
+    margin-bottom: 150px;
+    
+}
+.categorySectionItems{
+    margin: 40px 20px;
+}
+.categorySectionOptions img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}.categorySectionOptions h5{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+/* .categorySlider{
+    display: none;
+} */
+.categorySectionOptions p{
+font-size: 14px;
+font-weight: 500;
+font-family: Arial, Helvetica, sans-serif;
+}
+.categoryBody{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.categoryBody .bodyLeft{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(247, 243, 243);
+    display: flex;
+    flex-direction: column;
+    margin: 0px 15px;
+    padding: 0px 10px ;
+}
+.leftFilterHeading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftFilterHeading h1{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.filerBody section{
+    display: flex;
+    flex-direction: column;
+}
+.filerBody section > section{
+    display: flex;
+    flex-direction: column;
+}
+.filerBody section > section > .form-check{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+margin: auto 20px;
+}
+.filerBody section > section > .form-check > .form-check-label ,.filerBody section > section > .form-check > .checkbox {
+margin: auto 10px ;
+}
+.filerBody section > .ratingBlock {
+    display: flex;
+    flex-direction: column;
+}
+.brands{
+   font-size: large !important;
+}
+.filerBody section > .ratingBlock  > a > ul{
+    display: flex;
+    flex-direction: row;
+}
+.filerBody section > .ratingBlock  > a > ul > li{
+    display: inline-block;
+}
+.filerBody section > .ratingBlock  > a > ul > li > p{
+   margin-top: -8px;
+}
+.categoryBody .bodyRight{
+    width: 80%;
+    height: 100%;
+    background-color: rgb(236, 233, 233);
+}
+.bodyRightHeading{
+    margin: 10px 10px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(236, 233, 233);
+}
+.bodyRightHeading p{
+    font-size: 12px ;
+    font-weight: 600;
+width: 70%;
+}
+.bodyRightHeading .sortOption{
+    width: 24%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.bodyRightCategory{
+    display: flex;
+    flex-direction: column;
+}
+.bodyRightCategory .firstPanel{
+    display: flex;
+    flex-direction: row;
+}
+.bodyRightCategory .firstPanel .categoryProduct{
+    padding: 20px;
+}
+.feature-box{
+    width:115px;
+    height: 80px;
+    margin: 0px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.feature-box  img{
+    width:100%;
+    height: 100%;
+    object-position: center;
+}
+.item span{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 5px;
+    color: #444444;
+}
+ .item{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:920px) {
+    .categorySlider{
+        display: block;
+    }
+    .categorySection{
+        display: none;
+    }
+    .bodyLeft{
+        display: none!important;
+    }
+    .categorySectionOptions{
+        display: none;
+    }
+.mainCategoryPanel{
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    height: auto;
+}
+.mainCategoryPanel .item{
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.bodyRight{
+    width: 100%!important;
+}
+.firstPanel{
+    justify-content: center;
+    display: flex;
+    flex-direction: column!important;
+}
+}

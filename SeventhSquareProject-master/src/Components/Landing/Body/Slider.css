@@ -1,0 +1,79 @@
+/* .slide1{
+    background-image:url('https://i0.wp.com/neutrinobursts.com/wp-content/uploads/2019/05/energy-efficient-sustainable-building-materials-neutrino-burst.jpg?fit=960%2C540&ssl=1');
+}
+.slide2{
+    background-image:url('https://www.propproperty.com/web/category/materials1.jpg');
+}
+.slide3{
+    background-image:url('https://www.swri.org/sites/default/files/styles/client_services_banner/public/PD017505_4814.jpg?itok=LqQIdbVF&c=30e6a1820aa19c7e9655c657beb08111');
+}
+.carousel,
+.item,
+.active {
+    
+    height: 400px;
+}
+
+.carousel-in {
+  height: 400px;
+  background: #000;
+}
+
+.carousel-caption{
+    height: 200px;
+    width: 900px;
+    padding-bottom:80px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+}
+
+
+
+
+/* Background images are set within the HTML using inline CSS, not here 
+
+.fill {
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity:0.6;
+}
+@media (max-width:920px){
+    #myCarousel h2{font-size: 20px;}
+#myCarousel p{padding:10px;
+color: aliceblue;}
+    .fill {
+        width: 100%;
+        height: 400px;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        opacity:0.6;
+    }
+    .carousel,
+.item,
+.active {
+    
+    height: 300px;
+}
+
+.carousel-in {
+  height: 300px;
+  background: #000;
+}
+
+.carousel-caption{
+    height: 100px;
+    width: 70%;
+    padding-bottom:80px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+}
+
+} */

@@ -1,0 +1,46 @@
+.service-container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+
+}
+.service-container .service-box{
+    width: 300px;
+    height: 250px;
+    margin: 0 20px;
+
+}
+.service-box img{
+    display: flex;
+    align-items:center;
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+}
+.service-box p{
+    font-size:18px;
+    font-weight: 600;
+    font-family: "Crimson Text";
+    text-align: center;
+    color: black; 
+}
+.service-box span{
+    font-size: 14px;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(97, 95, 92);
+}
+@media (max-width:920px) {
+    .service-container{
+        flex-direction: column;
+        height: auto;
+    margin-bottom: 50px;
+    }
+    .service-container .service-box{
+        width: 250px;
+        height: 200px;
+        margin: 20px 20px;
+    }
+}
