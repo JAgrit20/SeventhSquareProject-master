@@ -86,7 +86,8 @@ function Product() {
       "price": users.sellingPrice ,
       "quantity": quantity,
       "item": users.id,
-      "gst":users.gstRate
+      "gst":users.gstRate,
+      "sellerId":users.account
       
     }
     var localcart=[]
@@ -155,7 +156,8 @@ const buynow=async()=>{
       "price": users.sellingPrice ,
       "quantity": quantity,
       "item": users.id,
-      "gst":users.gstRate
+      "gst":users.gstRate,
+      "sellerId":users.account
       
     })
   };
