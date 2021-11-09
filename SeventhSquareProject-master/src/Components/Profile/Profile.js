@@ -182,6 +182,64 @@ function Profile() {
     )
   }
  
+  
+  const ramanger_message=async()=>{
+    
+    var bodyFormData = new FormData();
+    bodyFormData.append('user_name', 'jag')
+    bodyFormData.append('manager_name', 'orderAmount')
+    bodyFormData.append('message','customerPhone')
+
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8001/enquiry/message/",
+      data: bodyFormData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+    
+
+  
+  }
+
+
+//   const handleSubmitmessage = (e) =>{
+	  
+// 	// const config = {
+// 	// 	headers: {
+// 	// 	  Authorization: "token " + localStorage.getItem("token"),
+// 	// 	},
+// 	//   };
+//     // e.preventDefault();
+
+//     const data  = {
+		
+// 		manager_name:'jagrit',
+//        street_address: streetaddress,
+//        street_address: streetaddress,
+        
+//     };
+// 	console.log(data)
+//     axios.post('https://api.seventhsq.com/orders/addresses/create/', data,config).then(
+//         res => {
+//             console.log(res)
+//           window.alert("Added");
+// 		  window.location.reload();
+//         }
+//     ).catch(
+//         err => {
+//             console.log(err)
+//             window.alert("Something went wrong");
+//         }
+//     )
+//   }
     
       return (
 		  
