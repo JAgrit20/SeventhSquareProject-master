@@ -29,7 +29,7 @@ class ForgotPassword extends Component {
             console.log(res)
             const token = res.data.token;
             
-            localStorage.setItem('token', token.toString());
+            localStorage.setItem('token', token);
             console.log(token)
             
             this.props.history.push({

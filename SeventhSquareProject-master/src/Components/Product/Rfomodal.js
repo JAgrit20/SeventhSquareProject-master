@@ -43,15 +43,16 @@ function Rfqmodal(props) {
         "phone":userdata.phone,
         "brand_preference":"nike",
         "desc": description,
-        "quantity_required":"12",
+        "quantity_required":"0",
         "delivery_location": location,
         "delivery_timeline": time,
         "is_replyed":false,
-        "email":"ok@gmail.com",
+        "email":userdata.email,
         "seller": '1'
         
       })
     };
+    console.log(userdata);
     console.log(config);
     const res=await fetch('https://api.seventhsq.com/enquiry/request/',config);
     window.alert('Request Sent')

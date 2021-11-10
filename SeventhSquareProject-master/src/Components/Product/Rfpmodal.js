@@ -48,12 +48,16 @@ function Rfpmodal(props) {
         "delivery_location": location,
         "delivery_timeline": time,
         "is_replyed":false,
-        "email":"ok@gmail.com",
+        "email":"jagrit",
         "seller": '1'
         
       })
     };
+    console.log("console.log(userdata);");
+    console.log(userdata);
     console.log(config);
+
+    
     const res=await fetch('https://api.seventhsq.com/enquiry/request/proposal',config);
     window.alert('Request Sent')
     const data= await res.json();

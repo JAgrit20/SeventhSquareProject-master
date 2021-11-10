@@ -8,6 +8,9 @@ import Testimonial from "../Landing/Body/Testimonial";
 import Blogs from "../Landing/Body/Benefits/Blog/Blogs"
 // import { FaLessThan } from "react-icons/fa";
 // import { FaGreaterThan } from "react-icons/fa";
+// import logo from "../../images/service1"
+import Fship from "../../images/freeship.png";
+import Rship from "../../images/returnship.png";
 import "./product.css";
 import { FaArrowDown } from "react-icons/fa";
 import { BrowserRouter as router, Link } from "react-router-dom";
@@ -619,13 +622,19 @@ const Verify=()=>{
               </div>
               
             </div>
+            
             <div class="d-flex justify-content-start">
-            <div className='container return mb-4 p-1'>
-              <h5>Non-Returnable</h5>
-            </div>
-            <div className='container return mb-4 p-1'>
-              <h5>Free Shipping</h5>
-            </div>
+            {/* <img style={{height: '40px', width: '40px'}}src={Rship} /> */}
+            {/* <div className='container mb-4 '> */}
+             <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />
+            {/* </div> */}
+
+            {/* <div className='container mb-4 '> */}
+            
+            <img style={{paddingLeft:'10px' ,height: '30px', width: '70px'}}src={Fship} />
+            
+              {/* <h5> <i class="fas fa-truck fa-3x" style={{color:'white'}}></i>Free Shipping</h5> */}
+            {/* </div> */}
 
             </div>
             
