@@ -215,6 +215,7 @@ function Profile() {
         //handle error
         console.log(response);
       });
+	  setmessage("message delivered")
     messa="message sent success"
 
   
@@ -397,8 +398,11 @@ function Profile() {
 									Send Message
 								</h5>
 							</button>
-							<input className="message" name="message" id="message" style={{border:'solid'}}/>
-							{messa}
+							<input className="message" name="message" id="message" style={{border:'solid',borderWidth: 1, borderRadius: '100px',height:30, width:180, whiteSpace: 'pre-wrap'}} placeholder=" Type your message here"/><br></br>
+							<br />
+							<br></br>
+							<p style={{ color: 'green' }} >{message}</p>
+							
 							</div>
 							
 							
