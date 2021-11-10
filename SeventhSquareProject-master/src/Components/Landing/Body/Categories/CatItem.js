@@ -31,10 +31,11 @@ function CatItem(props) {
         "price": props.price ,
         "quantity": 1,
         "item": props.id,
-        "gst":props.gst
-        
+        "gst":props.gst,
+        "sellerId":props.sellerId
       })
     };
+    
     console.log(config);
     const res=await fetch('https://api.seventhsq.com/orders/add-to-cart/',config);
     window.alert("Added to Cart");

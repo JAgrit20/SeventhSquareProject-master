@@ -19,6 +19,7 @@ function Profile() {
 	const [addresstype,setaddresstype]=useState('')
 	const [show, setModalShow] = useState(false);
 	const [oldpassword,setoldpass]=useState('')
+	const [message,setmessage]=useState('')
 	const [newpassword,setnewpass]=useState('')
     let history = useHistory();
 	const getuser=async()=>{
@@ -182,29 +183,39 @@ function Profile() {
     )
   }
  
-  
-  const ramanger_message=async()=>{
-    
+  var messa = "";
+  const ramanger_message=async(e)=>{
+
+    let name=e.target.name
+	let value=e.target.value
+	console.log(value)
+	console.log(name)
+	if(name=='message'){
+		setmessage(value)
+	}
+	var mess = document.getElementById("message").value;
+	console.log(message)
     var bodyFormData = new FormData();
     bodyFormData.append('user_name', 'jag')
-    bodyFormData.append('manager_name', 'orderAmount')
-    bodyFormData.append('message','customerPhone')
+    bodyFormData.append('manager_name', 'jagrit')
+    bodyFormData.append('message',mess)
 
     axios({
       method: "post",
-      url: "http://127.0.0.1:8001/enquiry/message/",
+      url: "https://api.seventhsq.com/enquiry/message/",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then(function (response) {
         //handle success
         console.log(response);
+
       })
       .catch(function (response) {
         //handle error
         console.log(response);
       });
-    
+    messa="message sent success"
 
   
   }
@@ -312,6 +323,82 @@ function Profile() {
 									Change Password
 								</h5>
 							</button>
+							</div>
+							
+							
+						</div>
+						
+					</div>
+					<div class="card">
+						<div class="card-body">
+							
+							<div class="d-flex flex-column align-items-center text-center">
+								<div className='rounded-circle p-1 bg-primary'>
+                                         <h1>
+										 {
+										 userdata.first_name && userdata.last_name?
+										 userdata.first_name[0]+userdata.last_name[0]:null
+										 }
+										 </h1>
+								</div>
+								<div class="mt-3">
+									{/* <h4>{userdata.first_name} &nbsp;{userdata.last_name} </h4> */}
+									<h4>Jagrit Acharya</h4>
+									<p class="text-secondary mb-1">
+									<p class="text-muted font-size-sm">Relationship Manager</p>
+									</p>
+									{/* {
+										userdata.is_corporate?
+									<p class="text-muted font-size-sm">Corporate Account</p>:
+
+									<p class="text-muted font-size-sm">Individual Account</p>
+									} */}
+									
+								</div>
+							</div>
+							<hr class="my-4"/>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									
+									<span class="text-secondary">Manager Email: {userdata.email}</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									
+									<span class="text-secondary"> Manager Phone number: 1234567890</span>
+								</li>
+								{
+									userdata.is_corporate?
+									<>
+									<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									
+									<span class="text-secondary">{userdata.company_name}</span>
+								</li>
+								<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+									
+									<span class="text-secondary">{userdata.gst_in}</span>
+								</li>
+								</>:null
+
+								}
+								
+							
+							</ul>
+							<hr class="my-4"/>
+							<div className='d-flex justify-content-between'>
+															
+								{/* <button onClick={logout}>
+								<h5>
+									Logout
+								</h5>
+							</button> */}
+							<button className="btn btn-success" onClick={ramanger_message}>
+							
+								<h5>
+									Send Message
+								</h5>
+							</button>
+							<input className="message" name="message" id="message" style={{border:'solid'}}/>
+							{messa}
 							</div>
 							
 							
