@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.26b87600.chunk.css",
-    "main.js": "/static/js/main.26b3b783.chunk.js",
-    "main.js.map": "/static/js/main.26b3b783.chunk.js.map",
+    "main.js": "/static/js/main.d1a6ca6b.chunk.js",
+    "main.js.map": "/static/js/main.d1a6ca6b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f051f56f.js",
     "runtime-main.js.map": "/static/js/runtime-main.f051f56f.js.map",
     "static/css/2.7f039e06.chunk.css": "/static/css/2.7f039e06.chunk.css",
@@ -77,8 +77,10 @@
     "static/media/modular.png": "/static/media/modular.c2e94df6.png",
     "static/media/paint.jpg": "/static/media/paint.a9372cff.jpg",
     "static/media/privacy.439b1ea4.png": "/static/media/privacy.439b1ea4.png",
+    "static/media/returnship.197a4722.png": "/static/media/returnship.197a4722.png",
     "static/media/styles.css": "/static/media/revicons.e8746a62.woff",
     "static/media/roofing.jpg": "/static/media/roofing.5f8a404e.jpg",
+    "static/media/service1.654cab31.png": "/static/media/service1.654cab31.png",
     "static/media/service3.44e0fad4.png": "/static/media/service3.44e0fad4.png",
     "static/media/steel.webp": "/static/media/steel.b369f8aa.webp",
     "static/media/timer.a09bb7be.png": "/static/media/timer.a09bb7be.png",
@@ -89,6 +91,6 @@
     "static/css/2.7f039e06.chunk.css",
     "static/js/2.75df027d.chunk.js",
     "static/css/main.26b87600.chunk.css",
-    "static/js/main.26b3b783.chunk.js"
+    "static/js/main.d1a6ca6b.chunk.js"
   ]
 }

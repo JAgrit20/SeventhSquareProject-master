@@ -36,7 +36,7 @@ class ForgotPassword extends Component {
               pathname: `/`,
               
           });
-          window.alert("Login Success");
+          window.alert("Password changed successfully, Please login");
         }
     ).catch(
         err => {
