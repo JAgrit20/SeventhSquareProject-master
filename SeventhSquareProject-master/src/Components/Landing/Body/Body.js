@@ -79,6 +79,19 @@ console.log(err)
         <section class="section products">
           <div class="title">
             <span class="h1 my-2">Best Selling</span>
+            <div  class="my-2" >
+
+            <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
+</div>
             <div class="product-layout">
               {this.state.posts.slice(0,12).map((product,index) => (
               <Link to={"/product/"   + product.id.toString()} >
@@ -96,10 +109,10 @@ console.log(err)
 
          
         </div>
-        <div class="bottom shadow">
+        <div class="bottom shadow" style={{fontFamily:'Open Sans',fontSize:15,textAlign:'left'}}>
         <p>{product.name}</p>
        
-          <div class="price">
+          <div class="price" style={{fontFamily:'Source Sans Pro', marginLeft:'20px'}}>
             <span>₹{product.sellingPrice}</span>
           </div>
         </div>
@@ -116,14 +129,37 @@ console.log(err)
       <section class="section products">
         <div class="title">
           <span class="h1 my-2">Recently Viewed</span>
+          <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
           </div>
+      
           <RecentlyViewedCarousel items={this.state.posts}/>
+         
+         
         
         
       </section>
       <section class="section products">
         <div class="title">
           <span class="h1 my-2">Most Popular</span>
+          <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
         </div>
       </section>
       <MostPopularCarousel  items={this.state.posts}/>

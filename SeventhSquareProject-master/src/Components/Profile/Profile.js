@@ -196,8 +196,8 @@ function Profile() {
 	var mess = document.getElementById("message").value;
 	console.log(message)
     var bodyFormData = new FormData();
-    bodyFormData.append('user_name', 'jag')
-    bodyFormData.append('manager_name', 'jagrit')
+    bodyFormData.append('user_name', userdata.first_name)
+    bodyFormData.append('manager_name', userdata.assigned_manager)
     bodyFormData.append('message',mess)
 
     axios({
@@ -342,9 +342,12 @@ function Profile() {
 										 }
 										 </h1>
 								</div>
+							
+								
 								<div class="mt-3">
 									{/* <h4>{userdata.first_name} &nbsp;{userdata.last_name} </h4> */}
-									<h4>Jagrit Acharya</h4>
+									
+								<h4>{userdata.assigned_manager}</h4>
 									<p class="text-secondary mb-1">
 									<p class="text-muted font-size-sm">Relationship Manager</p>
 									</p>

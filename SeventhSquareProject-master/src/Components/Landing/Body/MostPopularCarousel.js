@@ -42,8 +42,8 @@ function MostPopularCarousel(props) {
 
 
     return (
-      <div class="card mt-5">
-      <div class="card-body">
+      <div class="mt-5">
+      <div class="">
       <Carousel
       swipeable={false}
       draggable={false}

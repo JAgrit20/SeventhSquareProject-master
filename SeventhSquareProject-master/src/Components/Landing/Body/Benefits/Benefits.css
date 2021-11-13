@@ -23,11 +23,12 @@ display:flex ;
 }
 .benefitsItem h2{
     font-size: 18px ;
-    font-weight: 600 ;
+    font-weight: 600 ;  
+    /* font-family:'Source Sans Pro', Times, serif ; */
 }
 .benefitsItem span{
     font-size: 14px;
-    font-family:'Times New Roman', Times, serif ;
+    font-family:'Open Sans', Times, serif ;
     text-align: center ;
 }
 @media (max-width:920px) {

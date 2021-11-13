@@ -42,8 +42,8 @@ function RecentlyViewedCarousel(props) {
 
 
     return (
-      <div class="card">
-      <div class="card-body">
+      <div class="">
+      <div class="">
       <Carousel
       swipeable={false}
       draggable={false}
@@ -66,7 +66,8 @@ function RecentlyViewedCarousel(props) {
         {  props.items.slice(0,10).map((product) => (
           <Link to={"/product/"   + product.id.toString()} >
               <div class={'product my-2 Mostpopulardiv ml-5' } key={product.id}>
-    <div class="img-container shadow">
+                <div class="card-body">
+    <div class="img-container shadow" >
       <ProductImageIndividual
       image = {product.id.toString()}
       />
@@ -77,11 +78,12 @@ function RecentlyViewedCarousel(props) {
 
     </div>
     <div class="bottom shadow">
-    <p>{product.name}</p>
+    <p style={{fontSize:20,textAlign: "left"}}>{product.name}</p>
    
       <div class="price">
-        <span>₹{product.sellingPrice}</span>
+        <span style={{fontSize:20,fontFamily:'Times new roman',fontWeight: 'bold'}}>₹{product.sellingPrice}</span>
       </div>
+    </div>
     </div>
   </div>
   </Link>  

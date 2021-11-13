@@ -1,7 +1,65 @@
 import React from "react";
 import "./Contact.css";
-
+import axios from "axios";
 import ContactQuotation from "./Contactcategories";
+
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+// import { useState, useEffect } from 'react';
+
+// const [message,setmessage]=useState('')
+const notify = ()=>{
+ 
+  // Calling toast method by passing string
+  toast('Hello Geeks')
+}
+
+var status="";
+var messa = "";
+const contact_request=async(e)=>{
+
+//   let name=e.target.name
+// let value=e.target.value
+// console.log(value)
+// console.log(name)
+// if(name=='message'){
+//   setmessage(value)
+// }
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var message = document.getElementById("message").value;
+console.log(message)
+  var bodyFormData = new FormData();
+  bodyFormData.append('Name', name)
+  bodyFormData.append('email', email)
+  bodyFormData.append('message',message)
+
+  axios({
+    method: "post",
+    url: "https://api.seventhsq.com/enquiry/contactus/",
+    data: bodyFormData,
+    headers: { "Content-Type": "multipart/form-data" },
+  })
+    .then(function (response) {
+      //handle success
+      console.log(response);
+
+    })
+    .catch(function (response) {
+      //handle error
+      console.log(response);
+
+    });
+
+  // setmessage("contact request delivered")
+  // messa="message sent success"
+  
+
+
+}
+
+
 function Contact() {
   return (
     <div>
@@ -104,11 +162,12 @@ function Contact() {
 
             <div class="c-inputs">
               <form>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="Example@gmail.com" />
-                <textarea name="message" placeholder="Write Message"></textarea>
+                <input type="text" name="name" id="name" placeholder="Full Name" />
+                <input type="email" name="email" id="email" placeholder="Example@gmail.com" />
+                <textarea name="message" name="message" id="message" placeholder="Write Message"></textarea>
 
-                <button>SEND</button>
+                <button onClick={contact_request}>SEND</button>
+                {/* <button onClick={notify}>Click Me!</button> */}
               </form>
             </div>
           </div>
