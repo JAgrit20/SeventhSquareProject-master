@@ -27,3 +27,16 @@
   color: blue !important;
 
 }
+
+.edit_add_ok_btn{
+  
+  border: 1px solid;
+  width: fit-content;
+  padding: 3pt 15pt;
+  margin-left: auto;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  border-radius: 4pt;
+  cursor: pointer;
+
+}
