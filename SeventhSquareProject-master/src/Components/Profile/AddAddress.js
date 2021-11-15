@@ -1,11 +1,12 @@
 import React from 'react'
+import { update_address } from '../../services/apicalls'
 
-export default function AddAddress({ handleSubmit, callChange, toggle, current }) {
+export default function AddAddress({ callChange, toggle, current }) {
   console.log(current)
   const style = { display: 'grid', gridTemplateColumns: "100% 100%", justifyContent: 'center' }
 
   return (
-    <form method="POST" class="register-form" onSubmit={handleSubmit} id="address-form" >
+    <div>
       <div style={style}>
         <input
           class="form-control"
@@ -73,8 +74,10 @@ export default function AddAddress({ handleSubmit, callChange, toggle, current }
         <div></div>
         <button
           className="edit_add_ok_btn"
-          onClick={toggle}>Ok</button>
+          onClick={() => {
+            update_address(current.id, current, toggle)
+          }}>Ok</button>
       </div>
-    </form >
+    </div >
   )
 }

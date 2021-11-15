@@ -9,6 +9,12 @@ export default function SavedAddress({ curr, index }) {
   const [Edit, setEdit] = useState(false)
   const [current, setcurrent] = useState(curr)
 
+  const handle_change = (e) => {
+    setcurrent({
+      ...current,
+      [e.target.name]: e.target.value
+    })
+  }
   console.log(current)
 
   const toggle = () => { setEdit(!Edit) }
@@ -18,7 +24,7 @@ export default function SavedAddress({ curr, index }) {
     <div class="d-flex justify-content-evenly">
       {Edit ?
 
-        <AddAddress handleSubmit={() => { }} callChange={() => { }} toggle={toggle} current={current} />
+        <AddAddress callChange={handle_change} toggle={toggle} current={current} />
         :
         <>
           <input type="text" class="form-control" value={current.apartment_address + ',' + current.street_address + ',' + current.city + ',' + current.state + ',' + current.country + ',' + current.zip} key={index} />
