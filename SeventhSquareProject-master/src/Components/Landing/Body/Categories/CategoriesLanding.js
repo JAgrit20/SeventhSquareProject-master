@@ -280,6 +280,16 @@ const handlelow=()=>{
   console.log(order)
 
 }
+const handleorder=(value)=>{
+  if(value.target.value=="high"){
+    setorder('high')
+  }else{
+    setorder('low')
+  }
+
+  console.log(order)
+
+}
 const handlehigh=()=>{
   setorder('low')
   console.log(order)
@@ -450,18 +460,24 @@ const handlesanitarymaterial=(value)=>{
               <p>Options in {name} </p>
               <div className="sortOption">
                 <p>Sort By</p>
-                {/* <select class="form-select" onChange={handleorder} >
+                 {/* <select class="form-select" } >
                   <option  value='high' name='high' >High to Low</option>
                   <option value="low" name='low' >Low to High</option>
+                  </select> */}
                   {/* <option value="2">Bottom to Top</option>
-                  <option value="3">Popular</option> }
-                </select> */}
-                <button onClick={handlelow}>
+                  <option value="3">Popular</option>}
+        </select> */}
+        <select class="form-select" onChange={handleorder} >
+        {/* <select class="form-select" > */}
+                  <option onChange={handlelow} value='high' name='high' >High to Low</option>
+                  <option onChange={handlehigh} value="low" name='low' >Low to High</option>
+                  </select>
+                {/* <button onClick={handlelow}>
                   High to low
                 </button>
                 <button onClick={handlehigh}>
                   low to high
-                </button>
+                </button> */}
     
               </div>
               

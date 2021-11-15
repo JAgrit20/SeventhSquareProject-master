@@ -1,6 +1,7 @@
 import React  from 'react'
 import "./Navbar.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { AiOutlineSearch } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
@@ -240,8 +241,9 @@ import SuggestionsList from './Autocomplete';
                     onChange={onChange}
                     
                     
+                    
                   />
-                <i class="fas fa-search"/>
+                <AiOutlineSearch />
                 <SuggestionsList
                 inputValue={search}
                 selectedSuggestion={selectedSuggestion}
@@ -260,6 +262,7 @@ import SuggestionsList from './Autocomplete';
                 <li class="log-sign">
                   <a to="/">
                     <FaMapMarkerAlt />
+                    
                     <select className="form-select" onChange={handlecity} >
                       {
                        
@@ -352,7 +355,7 @@ import SuggestionsList from './Autocomplete';
             <nav className="lowerNavbar">
               <ul class="menu-main">
                 <li class="header_li">
-                  <Link to="/product">Construction Materials</Link>
+                  <Link to="/product" style={{fontSize:"2.0rem !important"}}>Construction Materials</Link>
                   <div class="menu-sub building">
                     <div class="menu-col-1">
                       <h4 class="menu-category">Cement</h4>
@@ -985,6 +988,7 @@ import SuggestionsList from './Autocomplete';
                     placeholder='Search Your Product'
                     aria-label="Search Your Product"
                     aria-describedby="button-addon2"
+                    fontSize="20px"
                     
                     name='search'
                     value={search}

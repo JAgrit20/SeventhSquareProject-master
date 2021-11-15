@@ -25,8 +25,8 @@ function MostPopularCarousel(props) {
     const responsive = {
             desktop: {
               breakpoint: { max: 3000, min: 1024 },
-              items: 3,
-              slidesToSlide: 3 // optional, default to 1.
+              items: 4,
+              slidesToSlide: 4 // optional, default to 1.
             },
             tablet: {
               breakpoint: { max: 1024, min: 464 },
@@ -66,6 +66,7 @@ function MostPopularCarousel(props) {
         {  props.items.slice(0,10).map((product) => (
           <Link to={"/product/"   + product.id.toString()} >
               <div class={'product my-2 Mostpopulardiv ml-5' } key={product.id}>
+              <div class="card-body">
     <div class="img-container shadow">
       <ProductImageIndividual
       image = {product.id.toString()}
@@ -78,11 +79,14 @@ function MostPopularCarousel(props) {
      
     </div>
     <div class="bottom shadow">
-    <p>{product.name}</p>
+    {/* <p style={{fontSize:15,textAlign: "left",textOverflow:"ellipsis",whiteSpace: "nowrap",overflow: "hidden"}}>{product.name}</p> */}
+
+    <p id="ptitle"style={{fontSize:15,textAlign: "left",textOverflow:"ellipsis",whiteSpace: "nowrap",overflow: "hidden", }}>{product.name}</p>
    
       <div class="price">
-        <span>₹{product.sellingPrice}</span>
+        <span style={{fontSize:20,fontFamily:'Times new roman',fontWeight: 'bold'}}>₹{product.sellingPrice}</span>
       </div>
+    </div>
     </div>
   </div>
   </Link>  

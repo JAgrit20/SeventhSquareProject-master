@@ -39,58 +39,58 @@ function Checkout() {
   let cartItems=[]
   
 
-  const postcashfree=async()=>{
+  // const postcashfree=async()=>{
     
-    var bodyFormData = new FormData();
-    bodyFormData.append('orderId', orderId)
-    bodyFormData.append('orderAmount', orderAmount)
-    bodyFormData.append('customerPhone',customerPhone)
-    bodyFormData.append('customerEmail',customerEmail)
-    bodyFormData.append( 'customerName',firstname)
+  //   var bodyFormData = new FormData();
+  //   bodyFormData.append('orderId', orderId)
+  //   bodyFormData.append('orderAmount', orderAmount)
+  //   bodyFormData.append('customerPhone',customerPhone)
+  //   bodyFormData.append('customerEmail',customerEmail)
+  //   bodyFormData.append( 'customerName',firstname)
 
 
 
-    axios({
-      method: "post",
-      url: "https://api.seventhsq.com/payu/create_cashfree/",
-      data: bodyFormData,
-      headers: { "Content-Type": "multipart/form-data" },
-    })
-      .then(function (response) {
-        //handle success
-        console.log(response);
-      })
-      .catch(function (response) {
-        //handle error
-        console.log(response);
-      });
+  //   axios({
+  //     method: "post",
+  //     url: "https://api.seventhsq.com/payu/create_cashfree/",
+  //     data: bodyFormData,
+  //     headers: { "Content-Type": "multipart/form-data" },
+  //   })
+  //     .then(function (response) {
+  //       //handle success
+  //       console.log(response);
+  //     })
+  //     .catch(function (response) {
+  //       //handle error
+  //       console.log(response);
+  //     });
     
-    // const config = {
-    //   method:'POST',
+  //   // const config = {
+  //   //   method:'POST',
       
      
-    //   headers: {
+  //   //   headers: {
         
-    //     'Content-Type': 'application/form-data'
-    //   },
-    //   body:JSON.stringify({
+  //   //     'Content-Type': 'application/form-data'
+  //   //   },
+  //   //   body:JSON.stringify({
         
-    //     'orderId': orderId,
-    //     'orderAmount': orderAmount,
-    //     'customerPhone':customerPhone,
-    //     'customerEmail':customerEmail,
-    //     'customerName':firstname
+  //   //     'orderId': orderId,
+  //   //     'orderAmount': orderAmount,
+  //   //     'customerPhone':customerPhone,
+  //   //     'customerEmail':customerEmail,
+  //   //     'customerName':firstname
        
-    // })
+  //   // })
   
-    // };
+  //   // };
    
-    // const res=await fetch('https://api.seventhsq.com/payu/create_cashfree/',config);
+  //   // const res=await fetch('https://api.seventhsq.com/payu/create_cashfree/',config);
     
-    // console.log(res)
+  //   // console.log(res)
     
   
-  }
+  // }
 /////////////////////////////////////////to get hash value
 //   const gethash=async()=>{
     

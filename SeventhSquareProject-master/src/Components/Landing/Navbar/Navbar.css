@@ -135,12 +135,15 @@ header {
   padding-top: 1%;
   border-radius: 5px 0 0 5px;
   border: none !important;
+  border:0px;
   
 }
 
 .input__box input {
   border-radius: 1px 0 0 1px !important;
   width: 500px;
+  font-size: medium;
+  border: none !important;
 }
 #search_box::placeholder {
   color: #242020;
@@ -149,14 +152,18 @@ header {
   font-family:'open sans';
 }
 .fa-search {
-  padding-top: 9px ;
+  /* padding-top: 9px ; */
   padding-inline: 8px;
   border-radius: 0 1px 1px 0 !important;
   cursor: pointer;
   left: 0;
   color: rgb(17, 14, 14);
   background-color: rgb(255, 255, 255);
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none !important;
+
 }
 .log-sign {
   padding-top: 2px;
@@ -232,7 +239,7 @@ header {
 .lowerNavbar a {
   color: rgb(17, 17, 17);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   display: block;
   padding: 0 0.75em;
   font-weight: 400;
@@ -289,8 +296,6 @@ header {
 .lowerNavbar li:hover .menu-sub {
   display: block;
 }
-
-
 
 .menu-sub ul {
   margin-left: 0px;

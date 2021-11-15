@@ -9,7 +9,7 @@ function Testimonial() {
       
       <section class="review" id="review">
         <div class="title">
-          <span className="h2">What People Say about Us</span>
+          <span className="h1">What People Say about Us</span>
         </div>
         <div className='caraousel-container mb-4'>
 

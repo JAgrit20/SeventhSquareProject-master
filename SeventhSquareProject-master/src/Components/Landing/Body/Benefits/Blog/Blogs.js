@@ -20,6 +20,16 @@ function Blogs() {
         <div class="container-fluid blogcontainer">
             <div class="title">
           <span className="h1">Recent Blogs</span>
+          <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
         </div>
         <div class="bloggrid">
             {
