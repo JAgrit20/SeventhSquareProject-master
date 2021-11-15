@@ -1,4 +1,4 @@
-const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : ""
+const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : "https://api.seventhsq.com"
 
 const update_address = (id, data, callback) => {
 
@@ -23,8 +23,29 @@ const update_address = (id, data, callback) => {
 }
 
 
+const Delete_address = (id, callback) => {
+  const token = localStorage.getItem('token')
+
+  fetch(`${url}/orders/addresses/${id}/update/`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      "Authorization": `token ${token}`
+    },
+  })
+    .then(res => res.json())
+    .then((res) => {
+      callback(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
 
 export {
   url,
-  update_address
+  update_address,
+  Delete_address
 }
