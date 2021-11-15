@@ -6,6 +6,8 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { BrowserRouter as Router,  Link } from "react-router-dom";
 import Login from '../Login/Navlogin.js';
+import { FaUserAlt } from 'react-icons/fa';
+
 
 import axios from "axios"
 import { useState, useEffect ,useContext} from 'react';
@@ -225,7 +227,9 @@ import SuggestionsList from './Autocomplete';
               <ul>
                 <li class="input__box">
                   <form action={`/search-result/${search}`}>
+                 
                   <input
+                  
                     type="text"
                     class="form-control"
                     placeholder='Search Your Product'
@@ -234,9 +238,10 @@ import SuggestionsList from './Autocomplete';
                     name='search'
                     value={search}
                     onChange={onChange}
-
+                    
+                    
                   />
-                
+                <i class="fas fa-search"/>
                 <SuggestionsList
                 inputValue={search}
                 selectedSuggestion={selectedSuggestion}
@@ -247,7 +252,7 @@ import SuggestionsList from './Autocomplete';
                   
                   </form>
                   
-                  <i class="fas fa-search"></i>
+                 
                  
                 </li>
                
@@ -267,8 +272,7 @@ import SuggestionsList from './Autocomplete';
                      <option id="Select Region" value='Select Region'>Select Region</option>
                       <option id="Andhra Pradesh" value='Andhra Pradesh'>Andhra Pradesh</option>
                       <option id="Arunachal Pradesh" value='Arunachal Pradesh'>Arunachal Pradesh</option>
-                      <option id="Assam" value='Assam'>Assam</option>
-                      
+                      <option id="Assam" value='Assam'>Assam</option>       
                       <option id="Bihar" value='Bihar'>Bihar</option>
                       <option id="Chhattisgarh"  value='Chhattisgarh'>Chhattisgarh</option>
                       <option id="Goa" value='Goa'>Goa</option>
@@ -975,11 +979,13 @@ import SuggestionsList from './Autocomplete';
               <li class="input__box">
                   <form action={`/search-result/${search}`}>
                   <input
+                  id="search_box"
                     type="text"
                     class="form-control"
                     placeholder='Search Your Product'
                     aria-label="Search Your Product"
                     aria-describedby="button-addon2"
+                    
                     name='search'
                     value={search}
                     onChange={onChange}
@@ -996,7 +1002,7 @@ import SuggestionsList from './Autocomplete';
                   
                   </form>
                   
-                  <i class="fas fa-search"></i>
+                  <i class="fas fa-search fa-lg"></i>
                  
                 </li>
                 <li class="log-sign">

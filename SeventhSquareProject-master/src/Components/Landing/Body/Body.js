@@ -67,14 +67,42 @@ console.log(err)
     return (
       <div>
         <HomeSlider/>
-      <section class="section products my-2">
+        
         <div class="title">
           <span class="h1">Categories</span>
+          <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
           
         </div>
-        <br/>
         <Categories />
+      <section class="container">
+        
+
+
+      <div class="title">
+          <span class="h1" style={{visibility: 'hidden'}}>ok</span>
+
+          </div>
+      <div class="title">
+          <span class="h1" style={{visibility: 'hidden'}}>ok</span>
+
+          </div>
+      <div class="title">
+          <span class="h1" style={{visibility: 'hidden'}}>ok</span>
+
+          </div>
+        
+
       </section>
+
       <Benefits />
         <section class="section products">
           <div class="title">
@@ -119,7 +147,7 @@ console.log(err)
       </div>
       </Link>  
               ))}
-              ;
+              
             </div>
           </div>
         </section>

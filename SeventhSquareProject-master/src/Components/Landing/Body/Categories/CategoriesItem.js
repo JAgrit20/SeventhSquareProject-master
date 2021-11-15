@@ -14,7 +14,7 @@ export const catItem = [
     },
     {
         id: "3",
-        image : require('./Categories_images/steel.webp'),
+        image : require('./Categories_images/alumunium.webp'),
         title : "Pipes & Fittings",
 
     },
@@ -26,7 +26,7 @@ export const catItem = [
     },
     {
         id: "5",
-        image : require('./Categories_images/alumunium.webp'),
+        image : require('./Categories_images/steel.png'),
         title : "Steel",
 
     },
@@ -45,13 +45,13 @@ export const catItem = [
     {
         id: "8",
         image : require('./Categories_images/flooring.png'),
-        title : "Flooring & wall",
+        title : "Flooring & Wall",
 
     },
     {
         id: "9",
         image : require('./Categories_images/wood.jpg'),
-        title : "wood",
+        title : "Wood",
 
     },
     {

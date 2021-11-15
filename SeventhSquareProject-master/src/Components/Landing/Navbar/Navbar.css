@@ -135,19 +135,27 @@ header {
   padding-top: 1%;
   border-radius: 5px 0 0 5px;
   border: none !important;
+  
 }
+
 .input__box input {
-  border-radius: 5px 0 0 5px !important;
+  border-radius: 1px 0 0 1px !important;
   width: 500px;
+}
+#search_box::placeholder {
+  color: #242020;
+  opacity: 1;
+  font-size: medium;
+  font-family:'open sans';
 }
 .fa-search {
   padding-top: 9px ;
   padding-inline: 8px;
-  border-radius: 0 5px 5px 0 !important;
+  border-radius: 0 1px 1px 0 !important;
   cursor: pointer;
   left: 0;
-  color: white;
-  background-color: #555;
+  color: rgb(17, 14, 14);
+  background-color: rgb(255, 255, 255);
   
 }
 .log-sign {
