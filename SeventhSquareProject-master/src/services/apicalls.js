@@ -26,7 +26,7 @@ const update_address = (id, data, callback) => {
 const Delete_address = (id, callback) => {
   const token = localStorage.getItem('token')
 
-  fetch(`${url}/orders/addresses/${id}/update/`, {
+  fetch(`${url}/orders/addresses/${id}/delete/`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Delete_address = (id, callback) => {
   })
     .then(res => res.json())
     .then((res) => {
-      callback(res)
+      callback()
     })
     .catch(err => {
       console.log(err)

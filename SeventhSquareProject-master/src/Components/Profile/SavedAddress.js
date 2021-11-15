@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { FaRegTrashAlt, FaEdit } from "react-icons/fa";
+import { Delete_address } from '../../services/apicalls';
 import AddAddress from './AddAddress';
 
-export default function SavedAddress({ curr, index }) {
+export default function SavedAddress({ curr, index, addressdata, setaddressdata }) {
 
   const style = { margin: "0pt 5pt", fontSize: "12pt" }
 
@@ -19,6 +20,13 @@ export default function SavedAddress({ curr, index }) {
 
   const toggle = () => { setEdit(!Edit) }
 
+  const filter = () => {
+    setaddressdata(addressdata?.filter(v => v?.id !== current?.id))
+  }
+
+  const Delete = () => {
+    Delete_address(current?.id, filter)
+  }
 
   return (
     <div class="d-flex justify-content-evenly">
@@ -28,7 +36,9 @@ export default function SavedAddress({ curr, index }) {
         :
         <>
           <input type="text" class="form-control" value={current.apartment_address + ',' + current.street_address + ',' + current.city + ',' + current.state + ',' + current.country + ',' + current.zip} key={index} />
-          <FaRegTrashAlt style={style} />
+          <div onClick={Delete}>
+            <FaRegTrashAlt style={style} />
+          </div>
           <div onClick={toggle}>
             <FaEdit style={style} />
           </div>

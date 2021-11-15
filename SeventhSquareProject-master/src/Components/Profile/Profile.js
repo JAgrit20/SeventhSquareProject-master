@@ -454,7 +454,7 @@ function Profile() {
 												addressdata ?
 													addressdata.map((curr, index) => {
 														return (
-															<SavedAddress curr={curr} index={index} />
+															<SavedAddress curr={curr} index={index} addressdata={addressdata} setaddressdata={setaddressdata} />
 														)
 													}
 													) : null
