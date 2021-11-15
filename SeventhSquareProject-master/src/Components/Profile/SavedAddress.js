@@ -18,7 +18,7 @@ export default function SavedAddress({ curr, index }) {
     <div class="d-flex justify-content-evenly">
       {Edit ?
 
-        <AddAddress handleSubmit={() => { }} callChange={() => { }} toggle={toggle} />
+        <AddAddress handleSubmit={() => { }} callChange={() => { }} toggle={toggle} current={current} />
         :
         <>
           <input type="text" class="form-control" value={current.apartment_address + ',' + current.street_address + ',' + current.city + ',' + current.state + ',' + current.country + ',' + current.zip} key={index} />

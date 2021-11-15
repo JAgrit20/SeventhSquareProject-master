@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function AddAddress({ handleSubmit, callChange, toggle }) {
-
+export default function AddAddress({ handleSubmit, callChange, toggle, current }) {
+  console.log(current)
   const style = { display: 'grid', gridTemplateColumns: "100% 100%", justifyContent: 'center' }
 
   return (
@@ -14,7 +14,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="street_address"
           placeholder="Adress Line 1"
           onChange={callChange}
-
+          value={current?.street_address}
 
         />
         <input
@@ -24,8 +24,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="apartment_address"
           placeholder="Adress Line 2"
           onChange={callChange}
-
-
+          value={current?.apartment_address}
         />
       </div>
       <div style={style}>
@@ -36,8 +35,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="city"
           placeholder="City"
           onChange={callChange}
-
-
+          value={current?.city}
         />
         <input
           class="form-control"
@@ -46,7 +44,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="state"
           placeholder="State"
           onChange={callChange}
-
+          value={current?.state}
         />
       </div>
       <div style={style}>
@@ -57,7 +55,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="country"
           placeholder="Country"
           onChange={callChange}
-
+          value={current?.country}
         />
         <input
           class="form-control"
@@ -66,7 +64,7 @@ export default function AddAddress({ handleSubmit, callChange, toggle }) {
           id="zip"
           placeholder="Zip Code"
           onChange={callChange}
-
+          value={current?.zip}
 
         />
       </div>
