@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
-// import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
 
 
 class Login extends Component {
@@ -19,6 +19,7 @@ class Login extends Component {
         res => {
             console.log(res)
             const token = res.data.token;
+           
             
             localStorage.setItem('token', token.toString());
             console.log(token)
@@ -34,12 +35,12 @@ class Login extends Component {
     ).catch(
         err => {
             console.log(err)
-            //   Swal.fire({
-            //   icon: 'error',
-            //   title: 'Oops...',
-            //   text: 'Wrong Credentials',
-            //   // footer: '<a href="">Why do I have this issue?</a>'
-            // })
+              Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Wrong Credentials',
+              // footer: '<a href="">Why do I have this issue?</a>'
+            })
             // window.alert("Wrong Credentials");
         }
     )
