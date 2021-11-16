@@ -281,45 +281,117 @@ const Verify=()=>{
                 
               </div>
               <div class="product-rating">
-                              {totalreview=>0 && totalreview<=1?
-                                <i class="fas fa-star"></i>:null
+                         
+                              {
+                                totalreview==0 ?<>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i></>:null
+                              }
+                              {totalreview>0 && totalreview<1?
+                               <> <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
                                }
-                                {totalreview>1 && totalreview<=2?
+                                {totalreview==1?
                                 <>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview>1 && totalreview<2?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview==2?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>2 && totalreview<3?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview==3?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>3 && totalreview<4 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview==4 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>4 && totalreview<5 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview==5 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 </>
                                 :null
                                }
-                               {totalreview>2 && totalreview<=3?
-                                <>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                </>
-                                :null
-                               }
-                               {totalreview>3 && totalreview<=4?
-                                <>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                </>
-                                :null
-                               }
-                                {totalreview>4 && totalreview<=5?
-                                <>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                </>
-                                :null
-                               }
+
                                 
-                <span>{Math.ceil(totalreview)}/5</span>
+                <span>{totalreview}/5</span>
               </div>
             </div>
             <div class="exclusiveGst">
@@ -596,6 +668,8 @@ const Verify=()=>{
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
+                                
+                                
                                 </>
                                 :null
                                }
@@ -626,12 +700,20 @@ const Verify=()=>{
             <div class="d-flex justify-content-start">
             {/* <img style={{height: '40px', width: '40px'}}src={Rship} /> */}
             {/* <div className='container mb-4 '> */}
-             <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />
+               {
+                 users.returnable==true?
+                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />:null
+               }
+             
+
             {/* </div> */}
 
             {/* <div className='container mb-4 '> */}
+            {
+              users.incl_shipping==true?
+              <img style={{paddingLeft:'10px' ,height: '30px', width: '70px'}}src={Fship} />:null
+            }
             
-            <img style={{paddingLeft:'10px' ,height: '30px', width: '70px'}}src={Fship} />
             
               {/* <h5> <i class="fas fa-truck fa-3x" style={{color:'white'}}></i>Free Shipping</h5> */}
             {/* </div> */}

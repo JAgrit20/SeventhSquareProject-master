@@ -67,7 +67,7 @@ function RecentlyViewedCarousel(props) {
           <Link to={"/product/"   + product.id.toString()} >
               <div class={'product my-2 Mostpopulardiv ml-5' } key={product.id}>
                 <div class="card-body">
-    <div class="img-container shadow" >
+    <div class="img-container" >
       <ProductImageIndividual
       image = {product.id.toString()}
       />

@@ -38,7 +38,7 @@ function BricksFilter(props) {
               <section>
                 <section>
                   <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Size</h6>
+                    <h3 class="mb-3">Size</h3>
 
                     {
                        bricksize?
@@ -46,14 +46,18 @@ function BricksFilter(props) {
                          return(
                            <div>
                                <div class="form-check pl-0 mb-3 mx-4">
-                                <input
+                                <input style={{width:"15px",height:"15px","backgroundColor": "#D7B1D7"}}
                                   type="checkbox"
-                                  class="form-check-input filled-in"
+                                  // class="form-check-input filled-in"
                                   id={curr}
                                   onChange={()=>props.handlebricksize(curr)}
+
+                                    // border-color: #D7B1D7;
+                                    
                                   
+                                  defaultChecked={props.bricksizes.includes(curr)?true:false}
                                 />
-                                <label
+                                <label style={{fontSize:"17px",paddingLeft:"5px",justifyContent:"center",alignContent:"center"}}
                                   class="form-check-label small text-uppercase card-link-secondary"
                                   for={curr}
                                 >
@@ -73,7 +77,7 @@ function BricksFilter(props) {
                   </section>
 
                   {/* <section class="mb-4 ratingBlock">
-                    <h6 class="font-weight-bold mb-3">Avg. Customer Review</h6>
+                    <h3 class="font-weight-bold mb-3">Avg. Customer Review</h3>
 
                     <a href="#!" className="">
                       <ul class="rating">
@@ -152,7 +156,7 @@ function BricksFilter(props) {
                       </ul>
                     </a>
                   </section> */}
-                   <h6 class="font-weight-bold mb-3">Brands</h6>
+                   <h3 class="mb-3">Brands</h3>
                    {
                       
                         props.brands?
@@ -165,14 +169,14 @@ function BricksFilter(props) {
                               </p>
                               </button> */}
                                 <div class="form-check pl-0 mb-3 ml-4">
-                              <input
+                              <input style={{width:"13px",height:"13px"}}
                                 type="checkbox"
-                                class="form-check-input filled-in"
+                                // class="form-check-input filled-in"
                                 id={curr}
                                 onChange={()=>props.handlebrands(curr)}
                                 defaultChecked={props.filterbrands.includes(curr)?true:false}
                               />
-                              <label
+                              <label style={{fontSize:"13px",paddingLeft:"5px",justifyContent:"center",alignContent:"center"}}
                                 class="form-check-label small text-uppercase card-link-secondary"
                                 for={curr}
                               >
@@ -189,7 +193,7 @@ function BricksFilter(props) {
 
                     }
                   <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Price</h6>
+                    <h3 class="mb-3">Price</h3>
 
                    
                     <form>
@@ -213,7 +217,7 @@ function BricksFilter(props) {
                             name='max'
                             onChange={props.handlemax}
                           />
-                          <label for="to">₹ Max</label>
+                          <label for="to" style={{fontSize:"10px"}}>₹ Max</label>
                         </div>
                       </div>
                     </form>
@@ -231,7 +235,7 @@ function BricksFilter(props) {
                    
 
                   {/* <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Price</h6>
+                    <h3 class="mb-3">Price</h3>
 
                     <div class="slider-price d-flex align-items-center my-4">
                       <span class="font-weight-normal small text-muted mr-2">

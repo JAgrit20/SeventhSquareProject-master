@@ -33,7 +33,7 @@ function Blogs() {
         </div>
         <div class="bloggrid">
             {
-                 blogdata.slice(0,3).map((curr,index)=>{
+                 blogdata.slice(-3).map((curr,index)=>{
                      return(
                         <Blogcontainer title={curr.title} image={curr.image} slug={curr.slug} key={index} />
                      )

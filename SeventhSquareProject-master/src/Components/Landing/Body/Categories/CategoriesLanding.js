@@ -53,11 +53,11 @@ function CategoriesLanding() {
   const [city,setcity]=useState();
   const [hardwarematerial,sethardwarematerial]=useState('');
   const [sanitarymaterial,setsanitarymaterial]=useState('');
-  const [glassize,setglassize]=useState(0);
-  const [glassthick,setglassthick]=useState(0);
-  const [bricksize ,setbricksize]=useState(0);
-  const [pipesize ,setpipesize]=useState(0);
-  const [floorsize ,setfloorsize]=useState(0);
+  let [glassize,setglassize]=useState([]);
+  let [glassthick,setglassthick]=useState([]);
+  let [bricksize ,setbricksize]=useState([]);
+  let [pipesize ,setpipesize]=useState([]);
+  let [floorsize ,setfloorsize]=useState([]);
   let brandsarray=[]
   let j=0
   let final=[]
@@ -89,7 +89,7 @@ function CategoriesLanding() {
            if (min!=0 && max!=1000000000 && apply!=0){
               
             product=(product.filter((product)=>{
-                return  parseInt(product.sellingPrice)>min && parseInt(product.sellingPrice)<max
+                return  parseInt(product.sellingPrice)>=min && parseInt(product.sellingPrice)<=max
                 }))
            }
 
@@ -111,27 +111,27 @@ function CategoriesLanding() {
            }
            if (bricksize!=0 && apply!=0){
             product=(product.filter((products)=>{
-              return products.length==bricksize
+              return bricksize.includes(products.length)
               }))
            }
            if (glassize!=0 && apply!=0){
             product=(product.filter((products)=>{
-              return products.length==glassize
+              return glassize.includes(products.length)
               }))
            }
            if (pipesize!=0 && apply!=0){
             product=(product.filter((products)=>{
-              return products.length==pipesize
+              return pipesize.includes(products.length)
               }))
            }
            if (floorsize!=0 && apply!=0){
             product=(product.filter((products)=>{
-              return products.length==floorsize
+              return floorsize.includes(products.length)
               }))
            }
            if (glassthick!=0 && apply!=0){
             product=(product.filter((products)=>{
-              return products.length==glassthick
+              return glassthick.includes(products.width)
               }))
            }
            if (hardwarematerial!='' && apply!=0){
@@ -157,7 +157,7 @@ function CategoriesLanding() {
         if (min!=0 && max!=1000000000 && apply!=0){
            
          product=(product.filter((product)=>{
-             return  parseInt(product.sellingPrice)>min && parseInt(product.sellingPrice)<max
+             return  parseInt(product.sellingPrice)>=min && parseInt(product.sellingPrice)<=max
              }))
         }
 
@@ -175,30 +175,30 @@ function CategoriesLanding() {
            
         }
         if (bricksize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==bricksize
-           }))
+          product=(product.filter((products)=>{
+            return bricksize.includes(products.length)
+            }))
         }
         if (glassize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==glassize
-           }))
-        }
-        if (pipesize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==pipesize
-           }))
-        }
-        if (floorsize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==floorsize
-           }))
-        }
-        if (glassthick!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==glassthick
-           }))
-        }
+          product=(product.filter((products)=>{
+            return glassize.includes(products.length)
+            }))
+         }
+         if (pipesize!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return pipesize.includes(products.length)
+            }))
+         }
+         if (floorsize!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return floorsize.includes(products.length)
+            }))
+         }
+         if (glassthick!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return glassthick.includes(products.width)
+            }))
+         }
         if (hardwarematerial!='' && apply!=0){
          product=(product.filter((products)=>{
            return products.material==hardwarematerial
@@ -219,7 +219,7 @@ function CategoriesLanding() {
         if (min!=0 && max!=1000000000 && apply!=0){
            
          product=(product.filter((product)=>{
-             return  parseInt(product.sellingPrice)>min && parseInt(product.sellingPrice)<max
+             return  parseInt(product.sellingPrice)>=min && parseInt(product.sellingPrice)<=max
              }))
         }
 
@@ -237,30 +237,30 @@ function CategoriesLanding() {
            
         }
         if (bricksize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==bricksize
-           }))
+          product=(product.filter((products)=>{
+            return bricksize.includes(products.length)
+            }))
         }
         if (glassize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==glassize
-           }))
-        }
-        if (pipesize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==pipesize
-           }))
-        }
-        if (floorsize!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==floorsize
-           }))
-        }
-        if (glassthick!=0 && apply!=0){
-         product=(product.filter((products)=>{
-           return products.length==glassthick
-           }))
-        }
+          product=(product.filter((products)=>{
+            return glassize.includes(products.length)
+            }))
+         }
+         if (pipesize!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return pipesize.includes(products.length)
+            }))
+         }
+         if (floorsize!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return floorsize.includes(products.length)
+            }))
+         }
+         if (glassthick!=0 && apply!=0){
+          product=(product.filter((products)=>{
+            return glassthick.includes(products.width)
+            }))
+         }
         if (hardwarematerial!='' && apply!=0){
          product=(product.filter((products)=>{
            return products.material==hardwarematerial
@@ -274,27 +274,20 @@ function CategoriesLanding() {
   
    };
 
-const handlelow=()=>{
-  setorder('high')
 
-  console.log(order)
-
-}
 const handleorder=(value)=>{
   if(value.target.value=="high"){
     setorder('high')
+    setapply(value => value+1)
   }else{
     setorder('low')
+    setapply(value => value+1)
   }
 
   console.log(order)
 
 }
-const handlehigh=()=>{
-  setorder('low')
-  console.log(order)
 
-}
   const handlemin=(e)=>{
     let name=e.target.name
 		let value=e.target.value
@@ -330,24 +323,81 @@ const handlehigh=()=>{
         console.log(value)
   }
   const handlebricksize=(value)=>{
-    setbricksize(value)
-    console.log(value)
+   
+
+    if(bricksize.includes(value)){
+      bricksize=(bricksize.filter((size)=>{
+        return size != value
+        }))
+      setbricksize(bricksize)
+      
+    }
+    else{
+      bricksize.push(value.toString())
+      setbricksize(bricksize)
+      console.log(bricksize)
+
+    }
 }
 const handlepipesize=(value)=>{
-  setpipesize(value)
-  console.log(value)
+  if(pipesize.includes(value)){
+    pipesize=(pipesize.filter((size)=>{
+      return size != value
+      }))
+    setpipesize(pipesize)
+    
+  }
+  else{
+    pipesize.push(value.toString())
+    setpipesize(pipesize)
+    console.log(pipesize)
+
+  }
 }
 const handlefloorsize=(value)=>{
-  setfloorsize(value)
-  console.log(value)
+  if(floorsize.includes(value)){
+    floorsize=(floorsize.filter((size)=>{
+      return size != value
+      }))
+    setfloorsize(floorsize)
+    
+  }
+  else{
+    floorsize.push(value.toString())
+    setfloorsize(floorsize)
+    console.log(floorsize)
+
+  }
 }
 const handleglassize=(value)=>{
-  setglassize(value)
-  console.log(value)
+  if(glassize.includes(value)){
+    glassize=(glassize.filter((size)=>{
+      return size != value
+      }))
+    setglassize(glassize)
+    
+  }
+  else{
+    glassize.push(value.toString())
+    setglassize(glassize)
+    console.log(glassize)
+
+  }
 }
 const handleglassthick=(value)=>{
-  setglassthick(value)
-  console.log(value)
+  if(glassthick.includes(value)){
+    glassthick=(glassthick.filter((size)=>{
+      return size != value
+      }))
+    setglassthick(glassthick)
+    
+  }
+  else{
+    glassthick.push(value.toString())
+    setglassthick(glassthick)
+    console.log(glassthick)
+
+  }
 }
 const handlehardwarematerial=(value)=>{
   sethardwarematerial(value)
@@ -437,20 +487,20 @@ const handlesanitarymaterial=(value)=>{
         <div className="categoryBody">
           {
             name=='Hardware'? <CementFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlehardwarematerial={handlehardwarematerial} filterbrands={filterbrands}/>
-            :name=='Bricks'?<BricksFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlebricksize={handlebricksize} filterbrands={filterbrands}/>
+            :name=='Bricks'?<BricksFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlebricksize={handlebricksize} filterbrands={filterbrands} bricksizes={bricksize}/>
             :name=='Steel'?<SteelFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=='Aggregates'?<AggregatesFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=='Modular'?<ReadyMixConcreteFilter />
             :name=='wood'?<WoodFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
-            :name=='Glass'?<GlassFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handleglassize={handleglassize} handleglassthick={handleglassthick} filterbrands={filterbrands}/>
-            :name=='Pipes_&_Fittings'?<PipesFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlepipesize={handlepipesize} filterbrands={filterbrands}/>
+            :name=='Glass'?<GlassFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handleglassize={handleglassize} handleglassthick={handleglassthick} filterbrands={filterbrands} glassizes={glassize} glassthicks={glassthick} />
+            :name=='Pipes_&_Fittings'?<PipesFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlepipesize={handlepipesize} filterbrands={filterbrands} pipesizes={pipesize}/>
             :name=='Sanitaryware'?<SanitarywareFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlesanitarymaterial={handlesanitarymaterial} filterbrands={filterbrands}/>
             :name=='Electricals'?<ElectricalFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=='Chemicals'?<ConstructionChemicalsFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=='Paints_&_Finishes'?<PaintsFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=='Cement'?<BuildingHardwareFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :name=="Roofing"?<RoofingFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
-            :name=='Flooring_&_wall'?<FlooringFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlefloorsize={handlefloorsize} filterbrands={filterbrands}/>
+            :name=='Flooring_&_wall'?<FlooringFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} handlefloorsize={handlefloorsize} filterbrands={filterbrands} floorsizes={floorsize}/>
             :name=='Doors_&_Windows'?<DoorsFilter handlemin={handlemin} handlemax={handlemax}  brands={brands?brands:'none'} handlebrands={handlebrands} handleapply={handleapply} handleremove={handleremove} check={apply} filterbrands={filterbrands}/>
             :null
           }
@@ -469,8 +519,8 @@ const handlesanitarymaterial=(value)=>{
         </select> */}
         <select class="form-select" onChange={handleorder} >
         {/* <select class="form-select" > */}
-                  <option onChange={handlelow} value='high' name='high' >High to Low</option>
-                  <option onChange={handlehigh} value="low" name='low' >Low to High</option>
+                  <option  value='high' name='high' >High to Low</option>
+                  <option value="low" name='low' >Low to High</option>
                   </select>
                 {/* <button onClick={handlelow}>
                   High to low

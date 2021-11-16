@@ -49,7 +49,7 @@ function FlooringFilter(props) {
                                   class="form-check-input filled-in"
                                   id={curr}
                                   onChange={()=>props.handlefloorsize(curr)}
-                                  
+                                  defaultChecked={props.floorsizes.includes(curr)?true:false}
                                 />
                                 <label
                                   class="form-check-label small text-uppercase card-link-secondary"

@@ -9,7 +9,7 @@ function Testimonial() {
       
       <section class="review" id="review">
         <div class="title">
-          <span className="h1">What People Say about Us</span>
+          <span className="h1" >What People Say about Us</span>
         </div>
         <div className='caraousel-container mb-4'>
 
@@ -25,8 +25,8 @@ function Testimonial() {
             <div className="carousel-item active">
             <div class="box-container">
           <div class="box">
-            <h3>john deo</h3>
-            <p>
+            <h3 style={{fontFamily:"open sans"}}>john deo</h3>
+            <p style={{fontFamily:"open sans"}}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
               quos eum. Laborum aut a consequatur ducimus, molestias possimus
               quisquam rerum temporibus ipsum voluptate accusamus, unde ab
