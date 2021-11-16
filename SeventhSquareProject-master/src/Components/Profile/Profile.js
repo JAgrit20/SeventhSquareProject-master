@@ -430,7 +430,14 @@ function Profile() {
 											<h6 class="mb-0">Email</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">
-											<input type="text" class="form-control" value={userdata.email} />
+											<input type="text" class="form-control"
+												onChange={e => {
+													setuserdata({
+														...userdata,
+														email: e.target.value
+													})
+												}}
+												value={userdata.email} />
 										</div>
 									</div>
 
@@ -440,7 +447,14 @@ function Profile() {
 											<h6 class="mb-0">Mobile</h6>
 										</div>
 										<div class="col-sm-9 text-secondary">
-											<input type="text" class="form-control" value={userdata.phone} />
+											<input type="text" class="form-control" value={userdata.phone}
+												onChange={e => {
+													setuserdata({
+														...userdata,
+														phone: e.target.value
+													})
+												}}
+											/>
 										</div>
 									</div>
 									<div class="row mb-3">

@@ -43,9 +43,32 @@ const Delete_address = (id, callback) => {
     })
 }
 
+const Add_to_whishlist = (uid, pid) => {
+  const token = localStorage.getItem('token')
+  console.log(uid, pid)
+  fetch(`${url}/wishlist/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      "Authorization": `token ${token}`
+    },
+    body: JSON.stringify({
+      product_id: pid,
+      user: uid
+    })
+  })
+    .then(res => res.json())
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(err => { console.log(err) })
+}
+
 
 export {
   url,
   update_address,
-  Delete_address
+  Delete_address,
+  Add_to_whishlist
 }
