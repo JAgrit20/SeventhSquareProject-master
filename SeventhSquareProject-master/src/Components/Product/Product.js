@@ -734,6 +734,7 @@ function Product() {
         show={BpomodalShow}
         id={users.id}
         category={users.category}
+        users={users}
         onHide={() => setBpoModalShow(false)}
       />
       <InfoModal
@@ -741,6 +742,7 @@ function Product() {
         id={users.id}
         category={users.category}
         onHide={() => setInfoModalShow(false)}
+        users={users}
       />
 
     </div>

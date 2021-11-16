@@ -9,6 +9,7 @@ function Review() {
   const [title, settitle] = useState('')
   const [review, setreview] = useState('')
   const [star, setstar] = useState('')
+  const [Reviews, setReviews] = useState("")
 
   const getuser = async () => {
     const config = {
@@ -30,7 +31,7 @@ function Review() {
       },
     };
     console.log(config);
-    const res = await fetch('https://api.seventhsq.com/review/companyreview/', config);
+    const res = await fetch('http://localhost:8000/review/companyreview/', config);
     const data = await res.json();
     setreviewdata(data)
 
@@ -66,15 +67,97 @@ function Review() {
 
   }
 
+  console.log(reviewdata)
+
   useEffect(() => {
     getuser()
     getreviews()
+
   }, [])
   return (
     <div className='container-lg'>
-      <div className="d-flex justify-content-center my-5">
+      <div className="d-flex justify-content-center my-5" style={{ flexDirection: 'column' }}>
         <h1>Customer Reviews</h1>
+        <div className="grid_wrap_review">
+          {/* review card */}
+          {reviewdata?.map(v => {
+            return <div className="review_card">
+              <span className="circle"></span>
+              <span style={{ flex: 1 }}>
+                <span className="review_card_1st_child">
+                  <h1>{v?.username}</h1>
 
+                  {v.star > 0 && v.star <= 1 ?
+                    <span style={{
+                      width: "30%",
+                      marginLeft: "auto"
+                    }}>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    : null
+                  }
+                  {v.star > 1 && v.star <= 2 ?
+                    <span style={{
+                      width: "30%",
+                      marginLeft: "auto"
+                    }}>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    : null
+                  }
+                  {v.star > 2 && v.star <= 3 ?
+                    <span style={{
+                      width: "30%",
+                      marginLeft: "auto"
+                    }}>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    : null
+                  }
+                  {v.star > 3 && v.star <= 4 ?
+                    <span style={{
+                      width: "30%",
+                      marginLeft: "auto"
+                    }}>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </span>
+                    : null
+                  }
+                  {v.star > 4 && v.star <= 5 ?
+                    <span style={{
+                      width: "30%",
+                      marginLeft: "auto"
+                    }}>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </span>
+                    : null
+                  }
+                </span>
+                <p className="review_body">{v?.review}</p>
+              </span>
+            </div>
+          })}
+        </div>
       </div>
       <div className="d-flex justify-content-center my-5">
         <h4>we love and value all our customers equally every support of user means a lot</h4>
@@ -132,80 +215,6 @@ function Review() {
             </form>
 
           </div>
-        </div>
-
-        <div className='review-wrapper'>
-          {
-            reviewdata.map((curr, index) => {
-              return (
-                <div class="box-container my-3">
-                  <div class="box">
-                    <h3>{curr.title}</h3>
-                    <p>
-                      {curr.review}
-                    </p>
-                    <div class="stars">
-                      {curr.star > 0 && curr.star <= 1 ?
-                        <>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                        </>
-                        : null
-                      }
-                      {curr.star > 1 && curr.star <= 2 ?
-                        <>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                        </>
-                        : null
-                      }
-                      {curr.star > 2 && curr.star <= 3 ?
-                        <>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <i class="far fa-star"></i>
-                        </>
-                        : null
-                      }
-                      {curr.star > 3 && curr.star <= 4 ?
-                        <>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                        </>
-                        : null
-                      }
-                      {curr.star > 4 && curr.star <= 5 ?
-                        <>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </>
-                        : null
-                      }
-
-
-                    </div>
-                  </div>
-                </div>
-
-              )
-            })
-
-          }
-
         </div>
 
 
