@@ -1,5 +1,13 @@
+.profile{
+  font-family: "open sans";
+}
 .main-body input{
   font-size: 11px;
+
+}
+#title_pro{
+  font-family: crimson text !important;
+  font-size: 40px;
 }
 .card {
   position: relative;

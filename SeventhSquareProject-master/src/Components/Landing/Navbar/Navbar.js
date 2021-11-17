@@ -1009,6 +1009,7 @@ import SuggestionsList from './Autocomplete';
                   <i class="fas fa-search fa-lg"></i>
                  
                 </li>
+                
                 <li class="log-sign">
                   <a to="/">
                     <FaMapMarkerAlt />
@@ -1056,12 +1057,14 @@ import SuggestionsList from './Autocomplete';
                     </select>
                   </a>
                 </li>
+                
                 <li className="log-sign">
                   <Link to="/cart">
                     <FaCartArrowDown />
                     <span>Cart</span>
                     
                   </Link>
+
                 </li>
                 <li className="log-sign">
                   <Link to="/login">
