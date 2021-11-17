@@ -1,10 +1,10 @@
-import React, { useEffect, useState ,useCallback} from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 import "./categoriesProduct.css";
 import CatItem from "./CatItem";
 function Cat(props) {
   // const [filteredProducts, setfilteredProducts] = useState([]);
-  
+
   // useEffect(() => {
   //   console.log('first')
   //   setfilteredProducts(props.product)
@@ -21,9 +21,9 @@ function Cat(props) {
 
   // },[props.product] );
 
- 
-  
-  return( props.product.map((curr,index) => {
+
+
+  return (props.product.map((curr, index) => {
     return (
       //   <div class={'product my-2 ' } key={curr.id}>
       //   <div class="img-container shadow">
@@ -48,9 +48,9 @@ function Cat(props) {
       // "quantity": 1,
       // "item": users.id,
       // "gst":users.gstRate
-      
-             <CatItem  name={curr.name} price={curr.sellingPrice} key={index} id={curr.id} oldp={curr.markedPrice} gst={curr.gstRate} handleapply={props.handleapply} />
-      
+
+      <CatItem sellerId={curr.account} name={curr.name} price={curr.sellingPrice} key={index} id={curr.id} oldp={curr.markedPrice} gst={curr.gstRate} handleapply={props.handleapply} />
+
     );
   }));
 }

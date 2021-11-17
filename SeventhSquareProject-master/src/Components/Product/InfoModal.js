@@ -30,10 +30,10 @@ function InfoModal(props) {
 
       body: JSON.stringify({
         "product_id": props.id,
-        "phone": userdata.phone,
+        "phone": userdata?.phone,
         "desc": description,
         "is_replyed": false,
-        "email": userdata.email,
+        "email": userdata?.email,
         "seller": props?.users?.account
 
       })
