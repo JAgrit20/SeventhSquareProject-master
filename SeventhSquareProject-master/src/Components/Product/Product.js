@@ -233,7 +233,7 @@ function Product() {
               hashtag="#seventhsquare"
             >
               <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
-            </FacebookShareButton>
+            <FacebookShareButton/>
 
             <TwitterShareButton
               url={window.location.href}
@@ -248,7 +248,7 @@ function Product() {
               url={window.location.href}
               quote={'Check this Amazing Product'}
               hashtag="#seventhsquare"
-            >
+            />
 
               <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
             </FacebookShareButton>

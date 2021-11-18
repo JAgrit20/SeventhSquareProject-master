@@ -6,7 +6,7 @@ function Wishlist() {
 
   console.log(products)
   useEffect(() => {
-    fetch("http://localhost:8000/wishlist/", {
+    fetch("https://api.seventhsq.com/wishlist/", {
       headers: {
         "Authorization": `token ${localStorage.getItem("token")}`
       }
@@ -16,7 +16,7 @@ function Wishlist() {
         const list = v?.map(val => val?.product_id)
         setuserId(v[0]?.user)
 
-        fetch("http://localhost:8001/inventory/api/inventory_list/", {
+        fetch("https://api.seventhsq.com/inventory/api/inventory_list/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

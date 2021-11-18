@@ -13,6 +13,7 @@ const update_address = (id, data, callback) => {
     },
     body: JSON.stringify(data)
   })
+
     .then(res => res.json())
     .then((res) => {
       callback(res)

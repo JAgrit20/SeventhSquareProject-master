@@ -61,7 +61,7 @@ function BricksFilter(props) {
                                     // border-color: #D7B1D7;
                                     
                                   
-                                  defaultChecked={props.bricksizes.includes(curr)?true:false}
+                                  // defaultChecked={props.bricksizes.includes(curr)?true:false}
                                 />
                                 <label style={{fontSize:"17px",paddingLeft:"5px",justifyContent:"center",alignContent:"center"}}
                                   class="custom-control-label text-uppercase card-link-secondary"
