@@ -16,9 +16,10 @@ function CatItem(props) {
 
   }
 
+
   const addtocart=async()=>{
     console.log(props)
-    
+
     const config = {
       method: 'POST',
       headers: {
@@ -33,8 +34,10 @@ function CatItem(props) {
         "price": props.price,
         "quantity": 1,
         "item": props.id,
+
         "gst":props.gst,
         "sellerId":"21"
+
       })
     };
 
