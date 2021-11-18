@@ -31,6 +31,9 @@ width: 100%;
 display: flex;
 flex-direction: column;
 background-color: rgb(255, 255, 255);
+font-family:  "Crimson Text";
+/* font-weight:30px; */
+
 }
 .categorySection .categorySectionHeading{
     height: 150px;
@@ -38,6 +41,7 @@ background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bolder;
 }
 .categorySection .categorySectionHeading h3{
     font-size: 25px;
@@ -50,12 +54,63 @@ background-color: rgb(255, 255, 255);
     justify-content: center;
     align-items: flex-start;
     max-height: 100px;
-   
+
     margin-bottom: 150px;
     
 }
+input[type=checkbox] {
+    cursor: pointer;
+ }
+
+input[type=checkbox]:after {
+ content: " ";
+ background-color: #000000;
+ display: inline-block;
+ visibility: visible;
+}
+
+input[type=checkbox]:checked:after {
+  content: "\2714";
+}
+.custom-control-label:before{
+    background-color:rgb(141, 140, 140);
+    height: 15px;
+    width: 15px;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:black;
+    height: 15px;
+    width: 15px;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+    height: 15px;
+    width: 15px;
+}
+.custom-control-input:active~.custom-control-label::before{
+    background-color:green;
+    height: 15px;
+    width: 15px;
+}
+
+/** focus shadow pinkish **/
+.custom-checkbox .custom-control-input:focus~.custom-control-label::before{
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 0, 247, 0.25); 
+}
+/* .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #D7B1D7;
+    background-color: #D7B1D7;
+  } */
+  /* .custom-checkbox .custom-control-input:checked~.custom-control-label::before {     background-color: green!important; }  */
 .categorySectionItems{
     margin: 40px 20px;
+}
+.categorySectionItems:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 8px 10px #888888;
+    border-radius: 50%;
+    width: 100%;
+
 }
 .categorySectionOptions img{
     height: 100px;
@@ -83,7 +138,7 @@ font-family: Arial, Helvetica, sans-serif;
 .categoryBody .bodyLeft{
     width: 20%;
     height: 100%;
-    background-color: rgb(247, 243, 243);
+    background-color: rgb(238, 238, 238);
     display: flex;
     flex-direction: column;
     margin: 0px 15px;
@@ -96,8 +151,10 @@ font-family: Arial, Helvetica, sans-serif;
 }
 .leftFilterHeading h1{
     font-size: 20px;
-    font-weight: 700;
     line-height: 25px;
+    font-family: 'Open Sans';
+    margin-top: 10px;
+    font-weight: 600;
 }
 .filerBody section{
     display: flex;
@@ -136,18 +193,19 @@ margin: auto 10px ;
 .categoryBody .bodyRight{
     width: 80%;
     height: 100%;
-    background-color: rgb(236, 233, 233);
+    background-color: rgb(238, 238, 238);
 }
 .bodyRightHeading{
     margin: 10px 10px;
     width: 100%;
     display: flex;
-    background-color: rgb(236, 233, 233);
+    background-color: rgb(238, 238, 238);
 }
 .bodyRightHeading p{
-    font-size: 12px ;
+    font-size: 15px ;
     font-weight: 600;
 width: 70%;
+margin: initial;
 }
 .bodyRightHeading .sortOption{
     width: 24%;
@@ -164,7 +222,7 @@ width: 70%;
     flex-direction: row;
 }
 .bodyRightCategory .firstPanel .categoryProduct{
-    padding: 20px;
+    padding: 10px;
 }
 .feature-box{
     width:115px;
@@ -210,6 +268,7 @@ width: 70%;
     flex-direction: row !important;
     width: 100%;
     height: auto;
+    font-family: crimson Text;
 }
 .mainCategoryPanel .item{
     width: auto;

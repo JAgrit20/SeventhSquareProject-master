@@ -202,6 +202,7 @@ function Product() {
 
   }
 
+
   useEffect(() => {
     getUsers()
     Verify()
@@ -226,10 +227,29 @@ function Product() {
 
 
             <FacebookShareButton
+
               url={window.location.href}
               quote={'Check this Amazing Product'}
               hashtag="#seventhsquare"
             >
+              <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
+            </FacebookShareButton>
+
+            <TwitterShareButton
+              url={window.location.href}
+              quote={'Check this Amazing Product'}
+              hashtag="#seventhsquare"
+            >
+              <i class="fab fa-twitter mx-1" style={{ "font-size": "2em" }}></i>
+            </TwitterShareButton>
+
+            <WhatsappShareButton
+
+              url={window.location.href}
+              quote={'Check this Amazing Product'}
+              hashtag="#seventhsquare"
+            >
+
               <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
             </FacebookShareButton>
 
@@ -306,45 +326,121 @@ function Product() {
 
               </div>
               <div class="product-rating">
-                {totalreview => 0 && totalreview <= 1 ?
-                  <i class="fas fa-star"></i> : null
-                }
-                {totalreview > 1 && totalreview <= 2 ?
-                  <>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </>
-                  : null
-                }
-                {totalreview > 2 && totalreview <= 3 ?
-                  <>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </>
-                  : null
-                }
-                {totalreview > 3 && totalreview <= 4 ?
-                  <>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </>
-                  : null
-                }
-                {totalreview > 4 && totalreview <= 5 ?
-                  <>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </>
-                  : null
-                }
 
-                <span>{Math.ceil(totalreview)}/5</span>
+
+                  
+                              {
+                                totalreview==0 ?<>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i></>:null
+                              }
+                              {totalreview>0 && totalreview<1?
+                               <> <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview==1?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview>1 && totalreview<2?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview==2?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>2 && totalreview<3?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                               {totalreview==3?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>3 && totalreview<4 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview==4 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview>4 && totalreview<5 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                </>
+                                :null
+                               }
+                                {totalreview==5 ?
+                                <>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                </>
+                                :null
+                               }
+
+                                
+                <span>{totalreview.toFixed(1)}</span>
+
+
               </div>
             </div>
             <div class="exclusiveGst">
@@ -371,7 +467,12 @@ function Product() {
             </div>
             <div class="purchase-info">
               <div class="minimumorder">
-                <input class="purchaseinput" type="number" value={quantity} onChange={(e) => setquantity(e.target.value)} />
+
+
+                <input class="purchaseinput" type="number"  value={quantity} onChange={(e)=>setquantity(e.target.value)}/>
+               <span style={{fontWeight:600,fontSize:"15px"}}> Min quantity: {users.qty} </span>
+
+
 
               </div>
 
@@ -393,78 +494,88 @@ function Product() {
               />
 
               <>
-                <label className="productAccordianLabel" for="title1">
-                  Product Specifications
-                  <span>
-                    <FaArrowDown />
-                  </span>{" "}
-                </label>
-                <div class="accordianContent">
-                  {
-                    users.subCategory ?
-                      <p>
-                        Product Type : <span>{users.subCategory}</span>
-                      </p> : null
-                  }
-                  {
-                    users.weight ?
-                      <p>
-                        Product Weight : <span>{users.weight}Kg</span>
-                      </p> : null
-                  }
 
-                  {
-                    users.length ?
-                      <p>
-                        Product Length : <span>{users.length} {users.dimensionUnit}</span>
-                      </p> : null
-                  }
-                  {
-                    users.width ?
-                      <p>
-                        Product Width : <span>{users.width} {users.dimensionUnit}</span>
-                      </p> : null
-                  }
-                  {
-                    users.height ?
-                      <p>
-                        Product Height : <span>{users.height} {users.dimensionUnit}</span>
-                      </p> : null
-                  }
-                  {
-                    users.material ?
-                      <p>
-                        Product Material : <span>{users.material}</span>
-                      </p> : null
-                  }
-                  {
-                    users.countryOfOrigin ?
-                      <p>
-                        Country of Origin : <span>{users.countryOfOrigin}</span>
-                      </p> : null
-                  }
 
-                  {
-                    users.guarantee ?
-                      <p>
-                        Guarantee : <span>{users.guarantee} yr</span>
-                      </p> : null
-                  }
-                  {
-                    users.warranty ?
-                      <p>
-                        Warranty : <span>{users.warranty} yr</span>
-                      </p> : null
-                  }
-                  {
-                    users.packagingSize ?
-                      <p>
-                        Packaging Size : <span>{users.packagingSize} </span>
-                      </p> : null
-                  }
-                </div>
 
-              </>
+               <label className="productAccordianLabel" for="title1">
+               Product Specifications
+                 <span>
+                   <FaArrowDown />
+                 </span>{" "}
+               </label>
+               <div class="accordianContent">
+               {
+                 users.subCategory?
+                 <p>
+                  Product Type : <span>{users.subCategory}</span>
+                </p>:null
+               }
+                {
+                  users.weight?
+                  <p>
+                  Product Weight : <span>{users.weight}Kg</span>
+                </p>:null
+                }
+              
+              {
+                users.length ?
+                <p>
+                  Product Length : <span>{users.length} {users.dimensionUnit}</span>
+                </p>:null
+              }
+              {
+                users.width ?
+                <p>
+                  Product Width : <span>{users.width} {users.dimensionUnit}</span>
+                </p>:null
+              }
+              {
+                users.height ?
+                <p>
+                  Product Height : <span>{users.height} {users.dimensionUnit}</span>
+                </p>:null
+              }
+                 {
+                users.material ?
+                <p>
+                  Product Material : <span>{users.material}</span>
+                </p>:null
+              }
+                 {
+                users.components ?
+                <p>
+                  Product components : <span>{users.components}</span>
+                </p>:null
+              }
+             {
+               users.countryOfOrigin?
+               <p>
+                  Country of Origin : <span>{users.countryOfOrigin}</span>
+                </p>:null
+             }
+             
+              {
+               users.guarantee?
+               <p>
+                  Guarantee : <span>{users.guarantee} yr</span>
+                </p>:null
+             }
+               {
+               users.warranty?
+               <p>
+                  Warranty : <span>{users.warranty} yr</span>
+                </p>:null
+             }
+             {
+               users.packagingSize?
+               <p>
+                  Packaging Size : <span>{users.packagingSize} </span>
+                </p>:null
+             }
+              </div>
+               
+               </>
+
 
 
               <input
@@ -621,16 +732,23 @@ function Product() {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                              </>
-                              : null
-                            }
-                            {curr.star == '5' ?
-                              <>
+
+
+
+                                
+                                
+                                </>
+                                :null
+                               }
+                                {curr.star=='5'?
+                                <>
+              <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+
                               </>
                               : null
                             }
@@ -649,14 +767,38 @@ function Product() {
             </div>
 
             <div class="d-flex justify-content-start">
-              {/* <img style={{height: '40px', width: '40px'}}src={Rship} /> */}
-              {/* <div className='container mb-4 '> */}
-              <img style={{ paddingBottom: '1px', height: '40px', width: '40px' }} src={Rship} />
-              {/* </div> */}
 
-              {/* <div className='container mb-4 '> */}
 
-              <img style={{ paddingLeft: '10px', height: '30px', width: '70px' }} src={Fship} />
+            {/* <img style={{height: '40px', width: '40px'}}src={Rship} /> */}
+            {/* <div className='container mb-4 '> */}
+               {
+                 users.returnable==true?
+                 <div>
+                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} /> 
+                 <div className='container return mb-2 p-1'> 
+                   <h5 style={{fontFamily:"crimson Text",fontSize:"15px"}}>Returnable</h5>
+                 </div>
+                 </div>
+                 :
+                 <div stlye={{  display: "flex"}}>
+                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />
+                 <div className='container return mb-1 p-1'>
+                   
+                 <h5 style={{fontFamily:"crimson Text",fontSize:"10px"}}>Non-Returnable</h5>
+               </div>
+               </div>
+               }
+             
+
+            {/* </div> */}
+
+            {/* <div className='container mb-4 '> */}
+            {
+              users.incl_shipping==true?
+              <img style={{paddingLeft:'10px' ,height: '30px', width: '70px'}}src={Fship} />:null
+            }
+            
+
 
               {/* <h5> <i class="fas fa-truck fa-3x" style={{color:'white'}}></i>Free Shipping</h5> */}
               {/* </div> */}

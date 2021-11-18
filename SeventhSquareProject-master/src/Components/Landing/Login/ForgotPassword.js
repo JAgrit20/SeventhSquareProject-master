@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import { get } from 'jquery';
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
+
+
 
 
 class ForgotPassword extends Component {
@@ -41,7 +45,13 @@ class ForgotPassword extends Component {
     ).catch(
         err => {
             console.log(err)
-            window.alert("Wrong Credentials");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Wrong Credentials',
+              // footer: '<a href="">Why do I have this issue?</a>'
+            })
+            // window.alert("Wrong Credentials");
         }
     )
     console.log(data);

@@ -3,3 +3,14 @@
     overflow: hidden !important;
 
 }
+#ptitle:hover{
+    overflow: visible !important;
+    /* white-space: initial; */
+     word-wrap: break-word;
+    color:orange;
+    white-space: break-spaces;
+
+    text-align: "left";
+    text-overflow:none !important;
+    white-space: none !important;
+}

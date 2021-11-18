@@ -12,6 +12,9 @@
     padding: 10px;
     color:black !important;
     cursor: pointer;
+    font-size: medium;
+    font-family: 'open sans';
+    color: rgb(58, 56, 56) !important
   }
   .suggestion:hover {
     background-color: black !important;

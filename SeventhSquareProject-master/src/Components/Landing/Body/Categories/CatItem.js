@@ -15,7 +15,12 @@ function CatItem(props) {
     setimage(data[0]?.picture);
 
   }
-  const addtocart = async () => {
+
+
+
+  const addtocart=async()=>{
+    console.log(props)
+
 
     const config = {
       method: 'POST',
@@ -31,8 +36,11 @@ function CatItem(props) {
         "price": props.price,
         "quantity": 1,
         "item": props.id,
-        "gst": props.gst,
-        "sellerId": props.sellerId
+
+
+        "gst":props.gst,
+        "sellerId":"21"
+
       })
     };
 
