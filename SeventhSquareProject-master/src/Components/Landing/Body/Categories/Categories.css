@@ -105,6 +105,13 @@ input[type=checkbox]:checked:after {
 .categorySectionItems{
     margin: 40px 20px;
 }
+.categorySectionItems:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px 8px 10px #888888;
+    border-radius: 50%;
+    width: 100%;
+
+}
 .categorySectionOptions img{
     height: 100px;
     width: 100px;

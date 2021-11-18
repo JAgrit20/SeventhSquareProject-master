@@ -391,7 +391,7 @@ const Verify=()=>{
                                }
 
                                 
-                <span>{totalreview}/5</span>
+                <span>{totalreview.toFixed(1)}</span>
               </div>
             </div>
             <div class="exclusiveGst">
@@ -419,7 +419,7 @@ const Verify=()=>{
             <div class="purchase-info">
               <div class="minimumorder">
                 <input class="purchaseinput" type="number"  value={quantity} onChange={(e)=>setquantity(e.target.value)}/>
-               
+               <span style={{fontWeight:600,fontSize:"15px"}}> Min quantity: {users.qty} </span>
               </div>
 
               <button onClick={ usertoken?addtocart:addtolocal}   class="btn btn-light btn-md mr-1 mb-2">
@@ -482,6 +482,12 @@ const Verify=()=>{
                 users.material ?
                 <p>
                   Product Material : <span>{users.material}</span>
+                </p>:null
+              }
+                 {
+                users.components ?
+                <p>
+                  Product components : <span>{users.components}</span>
                 </p>:null
               }
              {
@@ -702,7 +708,20 @@ const Verify=()=>{
             {/* <div className='container mb-4 '> */}
                {
                  users.returnable==true?
-                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />:null
+                 <div>
+                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} /> 
+                 <div className='container return mb-2 p-1'> 
+                   <h5 style={{fontFamily:"crimson Text",fontSize:"15px"}}>Returnable</h5>
+                 </div>
+                 </div>
+                 :
+                 <div stlye={{  display: "flex"}}>
+                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />
+                 <div className='container return mb-1 p-1'>
+                   
+                 <h5 style={{fontFamily:"crimson Text",fontSize:"10px"}}>Non-Returnable</h5>
+               </div>
+               </div>
                }
              
 

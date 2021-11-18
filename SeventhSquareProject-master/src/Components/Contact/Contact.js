@@ -5,6 +5,7 @@ import ContactQuotation from "./Contactcategories";
 
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2'
 toast.configure()
 // import { useState, useEffect } from 'react';
 
@@ -42,13 +43,25 @@ console.log(message)
     headers: { "Content-Type": "multipart/form-data" },
   })
     .then(function (response) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Oops...',
+        text: 'Wrong Credentials',
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
       //handle success
+ 
       console.log(response);
-
     })
     .catch(function (response) {
       //handle error
       console.log(response);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Wrong Credentials',
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
 
     });
 
