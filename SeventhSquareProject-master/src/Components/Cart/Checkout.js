@@ -5,125 +5,126 @@ import { withRouter } from 'react-router-dom';
 
 import {Container, Row ,Form , Col , Formlabel,FormControl , Button } from 'react-bootstrap'
 function Checkout() {
-  const [addressdata,setaddress]=useState([])
-  const[cartdata,setdata]=useState([]);
-  const[userdata,setuserdata]=useState([]);
-  const[total,settotal]=useState(0);
-  const [baseurl]=useState('https://test.cashfree.com/api/v1/order/create');
+  const [addressdata, setaddress] = useState([])
+  const [cartdata, setdata] = useState([]);
+  console.log(cartdata, "data")
+  const [userdata, setuserdata] = useState([]);
+  const [total, settotal] = useState(0);
+  const [baseurl] = useState('https://test.cashfree.com/api/v1/order/create');
 
-  const [title]=useState('Reactjs checkout')
-  
-  const [orderId,settxnid]=useState(Math.round(Math.random(10000,50000)*1000000))
-  
-  const [orderAmount, setAmount]=useState('')
-  const [firstname,setfirstname]=useState('')
-  const [lastname,setlastname]=useState('')
-  const [customerEmail,setEmail]=useState('')
-  const [customerPhone,setPhone]=useState('')
-  const [productinfo, setproductinfo]=useState('ok')
-  
-  
-  const [plotno,setplotno]=useState('')
-  const [street,setstreet]=useState('')
-  const [city,setcity]=useState('')
-  const [state,setstate]=useState('')
-  const [zipcode,setzip]=useState('')
-  const [plotno2,setplotno2]=useState('')
-  const [street2,setstreet2]=useState('')
-  const [city2,setcity2]=useState('')
-  const [state2,setstate2]=useState('')
-  const [zipcode2,setzip2]=useState('')
-  const [same,setsame]=useState(true)
-  const [hash,]=useState('hdhcdgdew6tg')
+  const [title] = useState('Reactjs checkout')
 
-  let cartItems=[]
-  
+  const [orderId, settxnid] = useState(Math.round(Math.random(10000, 50000) * 1000000))
 
-  // const postcashfree=async()=>{
-    
-  //   var bodyFormData = new FormData();
-  //   bodyFormData.append('orderId', orderId)
-  //   bodyFormData.append('orderAmount', orderAmount)
-  //   bodyFormData.append('customerPhone',customerPhone)
-  //   bodyFormData.append('customerEmail',customerEmail)
-  //   bodyFormData.append( 'customerName',firstname)
+  const [orderAmount, setAmount] = useState('')
+  const [firstname, setfirstname] = useState('')
+  const [lastname, setlastname] = useState('')
+  const [customerEmail, setEmail] = useState('')
+  const [customerPhone, setPhone] = useState('')
+  const [productinfo, setproductinfo] = useState('ok')
 
 
+  const [plotno, setplotno] = useState('')
+  const [street, setstreet] = useState('')
+  const [city, setcity] = useState('')
+  const [state, setstate] = useState('')
+  const [zipcode, setzip] = useState('')
+  const [plotno2, setplotno2] = useState('')
+  const [street2, setstreet2] = useState('')
+  const [city2, setcity2] = useState('')
+  const [state2, setstate2] = useState('')
+  const [zipcode2, setzip2] = useState('')
+  const [same, setsame] = useState(true)
+  const [hash,] = useState('hdhcdgdew6tg')
 
-  //   axios({
-  //     method: "post",
-  //     url: "https://api.seventhsq.com/payu/create_cashfree/",
-  //     data: bodyFormData,
-  //     headers: { "Content-Type": "multipart/form-data" },
-  //   })
-  //     .then(function (response) {
-  //       //handle success
-  //       console.log(response);
-  //     })
-  //     .catch(function (response) {
-  //       //handle error
-  //       console.log(response);
-  //     });
-    
-  //   // const config = {
-  //   //   method:'POST',
-      
-     
-  //   //   headers: {
-        
-  //   //     'Content-Type': 'application/form-data'
-  //   //   },
-  //   //   body:JSON.stringify({
-        
-  //   //     'orderId': orderId,
-  //   //     'orderAmount': orderAmount,
-  //   //     'customerPhone':customerPhone,
-  //   //     'customerEmail':customerEmail,
-  //   //     'customerName':firstname
-       
-  //   // })
-  
-  //   // };
-   
-  //   // const res=await fetch('https://api.seventhsq.com/payu/create_cashfree/',config);
-    
-  //   // console.log(res)
-    
-  
+  let cartItems = []
+
+
+  const postcashfree = async () => {
+
+    var bodyFormData = new FormData();
+    bodyFormData.append('orderId', orderId)
+    bodyFormData.append('orderAmount', orderAmount)
+    bodyFormData.append('customerPhone', customerPhone)
+    bodyFormData.append('customerEmail', customerEmail)
+    bodyFormData.append('customerName', firstname)
+
+
+
+    axios({
+      method: "post",
+      url: "https://api.seventhsq.com/payu/create_cashfree/",
+      data: bodyFormData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+
+    // const config = {
+    //   method:'POST',
+
+
+    //   headers: {
+
+    //     'Content-Type': 'application/form-data'
+    //   },
+    //   body:JSON.stringify({
+
+    //     'orderId': orderId,
+    //     'orderAmount': orderAmount,
+    //     'customerPhone':customerPhone,
+    //     'customerEmail':customerEmail,
+    //     'customerName':firstname
+
+    // })
+
+    // };
+
+    // const res=await fetch('https://api.seventhsq.com/payu/create_cashfree/',config);
+
+    // console.log(res)
+
+
+  }
+  /////////////////////////////////////////to get hash value
+  //   const gethash=async()=>{
+
+  //     console.log(`amount${amount}`)
+  //     const config = {
+  //       method:'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+
+  //       },
+  //       body:JSON.stringify({
+  //         "amount": amount,
+  //         "productinfo": 'ok',
+  //         "firstname": userdata.first_name,
+  //         "email": userdata.email ,
+
+  //       })
+  //     };
+
+  //     const res=await fetch('https://api.seventhsq.com/payu/hash/',config);
+  //     const data= await res.json();
+  //     console.log(data);
+  //     sethash(data.hash);
+  //     settxnid(data.txnid)
+  //     console.log(data.hash)
+  //     console.log(data.txnid)
+
+
   // }
-/////////////////////////////////////////to get hash value
-//   const gethash=async()=>{
-    
-//     console.log(`amount${amount}`)
-//     const config = {
-//       method:'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-        
-//       },
-//       body:JSON.stringify({
-//         "amount": amount,
-//         "productinfo": 'ok',
-//         "firstname": userdata.first_name,
-//         "email": userdata.email ,
-        
-//       })
-//     };
-    
-//     const res=await fetch('https://api.seventhsq.com/payu/hash/',config);
-//     const data= await res.json();
-//     console.log(data);
-//     sethash(data.hash);
-//     settxnid(data.txnid)
-//     console.log(data.hash)
-//     console.log(data.txnid)
-    
-    
-// }
 
-////////////////////////////////////for posting order
-  const postorder=async()=>{
-    localStorage.setItem('orderID',orderId)
+  ////////////////////////////////////for posting order
+  const postorder = async () => {
+    localStorage.setItem('orderID', orderId)
     cartdata.forEach(myfn)
 
     function myfn(item) {
