@@ -2,19 +2,15 @@ import React from "react";
 import "./Contact.css";
 import axios from "axios";
 import ContactQuotation from "./Contactcategories";
+import toast, { Toaster } from 'react-hot-toast';
 
-import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
-toast.configure()
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
+
 // import { useState, useEffect } from 'react';
 
-// const [message,setmessage]=useState('')
-const notify = ()=>{
- 
-  // Calling toast method by passing string
-  toast('Hello Geeks')
-}
 
 var status="";
 var messa = "";
@@ -27,6 +23,7 @@ const contact_request=async(e)=>{
 // if(name=='message'){
 //   setmessage(value)
 // }
+
 var name = document.getElementById("name").value;
 var email = document.getElementById("email").value;
 var message = document.getElementById("message").value;
@@ -42,15 +39,20 @@ console.log(message)
     data: bodyFormData,
     headers: { "Content-Type": "multipart/form-data" },
   })
+  
     .then(function (response) {
+
       Swal.fire({
         icon: 'success',
         title: 'Oops...',
         text: 'Wrong Credentials',
-        // footer: '<a href="">Why do I have this issue?</a>'
+        footer: '<a href="">Why do I have this issue?</a>'
       })
       //handle success
- 
+      // toast('Here is your toast.');
+      // console.log(response);
+      
+      // NotificationManager.info('Info message');
       console.log(response);
     })
     .catch(function (response) {
@@ -168,6 +170,7 @@ function Contact() {
           </div> */}
 
           <div class="contact-box">
+          <NotificationContainer/>
             <div class="c-heading">
               <h1>Get In Touch</h1>
               <p>Call Or Email Us Regarding Question Or Issues</p>
@@ -184,6 +187,7 @@ function Contact() {
               </form>
             </div>
           </div>
+          <NotificationContainer/>
 
           <div class="map">
             <iframe
