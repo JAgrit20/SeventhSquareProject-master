@@ -422,7 +422,7 @@ function Product() {
                                 
                 <span>{totalreview.toFixed(1)}</span>
 
->>>>>>> master
+
               </div>
             </div>
             <div class="exclusiveGst">
