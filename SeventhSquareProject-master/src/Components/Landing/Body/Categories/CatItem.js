@@ -37,7 +37,7 @@ function CatItem(props) {
     };
 
     console.log(config);
-    const res = await fetch('http://localhost:8000/orders/add-to-cart/', config);
+    const res = await fetch('https://api.seventhsq.com/orders/add-to-cart/', config);
     window.alert("Added to Cart");
     const data = await res.json();
     console.log(data);

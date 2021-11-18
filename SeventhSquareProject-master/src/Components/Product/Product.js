@@ -77,7 +77,7 @@ function Product() {
   const get_logedin_user = async () => {
     const token = localStorage.getItem('token')
 
-    fetch("http://localhost:8000/user_profile/get_profile/", {
+    fetch("https://api.seventhsq.com/user_profile/get_profile/", {
       headers: {
         'Content-Type': 'application/json',
         // 'Content-Type': 'application/x-www-form-urlencoded',

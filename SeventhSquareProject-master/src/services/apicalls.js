@@ -1,4 +1,4 @@
-const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : "https://api.seventhsq.com"
+const url = process.env.NODE_ENV === 'development' ? 'https://api.seventhsq.com' : "https://api.seventhsq.com"
 
 const update_address = (id, data, callback) => {
 

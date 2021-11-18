@@ -31,7 +31,7 @@ function Review() {
       },
     };
     console.log(config);
-    const res = await fetch('http://localhost:8000/review/companyreview/', config);
+    const res = await fetch('https://api.seventhsq.com/review/companyreview/', config);
     const data = await res.json();
     setreviewdata(data)
 
@@ -60,7 +60,7 @@ function Review() {
       })
     };
     console.log(config);
-    const response = await fetch('http://localhost:8000/review/companyreview/', config);
+    const response = await fetch('https://api.seventhsq.com/review/companyreview/', config);
 
     const data = await response.json();
     console.log(data);
