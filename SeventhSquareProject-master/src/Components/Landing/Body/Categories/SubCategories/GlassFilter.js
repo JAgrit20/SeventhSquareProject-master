@@ -53,7 +53,7 @@ function GlassFilter(props) {
                                   class="form-check-input filled-in"
                                   id={curr}
                                   onChange={()=>props.handleglassize(curr)}
-                                  defaultChecked={props.glassizes.includes(curr)?true:false}
+                                  // defaultChecked={props.glassizes.includes(curr)?true:false}
                                 />
                                 <label
                                   class="form-check-label small text-uppercase card-link-secondary"
@@ -82,7 +82,7 @@ function GlassFilter(props) {
                                   class="form-check-input filled-in"
                                   id={curr}
                                   onChange={()=>props.handleglassthick(curr)}
-                                  defaultChecked={props.glassthicks.includes(curr)?true:false}
+                                  // defaultChecked={props.glassthicks.includes(curr)?true:false}
                                 />
                                 <label
                                   class="form-check-label small text-uppercase card-link-secondary"
@@ -199,7 +199,7 @@ function GlassFilter(props) {
                               class="form-check-input filled-in"
                               id={curr}
                               onChange={()=>props.handlebrands(curr)}
-                              defaultChecked={props.filterbrands.includes(curr)?true:false}
+                              // defaultChecked={props.filterbrands.includes(curr)?true:false}
                             />
                             <label
                               class="form-check-label small text-uppercase card-link-secondary"

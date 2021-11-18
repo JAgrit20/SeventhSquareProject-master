@@ -2,11 +2,8 @@ import React from "react";
 import "./Contact.css";
 import axios from "axios";
 import ContactQuotation from "./Contactcategories";
-import toast, { Toaster } from 'react-hot-toast';
 
-import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
-import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
 // import { useState, useEffect } from 'react';
@@ -44,9 +41,9 @@ console.log(message)
 
       Swal.fire({
         icon: 'success',
-        title: 'Oops...',
-        text: 'Wrong Credentials',
-        footer: '<a href="">Why do I have this issue?</a>'
+        title: ' Thank you',
+        text: 'Message Recieved',
+        
       })
       //handle success
       // toast('Here is your toast.');
@@ -170,7 +167,7 @@ function Contact() {
           </div> */}
 
           <div class="contact-box">
-          <NotificationContainer/>
+       
             <div class="c-heading">
               <h1>Get In Touch</h1>
               <p>Call Or Email Us Regarding Question Or Issues</p>
@@ -187,7 +184,7 @@ function Contact() {
               </form>
             </div>
           </div>
-          <NotificationContainer/>
+
 
           <div class="map">
             <iframe

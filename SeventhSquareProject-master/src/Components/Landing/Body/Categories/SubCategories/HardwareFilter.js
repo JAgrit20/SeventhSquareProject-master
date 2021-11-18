@@ -89,7 +89,7 @@ function CementFilter(props) {
                               id={curr}
                               onChange={()=>props.handlebrands(curr)}
                               //checked={props.filterbrands.includes(curr)?true:false}
-                              defaultChecked={props.filterbrands.includes(curr)?true:false}
+                              // defaultChecked={props.filterbrands.includes(curr)?true:false}
                              
                             />
                             <label

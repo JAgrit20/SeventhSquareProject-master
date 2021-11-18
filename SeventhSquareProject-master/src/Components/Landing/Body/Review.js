@@ -2,7 +2,9 @@
 import Testimonial from './Testimonial'
 import React, { useEffect, useState } from "react";
 import "../Body/Review.css";
+import Swal from 'sweetalert2'
 function Review() {
+
 
   const [userdata, setuserdata] = useState([])
   const [reviewdata, setreviewdata] = useState([])
@@ -64,6 +66,12 @@ function Review() {
 
     const data = await response.json();
     console.log(data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Thank you',
+      text: 'Review Recorded',
+      
+    })
 
   }
 

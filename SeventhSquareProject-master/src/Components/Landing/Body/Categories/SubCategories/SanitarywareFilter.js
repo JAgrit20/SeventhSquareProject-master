@@ -109,7 +109,7 @@ function SanitarywareFilter(props) {
                               class="form-check-input filled-in"
                               id={curr}
                               onChange={()=>props.handlebrands(curr)}
-                              defaultChecked={props.filterbrands.includes(curr)?true:false}
+                              // defaultChecked={props.filterbrands.includes(curr)?true:false}
                             />
                             <label
                               class="form-check-label small text-uppercase card-link-secondary"

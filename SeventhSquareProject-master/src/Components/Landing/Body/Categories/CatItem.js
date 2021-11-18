@@ -39,7 +39,7 @@ function CatItem(props) {
 
 
         "gst":props.gst,
-        "sellerId":"21"
+        "sellerId":props.sellerId
 
       })
     };
