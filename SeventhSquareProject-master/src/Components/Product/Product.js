@@ -166,7 +166,6 @@ function Product() {
 
   }
 
-
   const buynow = async () => {
 
     const config = {
@@ -228,10 +227,29 @@ function Product() {
 
 
             <FacebookShareButton
+
               url={window.location.href}
               quote={'Check this Amazing Product'}
               hashtag="#seventhsquare"
             >
+              <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
+            </FacebookShareButton>
+
+            <TwitterShareButton
+              url={window.location.href}
+              quote={'Check this Amazing Product'}
+              hashtag="#seventhsquare"
+            >
+              <i class="fab fa-twitter mx-1" style={{ "font-size": "2em" }}></i>
+            </TwitterShareButton>
+
+            <WhatsappShareButton
+
+              url={window.location.href}
+              quote={'Check this Amazing Product'}
+              hashtag="#seventhsquare"
+            >
+
               <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
             </FacebookShareButton>
 
@@ -455,6 +473,7 @@ function Product() {
                <span style={{fontWeight:600,fontSize:"15px"}}> Min quantity: {users.qty} </span>
 
 
+
               </div>
 
               <button onClick={usertoken ? addtocart : addtolocal} class="btn btn-light btn-md mr-1 mb-2">
@@ -475,6 +494,7 @@ function Product() {
               />
 
               <>
+
 
 
                <label className="productAccordianLabel" for="title1">
@@ -555,6 +575,7 @@ function Product() {
               </div>
                
                </>
+
 
 
               <input
@@ -713,6 +734,7 @@ function Product() {
                                 <i class="fas fa-star"></i>
 
 
+
                                 
                                 
                                 </>
@@ -721,10 +743,12 @@ function Product() {
                                 {curr.star=='5'?
                                 <>
               <i class="fas fa-star"></i>
+
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
+
                               </>
                               : null
                             }

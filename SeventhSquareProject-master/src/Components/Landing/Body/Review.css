@@ -44,3 +44,46 @@
     row-gap: 1em;
     }
   
+
+    .grid_wrap_review{
+      
+    width: 85%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+      
+    grid-gap: 5pt 40pt;
+
+    }
+
+.review_card{
+  background: rgba(0,0,0,0.1);
+  padding: 8pt;
+  margin: 2pt;
+  display: flex;
+  align-items: center;
+}
+
+.review_card_1st_child{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.review_body{
+  
+  font-size: 9pt;
+
+}
+
+.circle{
+  
+  width: 60pt;
+  background: rgba(0,0,0,0.5);
+  height: 60pt;
+  border-radius: 50%;
+  margin-right: 15pt;
+
+}
