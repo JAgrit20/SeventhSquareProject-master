@@ -256,7 +256,10 @@ function Profile() {
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <div className="rounded-circle p-1 bg-dark" style={{color:"white"}}>
+                    <div
+                      className="rounded-circle p-1 bg-dark"
+                      style={{ color: "white" }}
+                    >
                       <h1>
                         {userdata.first_name && userdata.last_name
                           ? userdata.first_name[0] + userdata.last_name[0]
@@ -280,7 +283,14 @@ function Profile() {
                   <hr class="my-4" />
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span style={{fontSize:"15px"}}> Your Email:</span><span style={{fontSize:"15px !important"}} class="text-secondary"> {userdata.email}</span>
+                      <span style={{ fontSize: "15px" }}> Your Email:</span>
+                      <span
+                        style={{ fontSize: "15px !important" }}
+                        class="text-secondary"
+                      >
+                        {" "}
+                        {userdata.email}
+                      </span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                       <span class="text-secondary">{userdata.username}</span>
@@ -312,8 +322,11 @@ function Profile() {
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <div className="rounded-circle p-1 bg-dark"style={{color:"white"}}>
-                      <h1 >
+                    <div
+                      className="rounded-circle p-1 bg-dark"
+                      style={{ color: "white" }}
+                    >
+                      <h1>
                         {userdata.first_name && userdata.last_name
                           ? userdata.first_name[0] + userdata.last_name[0]
                           : null}
@@ -370,10 +383,7 @@ function Profile() {
 									Logout
 								</h5>
 							</button> */}
-                    <button
-                      className="btn btn-dark"
-                      onClick={ramanger_message}
-                    >
+                    <button className="btn btn-dark" onClick={ramanger_message}>
                       <h5>Send Message</h5>
                     </button>
                     <input
@@ -419,33 +429,39 @@ function Profile() {
                       <h4 class="my-3">Email</h4>
                     </div>
                     <div class="col-sm-9 text-secondary">
-											<input type="text" class="form-control"
-												onChange={e => {
-													setuserdata({
-														...userdata,
-														email: e.target.value
-													})
-												}}
-												value={userdata.email} />
-										</div>
-									</div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        onChange={(e) => {
+                          setuserdata({
+                            ...userdata,
+                            email: e.target.value,
+                          });
+                        }}
+                        value={userdata.email}
+                      />
+                    </div>
+                  </div>
 
                   <div class="row mb-3">
                     <div class="col-sm-3">
                       <h4 class="my-3">Mobile</h4>
                     </div>
                     <div class="col-sm-9 text-secondary">
-											<input type="text" class="form-control" value={userdata.phone}
-												onChange={e => {
-													setuserdata({
-														...userdata,
-														phone: e.target.value
-													})
-												}}
-											/>
-										</div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value={userdata.phone}
+                        onChange={(e) => {
+                          setuserdata({
+                            ...userdata,
+                            phone: e.target.value,
+                          });
+                        }}
+                      />
+                    </div>
                   </div>
-                  <div class="row mb-3">
+                <div class="row mb-3">
                     <div class="col-sm-3">
                       <h4 class="mb-0 my-4">Saved Addresses</h4>
                     </div>
@@ -453,23 +469,41 @@ function Profile() {
                     <div class="col-sm-9 text-secondary">
                       {addressdata
                         ? addressdata.map((curr, index) => {
-							return (
-								<SavedAddress curr={curr} index={index} addressdata={addressdata} setaddressdata={setaddressdata} />
-							)
-						}
-						) : null
-
-				}
-				
+                            return (
+                              <SavedAddress
+                                curr={curr}
+                                index={index}
+                                addressdata={addressdata}
+                                setaddressdata={setaddressdata}
+                              />
+                            );
+                          })
+                        : null}
+                    </div>
+					
+                  </div>
+				  
+                </div>
+				<div>
+				<div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9 text-secondary">
+                      <button
+                        class="btn btn-dark px-4 saveChanges"
+                        value="Save Changes"
+                      >
+                        Save Changes
+                      </button>
                     </div>
                   </div>
-                </div>
+				</div>
+				
               </div>
-			  <div class="row">
+              <div class="row">
                 <div class="col-sm-12">
                   <div class="card jay">
                     <div class="card-body">
-					<h4 className="mt-4"> Add new Address</h4>
+                      <h4 className="mt-4"> Add new Address</h4>
                       <form
                         method="POST"
                         class="register-form"
@@ -532,7 +566,9 @@ function Profile() {
                         </div>
 
                         <div class="d-flex justify-content-space-between">
-                          <h5 className="mx-4" style={{fontSize:"15px"}}>Address Type</h5>
+                          <h5 className="mx-4" style={{ fontSize: "15px" }}>
+                            Address Type
+                          </h5>
                           <div class="d-flex justify-content-space-between">
                             <input
                               type="radio"
@@ -552,7 +588,10 @@ function Profile() {
                               value="S"
                               onChange={callChange}
                             />
-                              <label for="shipping" style={{fontSize:"10px"}}>Shipping</label>
+                             {" "}
+                            <label for="shipping" style={{ fontSize: "10px" }}>
+                              Shipping
+                            </label>
                             <br />
                           </div>
                           {/* <label for="address_type">Address Type:</label>
@@ -570,7 +609,11 @@ function Profile() {
                             name="default"
                             onChange={callChange}
                           />
-                          <label class="custom-control-label" for="default" style={{fontSize:"15px",paddingLeft:"5px"}}>
+                          <label
+                            class="custom-control-label"
+                            for="default"
+                            style={{ fontSize: "15px", paddingLeft: "5px" }}
+                          >
                             Keep this as default
                           </label>
                         </div>
@@ -581,7 +624,7 @@ function Profile() {
                             name="submit"
                             className="btn btn-dark my-4"
                           >
-                            <h6 >Add this Address</h6>
+                            <h6>Add this Address</h6>
                           </button>
                         </div>
                       </form>
@@ -590,15 +633,15 @@ function Profile() {
                 </div>
               </div>
             </div>
-
-            </div>
           </div>
-
-	  
+        </div>
       </div>
       <Modal show={show} onHide={() => setModalShow(false)} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter" style={{color:"black"}}>
+          <Modal.Title
+            id="contained-modal-title-vcenter"
+            style={{ color: "black" }}
+          >
             Change Password
           </Modal.Title>
         </Modal.Header>
