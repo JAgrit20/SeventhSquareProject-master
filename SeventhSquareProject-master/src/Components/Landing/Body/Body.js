@@ -120,10 +120,11 @@ console.log(err)
 
 }}/>
 </div>
-            <div class="product-layout">
+            <div class="product-layout" style={{width:"80%"}}>
               {this.state.posts.slice(0,12).map((product,index) => (
               <Link to={"/product/"   + product.id.toString()} >
                   <div class={'product my-2 ' } key={product.id}>
+                  <div class="card-body">
         <div class="img-container shadow">
           <ProductImageIndividual
           image = {product.id.toString()}
@@ -137,13 +138,14 @@ console.log(err)
 
          
         </div>
-        <div class="bottom shadow" style={{fontFamily:'Open Sans',fontSize:15,textAlign:'left'}}>
-        <p>{product.name}</p>
+        <div class="bottom shadow" style={{fontFamily:'Open Sans',textAlign:'left'}}>
+        <p style={{fontSize:20,textAlign: "left"}}>{product.name}</p>
        
           <div class="price" style={{fontFamily:'Source Sans Pro', marginLeft:'20px'}}>
-            <span>₹{product.sellingPrice}</span>
+            <span style={{fontSize:20,fontFamily:'Times new roman',fontWeight: 'bold'}}>₹{product.sellingPrice}</span>
           </div>
         </div>
+      </div>
       </div>
       </Link>  
               ))}
@@ -154,7 +156,7 @@ console.log(err)
         {/* <section className="section">
         <img className="offerImage" src="" alt=""/>
       </section> */}
-      <section class="section products">
+      <section class="section products" style={{width:"100%"}}>
         <div class="title">
           <span class="h1 my-2">Recently Viewed</span>
           <hr  style={{
@@ -171,8 +173,7 @@ console.log(err)
       
           <RecentlyViewedCarousel items={this.state.posts}/>
          
-         
-        
+                
         
       </section>
       <section class="section products">

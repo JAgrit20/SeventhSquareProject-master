@@ -9,9 +9,10 @@ import ENG from '../Sub Category Icons/Engineering Brick.png'
 import RCC from '../Sub Category Icons/RCC Pole.png'
 function Bricks(props) {
     return (
+      
         <div className="categorySection">
          
-          <h1 className="text-center mt-5 pt-4">Bricks</h1>
+          <h1 className="text-center mt-5 pt-4" style={{fontWeight:600}}>Bricks</h1>
 
         <div className="categorySectionOptions ">
           <div className="categorySectionItems slide">

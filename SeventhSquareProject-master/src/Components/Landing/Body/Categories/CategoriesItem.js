@@ -45,13 +45,13 @@ export const catItem = [
     {
         id: "8",
         image : require('./Categories_images/flooring.png'),
-        title : "Flooring & Wall",
+        title : "Flooring & wall",
 
     },
     {
         id: "9",
         image : require('./Categories_images/wood.jpg'),
-        title : "Wood",
+        title : "wood",
 
     },
     {

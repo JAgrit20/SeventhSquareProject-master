@@ -20,10 +20,20 @@ function Blogs() {
         <div class="container-fluid blogcontainer">
             <div class="title">
           <span className="h1">Recent Blogs</span>
+          <hr  style={{
+    color: '#000000',
+    backgroundColor: '#000000',
+    width:600,
+    height: 2.0,
+    borderColor : '#000000',
+    margin: 'auto',
+    marginBottom: 40
+
+}}/>
         </div>
         <div class="bloggrid">
             {
-                 blogdata.slice(0,3).map((curr,index)=>{
+                 blogdata.slice(-3).map((curr,index)=>{
                      return(
                         <Blogcontainer title={curr.title} image={curr.image} slug={curr.slug} key={index} />
                      )
