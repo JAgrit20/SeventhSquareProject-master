@@ -1,5 +1,12 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import './Wishlist.css'
+
+// import Testimonial from './Testimonial'
+import React, { useEffect, useState } from "react";
+// import "../Body/Review.css";
+import { Button, Modal } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form'  
+import Swal from 'sweetalert2'
 function Wishlist() {
   const [products, setproducts] = useState([])
   const [userId, setuserId] = useState("")
@@ -16,7 +23,7 @@ function Wishlist() {
         const list = v?.map(val => val?.product_id)
         setuserId(v[0]?.user)
 
-        fetch("https://api.seventhsq.com/inventory/api/inventory_list/", {
+        fetch("https://seller.seventhsq.com/inventory/api/inventory_detail/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -28,45 +35,159 @@ function Wishlist() {
       .catch(err => { console.log(err) })
   }, [])
 
+  const [userdata, setuserdata] = useState([])
+  const [reviewdata, setreviewdata] = useState([])
+  const [title, settitle] = useState('')
+  const [review, setreview] = useState('')
+  const [star, setstar] = useState('')
+  const [Reviews, setReviews] = useState("")
+  const [show, setModalShow] = useState(false);
+
+  const handlechangePassword = (e) => {
+		const config = {
+			headers: {
+				Authorization: "token " + localStorage.getItem("token"),
+			},
+		};
+		e.preventDefault()
+		// const data = {
+		// 	old_password: oldpassword,
+		// 	new_password: newpassword
+		// }
+		// console.log(data)
+		// axios.patch('https://api.seventhsq.com/auth/api/change-password/', data, config).then(
+		// 	res => {
+
+		// 		window.alert("Password Changed");
+		// 		window.localStorage.removeItem("token");
+		// 		console.log('token removed')
+		// 		history.push({
+		// 			pathname: `/login`,
+
+		// 		});
+		// 	}
+
+		// ).catch(
+		// 	err => {
+		// 		console.log(err)
+		// 		window.alert("Something went wrong");
+		// 	}
+		// )
+	}
+
+  const getuser = async () => {
+    const config = {
+      headers: {
+        Authorization: "token " + localStorage.getItem("token"),
+      },
+    };
+    console.log(config);
+    const res = await fetch('https://api.seventhsq.com/user_profile/get_profile/', config);
+    const data = await res.json();
+
+    setuserdata(data.user);
+    console.log(userdata);
+  }
+  const getreviews = async () => {
+    const config = {
+      headers: {
+        Authorization: "token " + localStorage.getItem("token"),
+      },
+    };
+    console.log(config);
+    const res = await fetch('https://api.seventhsq.com/review/companyreview/', config);
+    const data = await res.json();
+    setreviewdata(data)
+
+    console.log(data);
+    console.log("products");
+    console.log(products);
+  }
+
+
+  const postreview = async (e) => {
+    e.preventDefault();
+
+
+    const config = {
+      method: 'POST',
+      headers: {
+        Authorization: "token " + localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        "title": title,
+        "review": review,
+        "star": star,
+        "username": userdata.first_name,
+        "email": userdata.email
+
+      })
+    };
+    console.log(config);
+    const response = await fetch('https://api.seventhsq.com/review/companyreview/', config);
+
+    const data = await response.json();
+    console.log(data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Thank you',
+      text: 'Review Recorded',
+      
+    })
+
+  }
+
+  console.log(reviewdata)
+
+  useEffect(() => {
+    getuser()
+    getreviews()
+
+  }, [])
   return (
-    <div className='row'>
-      <div className='col-md-6 sm-12 mx-5'>
-        <h1 className='mx-5 my-5 text-center'> Your Wishlist</h1>
+    <div className='container-lg'>
+      <div className="d-flex justify-content-center my-5" style={{ flexDirection: 'column' }}>
+        <h1 style={{fontFamily:"crimson text"}}>Wishlist</h1>
+        <div className="container">
+          {/* review card */}
+          {reviewdata?.map(v => {
+            return <div className="review_card">
+              <span className="circle"></span>
+              <span style={{ flex: 1 }}>
+                <span className="review_card_1st_child">
+                  <h1>Product Name: {v?.username}</h1>
+                  <div>
+                  <h3 className="price pl-10">Price {v?.review}</h3>
+                    </div>
+                  
+                  {/* <p className="review_body">Region: {v?.review}</p>
+                  <p className="review_body">Date Added: {v?.review}</p> */}
 
-        {
-          products?.map(v => {
-            return <div>
-              <h1>hello</h1>
+
+                 
+                </span>
+                
+                <p className="review_body">Brand: {v?.review}</p>
+                <p className="review_body pd-4">Region: {v?.review} <span class="mx-3"> Date Added: {v?.review} </span> 
+                <div class="two_button">
+
+<button className="btn btn-secondary mx-2">Remove</button>
+<button className="btn btn-secondary">Add to Cart</button>
+
+</div>
+</p>
+                
+              </span>
+              
             </div>
-          })
-        }
-
-        <div class="card mb-3 fluid">
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='col-md-4'>
-                <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwZm9vZCUyMHN0b3JlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="card-img-top" alt="..." />
-              </div>
-              <div className='col-md-4'>
-                <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwZm9vZCUyMHN0b3JlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="card-img-top" alt="..." />
-              </div>
-              <div className='col-md-4'>
-                <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwZm9vZCUyMHN0b3JlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="card-img-top" alt="..." />
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-body">
-            <h5 class="card-title">Sample Product</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Price : 1000₹</small></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+          })}
         </div>
-
-
       </div>
+      
+      
+
 
     </div>
   )
