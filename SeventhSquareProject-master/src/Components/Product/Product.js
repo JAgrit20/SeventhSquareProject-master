@@ -251,7 +251,7 @@ function Product() {
             >
 
               <i class="fab fa-facebook mx-1" style={{ "font-size": "2em" }}></i>
-            </FacebookShareButton>
+            </WhatsappShareButton>
 
             <TwitterShareButton
               url={window.location.href}
