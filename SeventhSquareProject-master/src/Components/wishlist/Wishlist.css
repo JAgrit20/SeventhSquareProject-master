@@ -1,10 +1,10 @@
-.cardimages{
+.cardimages_w{
     height: auto;
     width: 300px;
     overflow: hidden;
     object-fit: scale-down;
 }
-/* review box data starting from here */
+
 .review .box-container{
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +62,7 @@
 
     }
 
-.review_card{
+.review_card_w{
   background: rgba(0,0,0,0.1);
   padding: 8pt;
   margin: 2pt;
@@ -70,7 +70,7 @@
   align-items: center;
 }
 
-.review_card_1st_child{
+.review_card_1st_child_w{
   
   display: flex;
   align-items: center;
@@ -79,11 +79,10 @@
 
 }
 
-.review_body{
+.review_body_w{
   padding-left: 20px;
   font-size: 11pt;
   display: flex;
-  justify-content: space-between;
 
 }
 .two_button{
@@ -97,7 +96,7 @@
   width: 60pt;
   background: rgba(0,0,0,0.5);
   height: 60pt;
-  /* border-radius: 50%; */
+
   margin-right: 15pt;
 
 }

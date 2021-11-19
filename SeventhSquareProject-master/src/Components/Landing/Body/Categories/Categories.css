@@ -107,9 +107,16 @@ input[type=checkbox]:checked:after {
 }
 .categorySectionItems:hover{
     cursor: pointer;
-    box-shadow: 10px 10px 8px 10px #888888;
-    border-radius: 50%;
-    width: 100%;
+    box-shadow: 10px 10px 10px 10px #888888;
+    border-radius: 20%;
+    width: 110px;
+
+}
+.categorySectionItems:active :focus{
+    cursor: pointer;
+    box-shadow: 10px 10px 10px 10px #aa2323;
+    border-radius: 30%;
+    width: 110px;
 
 }
 .categorySectionOptions img{

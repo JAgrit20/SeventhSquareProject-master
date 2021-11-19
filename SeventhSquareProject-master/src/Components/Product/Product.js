@@ -768,25 +768,25 @@ function Product() {
 
             <div class="d-flex justify-content-start">
 
-
-            {/* <img style={{height: '40px', width: '40px'}}src={Rship} /> */}
-            {/* <div className='container mb-4 '> */}
                {
                  users.returnable==true?
-                 <div>
-                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} /> 
-                 <div className='container return mb-2 p-1'> 
-                   <h5 style={{fontFamily:"crimson Text",fontSize:"15px"}}>Returnable</h5>
+                 <div style={{display: "contents"}}>
+                 <div style={{display: "contents !important"}}>
+                 <img style={{paddingBottom:'1px' ,height: '30px', width: '30px'}}src={Rship} /> 
+                 <div className='mt-2 ml-1'>
+                   <h5 style={{fontFamily:"crimson Text",fontSize:"20px"}}>Returnable</h5>
+                 </div>
                  </div>
                  </div>
                  :
-                 <div stlye={{  display: "flex"}}>
-                 <img style={{paddingBottom:'1px' ,height: '40px', width: '40px'}}src={Rship} />
-                 <div className='container return mb-1 p-1'>
+                 <div style={{display: "contents"}}>
+                 <img style={{paddingBottom:'1px' ,height: '30px', width: '30px'}}src={Rship} />
+                 <div className='mt-2 ml-1'>
                    
-                 <h5 style={{fontFamily:"crimson Text",fontSize:"10px"}}>Non-Returnable</h5>
+                 <h5 style={{fontFamily:"crimson Text",fontSize:"20px"}}>Non-Returnable</h5>
                </div>
                </div>
+               
                }
              
 

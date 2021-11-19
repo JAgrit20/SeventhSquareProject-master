@@ -149,17 +149,17 @@ function Wishlist() {
   return (
     <div className='container-lg'>
       <div className="d-flex justify-content-center my-5" style={{ flexDirection: 'column' }}>
-        <h1 style={{fontFamily:"crimson text"}}>Wishlist</h1>
+        <h1 style={{fontFamily:"crimson text",fontSize:"50px"}}>Wishlist</h1>
         <div className="container">
           {/* review card */}
           {reviewdata?.map(v => {
-            return <div className="review_card">
+            return <div className="review_card_w">
               <span className="circle"></span>
               <span style={{ flex: 1 }}>
-                <span className="review_card_1st_child">
+                <span className="review_card_1st_child_w">
                   <h1>Product Name: {v?.username}</h1>
                   <div>
-                  <h3 className="price pl-10">Price {v?.review}</h3>
+                  <h3 className="price_w pl-10">Price {v?.review}</h3>
                     </div>
                   
                   {/* <p className="review_body">Region: {v?.review}</p>
@@ -169,12 +169,12 @@ function Wishlist() {
                  
                 </span>
                 
-                <p className="review_body">Brand: {v?.review}</p>
-                <p className="review_body pd-4">Region: {v?.review} <span class="mx-3"> Date Added: {v?.review} </span> 
-                <div class="two_button">
+                <p className="review_body_w">Brand: {v?.review}</p>
+                <p className="review_body_w">Region: {v?.review} <span class="mx-3"> Date Added: {v?.review} </span> 
+                <div class="two_button" style={{marginLeft: "auto"}}>
 
-<button className="btn btn-secondary mx-2">Remove</button>
-<button className="btn btn-secondary">Add to Cart</button>
+<button  style={{ width:"100px"}}className="btn btn-secondary mx-2">Remove</button>
+<button  style={{ width:"100px"}} className="btn btn-secondary mx-2">Add to Cart</button>
 
 </div>
 </p>
