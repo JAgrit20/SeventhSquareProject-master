@@ -104,20 +104,20 @@ font-size: large;
 #inputPassword3{
   font-size: large;
   }
-.wrapper {
+.ww-wrapper {
   display: inline-block;
 }
-.wrapper * {
+.ww-wrapper * {
   float: right;
 }
-input {
+.star {
   display: none;
 }
-label {
+.star_lable {
   font-size: 30px;
 }
 
-input:checked ~ label {
+.star:checked ~ label {
   color: #FF9529;
 }
 /*

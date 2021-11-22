@@ -2,6 +2,7 @@ import React from "react";
 import "./Contact.css";
 import axios from "axios";
 import ContactQuotation from "./Contactcategories";
+import ContactQuotation2 from "./Contactcategories_copy";
 
 import Swal from 'sweetalert2'
 
@@ -80,7 +81,7 @@ function Contact() {
           <div class="container">
             <div class="text">
               <h2>
-                HOW CAN WE <span>HELP</span> YOU ?
+              <span style={{fontFamily:"crimson text"}}>CONTACT US</span>
               </h2>
               
             </div>
@@ -143,13 +144,16 @@ function Contact() {
           
           </div>
         </div>
-        <div class="contactQuotation">
+        <div class="contactQuotation" >
          <ContactQuotation/>
+
+      <h3 className='text-center '>Want to reach out to us directly</h3>
+
+         <ContactQuotation2/>
       </div>
-      <h3 className='text-center mt-5 pt-5'>Not related to above categories ? Contact Below</h3>
       </div>
      
-      <div class="contactPage">
+      <div class="contactPage" style={{marginTop:"600px"}}>
         <section class="container" id="contact">
           {/* <div class="social">
             <a href="/">

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.a06ee7cf.chunk.css",
-    "main.js": "/static/js/main.1faca23b.chunk.js",
-    "main.js.map": "/static/js/main.1faca23b.chunk.js.map",
+    "main.css": "/static/css/main.9b699d82.chunk.css",
+    "main.js": "/static/js/main.b9de318a.chunk.js",
+    "main.js.map": "/static/js/main.b9de318a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.93e7cfa6.js",
     "runtime-main.js.map": "/static/js/runtime-main.93e7cfa6.js.map",
     "static/css/2.d389eb36.chunk.css": "/static/css/2.d389eb36.chunk.css",
-    "static/js/2.5da72eba.chunk.js": "/static/js/2.5da72eba.chunk.js",
-    "static/js/2.5da72eba.chunk.js.map": "/static/js/2.5da72eba.chunk.js.map",
+    "static/js/2.9ffbe090.chunk.js": "/static/js/2.9ffbe090.chunk.js",
+    "static/js/2.9ffbe090.chunk.js.map": "/static/js/2.9ffbe090.chunk.js.map",
     "static/js/3.b1388463.chunk.js": "/static/js/3.b1388463.chunk.js",
     "static/js/3.b1388463.chunk.js.map": "/static/js/3.b1388463.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.d389eb36.chunk.css.map": "/static/css/2.d389eb36.chunk.css.map",
-    "static/css/main.a06ee7cf.chunk.css.map": "/static/css/main.a06ee7cf.chunk.css.map",
-    "static/js/2.5da72eba.chunk.js.LICENSE.txt": "/static/js/2.5da72eba.chunk.js.LICENSE.txt",
+    "static/css/main.9b699d82.chunk.css.map": "/static/css/main.9b699d82.chunk.css.map",
+    "static/js/2.9ffbe090.chunk.js.LICENSE.txt": "/static/js/2.9ffbe090.chunk.js.LICENSE.txt",
     "static/media/AAC Block.a84d8b22.png": "/static/media/AAC Block.a84d8b22.png",
     "static/media/Aluminium Roofing sheet.059c7f3e.png": "/static/media/Aluminium Roofing sheet.059c7f3e.png",
     "static/media/Bath Tub.dad8f527.png": "/static/media/Bath Tub.dad8f527.png",
@@ -71,6 +71,7 @@
     "static/media/alumunium.webp": "/static/media/alumunium.1132ce6a.webp",
     "static/media/brick.jpg": "/static/media/brick.4d926153.jpg",
     "static/media/cement.jpg": "/static/media/cement.1d2dfd70.jpg",
+    "static/media/cross.5080f065.png": "/static/media/cross.5080f065.png",
     "static/media/delivery.58d51abe.png": "/static/media/delivery.58d51abe.png",
     "static/media/electrical.jpg": "/static/media/electrical.7c4714dc.jpg",
     "static/media/flooring.png": "/static/media/flooring.1570abc1.png",
@@ -83,14 +84,15 @@
     "static/media/roofing.jpg": "/static/media/roofing.5f8a404e.jpg",
     "static/media/service1.57806c0c.png": "/static/media/service1.57806c0c.png",
     "static/media/steel.png": "/static/media/steel.bc379085.png",
+    "static/media/tick.f4ea228f.png": "/static/media/tick.f4ea228f.png",
     "static/media/timer.a09bb7be.png": "/static/media/timer.a09bb7be.png",
     "static/media/wood.jpg": "/static/media/wood.1288c032.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.93e7cfa6.js",
     "static/css/2.d389eb36.chunk.css",
-    "static/js/2.5da72eba.chunk.js",
-    "static/css/main.a06ee7cf.chunk.css",
-    "static/js/main.1faca23b.chunk.js"
+    "static/js/2.9ffbe090.chunk.js",
+    "static/css/main.9b699d82.chunk.css",
+    "static/js/main.b9de318a.chunk.js"
   ]
 }

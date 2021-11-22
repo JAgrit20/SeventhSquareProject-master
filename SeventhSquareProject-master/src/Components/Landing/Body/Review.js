@@ -227,19 +227,19 @@
                                       <div class="d-flex justify-content-space-between ">
                     
                                         <div class="d-flex justify-content-evenly">
-                                        <div class="wrapper">
+                                        <div class="ww-wrapper">
                                                
-  <input type="radio" id="r1" name="stars" value="5"  onChange={(e) => setstar(e.target.value)} />
-  <label for="r1">&#10038;</label>
+  <input class="star" type="radio" id="r1" name="stars" value="5"  onChange={(e) => setstar(e.target.value)} />
+  <label class="star_lable" for="r1">&#10038;</label>
   
-  <input type="radio" id="r2" name="stars" value="4" onChange={(e) => setstar(e.target.value)} />
-  <label for="r2">&#10038;</label>
-  <input type="radio" id="r3" name="stars" value="3" onChange={(e) => setstar(e.target.value)} />
-  <label for="r3">&#10038;</label>
-  <input type="radio" id="r4" name="stars" value="2" onChange={(e) => setstar(e.target.value)} />
-  <label for="r4">&#10038;</label>
-  <input type="radio" id="r5" name="stars" value="1" onChange={(e) => setstar(e.target.value)} />
-  <label for="r5">&#10038;</label>
+  <input class="star"  type="radio" id="r2" name="stars" value="4" onChange={(e) => setstar(e.target.value)} />
+  <label class="star_lable" for="r2">&#10038;</label>
+  <input class="star"  type="radio" id="r3" name="stars" value="3" onChange={(e) => setstar(e.target.value)} />
+  <label class="star_lable" for="r3">&#10038;</label>
+  <input class="star"  type="radio" id="r4" name="stars" value="2" onChange={(e) => setstar(e.target.value)} />
+  <label class="star_lable" for="r4">&#10038;</label>
+  <input class="star"  type="radio" id="r5" name="stars" value="1" onChange={(e) => setstar(e.target.value)} />
+  <label class="star_lable" for="r5">&#10038;</label>
 </div>
                     
                             

@@ -22,12 +22,29 @@
       background-color: silver !important;
       height: 250px !important;
       text-align: center;
-      box-shadow: #999;
+      box-shadow: rgb(0, 0, 0);
 
     }
     .loginPanel .pushcontainer:hover{
       height: 255px !important;
       
+    }
+    .form_f {
+      position: relative;
+    }
+    
+    #input_f {
+      width: 100%;
+      padding-right: 40px;
+    }
+    
+    #button_f {
+      width: 80px !important;
+      position: absolute;
+      height: 30px;
+      top: 0;
+      right: 0;
+      background-color: "#2A2F33 !important";
     }
   
     .loginPanel input,.loginPanel select,.loginPanel textarea {
@@ -92,7 +109,17 @@
     font-weight: bold;
     color: #222;
     font-family: Poppins;
-    font-size: 36px; }
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+    display: flex; }
+
+    .headingg {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+    }
   
     .loginPanel .main {
     background: #f8f8f8;
@@ -168,19 +195,32 @@
     text-align: center; }
   
     .loginPanel .form-submit {
-    display: inline-block;
-    background: #000000;
+
+      display: inline-block;
+      background: #2A2F33;
+      color: #fff;
+      border-bottom: none;
+      width: 100px;
+      margin-top: 15px;
+      font-size: 12px;
+      cursor: pointer;
+      height: 40px;
+
+    /* display: inline-block;
+    background: #999;
     color: #fff;
     border-bottom: none;
     width: auto;
-    padding: 15px 39px;
-    border-radius: 5px;
+    padding: 15px 39px; */
+    /* border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -o-border-radius: 5px;
-    -ms-border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer; }
+    -ms-border-radius: 5px; */
+    /* margin-top: 15px;
+    font-size:20px;
+    cursor: pointer; */
+   }
     .loginPanel .form-submit:hover {
       background: #ffffff; 
     color: black;
@@ -194,6 +234,7 @@
     font-size: 14px;
     color: rgb(80, 78, 78);
     display: block;
+    
     }
     .loginPanel .otp_links{
       margin-left: 50px;
@@ -206,8 +247,10 @@
     .loginPanel .otp_links .signup-image-link{
       margin: 0;
       padding: 0;
-    margin-left: -50px!important;
-    padding-left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: underline !important;
   }
     .loginPanel .term-service {
     font-size: 13px;
@@ -224,26 +267,41 @@
     .loginPanel .form-group {
     position: relative;
     margin-bottom: 25px;
-    overflow: hidden; }
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+   }
     .loginPanel.form-group:last-child {
       margin-bottom: 0px; }
   
       .loginPanel input {
-    width: 100%;
+        font-size: medium;
+    width: 80%;
     display: block;
     border: none;
-    border-bottom: 1px solid #999;
+    border-bottom: 4px solid #999;
     padding: 6px 30px;
-    font-family: Poppins;
+    font-family: open sans;
     box-sizing: border-box; }
     .loginPanel input::-webkit-input-placeholder {
-      color: #999; }
+      color: #999; 
+    font-size: medium;
+    line-height: 3;
+    }
       .loginPanel input::-moz-placeholder {
-      color: #999; }
+      color: #999; 
+    font-size: "19px";
+    }
       .loginPanel input:-ms-input-placeholder {
-      color: #999; }
+      color: #999; 
+    font-size: "19px";
+    }
       .loginPanel input:-moz-placeholder {
-      color: #999999; }
+      color: #999999;
+    font-size: "19px";
+    }
       .loginPanel input:focus {
       border-bottom: 1px solid #222; }
       .loginPanel input:focus::-webkit-input-placeholder {
@@ -365,6 +423,7 @@
     padding-bottom: 87px;
 display: flex;
 flex-direction: row;
+align-content: center; justify-content: center;
 }
   
     .loginPanel .social-login {

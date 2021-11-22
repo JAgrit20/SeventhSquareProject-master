@@ -773,7 +773,7 @@ function Product() {
                  <div style={{display: "contents"}}>
                  <div style={{display: "contents !important"}}>
                  <img style={{paddingBottom:'1px' ,height: '30px', width: '30px'}}src={Rship} /> 
-                 <div className='mt-2 ml-1'>
+                 <div className='mt-2 mr-2'> 
                    <h5 style={{fontFamily:"crimson Text",fontSize:"20px"}}>Returnable</h5>
                  </div>
                  </div>
@@ -781,7 +781,7 @@ function Product() {
                  :
                  <div style={{display: "contents"}}>
                  <img style={{paddingBottom:'1px' ,height: '30px', width: '30px'}}src={Rship} />
-                 <div className='mt-2 ml-1'>
+                 <div className='mt-2 mr-2'>
                    
                  <h5 style={{fontFamily:"crimson Text",fontSize:"20px"}}>Non-Returnable</h5>
                </div>

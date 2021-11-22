@@ -369,6 +369,19 @@ function CategoriesLanding() {
     }
   }
 
+  const handleorder=(value)=>{
+    if(value.target.value=="high"){
+      setorder('high')
+      setapply(value => value+1)
+    }else{
+      setorder('low')
+      setapply(value => value+1)
+    }
+  
+    console.log(order)
+  
+  }
+
   const handleapply = () => {
     setapply(value => value + 1)
     console.log(apply)
@@ -449,19 +462,33 @@ function CategoriesLanding() {
             <div className="bodyRightHeading">
               <p>Options in {name} </p>
               <div className="sortOption">
-                <p>Sort By</p>
+                {/* <p>Sort By</p> */}
                 {/* <select class="form-select" onChange={handleorder} >
                   <option  value='high' name='high' >High to Low</option>
                   <option value="low" name='low' >Low to High</option>
                   {/* <option value="2">Bottom to Top</option>
                   <option value="3">Popular</option> }
                 </select> */}
-                <button onClick={handlelow}>
+                {/* <button onClick={handlelow}>
                   High to low
                 </button>
                 <button onClick={handlehigh}>
                   low to high
-                </button>
+                </button> */}
+
+<p>Sort By</p>
+                 {/* <select class="form-select" } >
+                  <option  value='high' name='high' >High to Low</option>
+                  <option value="low" name='low' >Low to High</option>
+                  </select> */}
+                  {/* <option value="2">Bottom to Top</option>
+                  <option value="3">Popular</option>}
+        </select> */}
+        <select class="form-select" onChange={handleorder} >
+        {/* <select class="form-select" > */}
+                  <option  value='high' name='high' >High to Low</option>
+                  <option value="low" name='low' >Low to High</option>
+                  </select>
 
               </div>
 
