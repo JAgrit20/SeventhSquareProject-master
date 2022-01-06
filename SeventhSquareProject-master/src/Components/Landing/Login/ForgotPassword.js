@@ -4,8 +4,10 @@ import { withRouter } from "react-router-dom";
 import { get } from "jquery";
 // ES6 Modules or TypeScript
 import Swal from "sweetalert2";
+import { Helmet } from 'react-helmet';
 
 class ForgotPassword extends Component {
+  
   getotp = async (e) => {
     e.preventDefault();
 
@@ -13,7 +15,17 @@ class ForgotPassword extends Component {
       `https://api.seventhsq.com/auth/otp_gen/${this.phone}`
     );
     const data = await res.json();
+
+    console.log("otp data");
     console.log(data);
+    if(data==="Not register"){
+      Swal.fire({
+        icon: "error",
+        title: "Phone Number Not Registered...",
+        text: "Wrong Number",
+        // footer: '<a href="">Why do I have this issue?</a>'
+      });
+    }
   };
 
   handleSubmit = (e) => {
@@ -27,16 +39,37 @@ class ForgotPassword extends Component {
     axios
       .post("https://api.seventhsq.com/auth/forget/", data)
       .then((res) => {
+        
+        console.log("otp response");
         console.log(res);
         const token = res.data.token;
+        console.log(res.data)
+        if(res.data==="Wrong otp"){
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Wrong Otp",
+            // footer: '<a href="">Why do I have this issue?</a>'
+          });
+        }else{
+          // console.log(res.json()['data'])
+          
 
-        localStorage.setItem("token", token);
-        console.log(token);
-
-        this.props.history.push({
-          pathname: `/`,
-        });
-        window.alert("Password changed successfully, Please login");
+          localStorage.setItem("token", token);
+          console.log(token);
+          Swal.fire({
+            icon: "success",
+            title: "Thank you",
+            text: "Password changed successfully",
+          });
+        
+          this.props.history.push({
+            pathname: `/`,
+          });
+        
+       
+        }
+       
       })
       .catch((err) => {
         console.log(err);
@@ -53,6 +86,14 @@ class ForgotPassword extends Component {
   render() {
     return (
       <div>
+        {/* Forgot Password -hyperlink in login page */}
+        
+
+  <Helmet>
+    <title>Forgot Password</title>
+    {/* Forgot Password Seventh Square */}
+    <meta name="description" content="Forgot Password Seventh Square" />
+  </Helmet>
         <div className="loginPanel">
           <div class="main">
             <section class="sign-in">

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Blogcard from './Blogcard';
 import { useState, useEffect } from 'react';
 import Tags from "./Tags";
+import { Helmet } from 'react-helmet';
+
 function Blog() {
   const[blogdata,setdata]=useState([]);
   const[tagdata,settagdata]=useState([]);
@@ -30,10 +32,16 @@ function Blog() {
  useEffect(()=>{
      getdata();
  },[])
-  
+ let index = blogdata.length;
   return (
+    
     blogdata.length!=0?
+   
     <div>
+      <Helmet>
+    <title>Blog | Seventh Square</title>
+    <meta name="description" content="Blogs on Seventh Square" />
+  </Helmet>
       {blogdata.length!=0 ?
       <div class="container-fluid paddding mb-5 ">
         <div class="row mx-0">
@@ -42,13 +50,13 @@ function Blog() {
             data-animate-effect="fadeIn"
           >
             <Link
-             to={"/detail-blog/" + blogdata[0].slug}
+             to={"/detail-blog/" + blogdata[index-1].slug}
               >
             <div class="fh5co_suceefh5co_height">
               
               <img
 
-                src={'https://api.seventhsq.com'+blogdata[0].image}
+                src={'https://api.seventhsq.com'+blogdata[index-1].image}
                 alt="img"
               />
               
@@ -58,13 +66,13 @@ function Blog() {
                 <div class="">
                   <a href="/" class="color_fff">
                     {" "}
-                    <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[0].created}
+                    <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[index-1].created}
                   </a>
                 </div>
                 <div class="">
                   <a href="single.html" class="fh5co_good_font">
                     {" "}
-                    {blogdata[0].title}{" "}
+                    {blogdata[index-1].title}{" "}
                   </a>
                 </div>
               </div>
@@ -78,11 +86,11 @@ function Blog() {
                 data-animate-effect="fadeIn"
               >
                 <Link
-             to={"/detail-blog/" + blogdata[1].slug}
+             to={"/detail-blog/" + blogdata[index-2].slug}
               >
                 <div class="fh5co_suceefh5co_height_2">
                   <img
-                    src={'https://api.seventhsq.com'+blogdata[1].image}
+                    src={'https://api.seventhsq.com'+blogdata[index-2].image}
                     alt="img"
                   />
                   <div class="fh5co_suceefh5co_height_position_absolute"></div>
@@ -90,13 +98,13 @@ function Blog() {
                     <div class="">
                       <a href="/" class="color_fff">
                         {" "}
-                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[1].created}{" "}
+                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[index-2].created}{" "}
                       </a>
                     </div>
                     <div class="">
                       <a href="single.html" class="fh5co_good_font_2">
                         {" "}
-                        {blogdata[1].title}{" "}
+                        {blogdata[index-2].title}{" "}
                       </a>
                     </div>
                   </div>
@@ -108,11 +116,11 @@ function Blog() {
                 data-animate-effect="fadeIn"
               >
                   <Link
-             to={"/detail-blog/" + blogdata[2].slug}
+             to={"/detail-blog/" + blogdata[index-3].slug}
               >
                 <div class="fh5co_suceefh5co_height_2">
                   <img
-                    src={'https://api.seventhsq.com'+blogdata[2].image}
+                    src={'https://api.seventhsq.com'+blogdata[index-3].image}
                     alt="img"
                   />
                   <div class="fh5co_suceefh5co_height_position_absolute"></div>
@@ -120,13 +128,13 @@ function Blog() {
                     <div class="">
                       <a href="/" class="color_fff">
                         {" "}
-                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[2].created}{" "}
+                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[index-3].created}{" "}
                       </a>
                     </div>
                     <div class="">
                       <a href="single.html" class="fh5co_good_font_2">
                         {" "}
-                        {blogdata[2].title}{" "}
+                        {blogdata[index-3].title}{" "}
                       </a>
                     </div>
                   </div>
@@ -138,11 +146,11 @@ function Blog() {
                 data-animate-effect="fadeIn"
               >
                   <Link
-             to={"/detail-blog/" + blogdata[3].slug}
+             to={"/detail-blog/" + blogdata[index-4].slug}
               >
                 <div class="fh5co_suceefh5co_height_2">
                   <img
-                    src={'https://api.seventhsq.com'+blogdata[3].image}
+                    src={'https://api.seventhsq.com'+blogdata[index-4].image}
                     alt="img"
                   />
                   <div class="fh5co_suceefh5co_height_position_absolute"></div>
@@ -150,13 +158,13 @@ function Blog() {
                     <div class="">
                       <a href="/" class="color_fff">
                         {" "}
-                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[3].created}{" "}
+                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[index-4].created}{" "}
                       </a>
                     </div>
                     <div class="">
                       <a href="single.html" class="fh5co_good_font_2">
                         {" "}
-                        {blogdata[3].title}{" "}
+                        {blogdata[index-4].title}{" "}
                       </a>
                     </div>
                   </div>
@@ -168,11 +176,11 @@ function Blog() {
                 data-animate-effect="fadeIn"
               >
                   <Link
-             to={"/detail-blog/" + blogdata[4].slug}
+             to={"/detail-blog/" + blogdata[index-5].slug}
               >
                 <div class="fh5co_suceefh5co_height_2">
                   <img
-                     src={'https://api.seventhsq.com'+blogdata[4].image}
+                     src={'https://api.seventhsq.com'+blogdata[index-5].image}
                     alt="img"
                   />
                   <div class="fh5co_suceefh5co_height_position_absolute"></div>
@@ -180,13 +188,13 @@ function Blog() {
                     <div class="">
                       <a href="/" class="color_fff">
                         {" "}
-                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[4].created}{" "}
+                        <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{blogdata[index-5].created}{" "}
                       </a>
                     </div>
                     <div class="">
                       <a href="single.html" class="fh5co_good_font_2">
                         {" "}
-                        {blogdata[4].title}{" "}
+                        {blogdata[index-5].title}{" "}
                       </a>
                     </div>
                   </div>
@@ -222,7 +230,7 @@ function Blog() {
                       
                 }
                 
-                ):selectedtag.map((curr,index)=>{
+                ):selectedtag.reverse().map((curr,index)=>{
                   return(
                       <Blogcard
                       image={curr.image} title={curr.title} body={curr.body} key={index}

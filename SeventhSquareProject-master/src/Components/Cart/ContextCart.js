@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import {FaRegFolder} from "react-icons/fa"
 import axios from "axios";
 import "./cart.css"
+import Swal from 'sweetalert2'
 import { BrowserRouter as Link } from "react-router-dom";
 
 const ContextCart = () => {
@@ -77,9 +78,15 @@ const ContextCart = () => {
       settotal(s)
       data.forEach(myFunction2)
       function myFunction2(item) {
-        g += (item.price*item.gst)/100*item.quantity;
+        if(!item.incl_gst){
+          g += (item.price*item.gst)/100*item.quantity;
+          console.log("gst per piece")
+          console.log(g)
+        }
       }
       setgst(g)
+    
+
       
     
   }
@@ -183,7 +190,9 @@ const getlocaldata=()=>{
   
   storedcart.forEach(myFunction2)
   function myFunction2(item) {
-    g += (item.price*item.gst)/100*item.quantity;
+    if(!item.incl_gst){
+      g += (item.price*item.gst)/100*item.quantity;
+    }
   }
   setgst(g)
 
@@ -231,7 +240,22 @@ const getlocalpostcart=async()=>{
 }
 
 const invalid=()=>{
-  window.alert('Login First!')
+  if(usertoken){
+    Swal.fire({
+      icon: "error",
+      title: "Cart is empty",
+      // text: "Wrong Number",
+      // footer: '<a href="">Why do I have this issue?</a>'
+    });
+   
+  } else{
+    Swal.fire({
+      icon: "error",
+      title: "Please Login first",
+      // text: "Wrong Number",
+      // footer: '<a href="">Why do I have this issue?</a>'
+    });
+  }
 }
 
 useEffect(()=>{
@@ -266,7 +290,7 @@ useEffect(()=>{
       {cartdata!=null || localcartdata!=null ? 
       <div>
         <div class="container-fluid">
-          <h2 class="text-center text-dark py-4 h1">My Cart</h2>
+          <h1 class="text-center text-dark py-4 h1" style={{fontFamily:"crimson text"}}>MY CART</h1>
         
           <div class="row">
             <div class="col-md-10 col-11 mx-auto">
@@ -295,15 +319,15 @@ useEffect(()=>{
                   <div class="right_side p-3 shadow bg-white">
                     <h3 class=" h3 product_name mb-3 text-center">SUMMARY</h3>
                     <div class="price_indiv d-flex justify-content-between">
-                      <p style={{"fontSize":"15px"}} className='ml-3'>Product amount</p>
+                      <p style={{"fontSize":"12px"}} className='ml-4'>Sub Total</p>
                      
                      
                       <p>
-                       <span id="product_total_amt">₹ {total + gst}</span>
+                       <span id="product_total_amt" style={{marginRight:"20px !important"}}>₹ {total +gst}</span>
                       </p>
                     </div>
                     <div className='col'>
-                      {
+                      {/* {
                         cartdata.map((curr,index)=>{
                              return(
                                <li key={index} >
@@ -312,7 +336,27 @@ useEffect(()=>{
                                </li>
                              )
                         })
-                      }
+                      } */}
+                            <div style={{display: "flex",   justifyContent:" space-between",fontSize:"12px"}}>
+
+<p>
+Discount
+</p>
+<p>
+--
+</p> 
+</div>
+<div style={{display: "flex",   justifyContent:" space-between",fontSize:"12px"}}>
+
+<p>
+Delivery
+</p>
+<p>
+Est. at Checkout
+</p>
+
+</div>
+                      
                       </div>
                     {/* <div class="price_indiv d-flex justify-content-between">
                       <p>GST</p>
@@ -338,7 +382,7 @@ useEffect(()=>{
                   </div>
                  
                     {
-                      usertoken? <a href=  {'/checkout'} ><button className="btncheckoutbutton text-uppercase btn btn-dark mt-5"> Proceed to Checkout</button></a>
+                      usertoken && (total+gst )!=0 ? <a href=  {'/checkout'} ><button className="btncheckoutbutton text-uppercase btn btn-dark mt-5"> Proceed to Checkout</button></a>
                       : <a href='#' ><button className="btncheckoutbutton text-uppercase btn btn-dark mt-5" onClick={()=>invalid()}> Proceed to Checkout</button></a>
                     }
                    

@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap');
 .requestForQuote{
-    margin: auto 5rem !important;
+    margin: auto 10px !important;
 
     
 }
+.my-modal .modal-content {
+    background-color: #F4F4F4;
+  }
 .requestForQuote h2{
     margin-top: 25px;
     text-align: center;
@@ -11,17 +14,20 @@
     font-family: 'Merriweather', serif;
     
 }
-.requestForQuote hr{
-    margin:  20px 150px 50px 150px;
+.requestForQuote input ::placeholder{
+  font-size: small !important;
 }
 .requestForQuote label{
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
 .requestForQuote input,.requestForQuote textarea{
-    font-size: 14px;
+    font-size: 14px !important; 
     outline: none;
 }
+.requestForQuote input,.requestForQuote textarea::placeholder{
+    font-size: small !important;
+  }
 .requestForQuote .btn{
     font-size: 12px;
     float: inline-end;
@@ -30,3 +36,15 @@
     font-size: small;
 }
 .modal-backdrop {display: none;}
+
+#cat{
+    font-size: small;
+    color: #6C757D;
+}
+#cat::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; 
+  }
+#des{
+    font-size: medium;
+}

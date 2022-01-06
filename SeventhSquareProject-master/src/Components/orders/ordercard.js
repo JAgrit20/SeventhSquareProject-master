@@ -26,7 +26,7 @@ function Ordercard(props) {
     return (
       props.items.map((curr,index)=>{
         return(
-          <Productcard id={curr.product} key={index} orderid={props.orderid} status={props.status}/>
+          <Productcard id={curr.product} key={index} orderid={props.orderid} status={props.status} quant={props.qty} datee={props.datee}pq={curr.quantity} paid={curr.price}/>
         )
       })
        

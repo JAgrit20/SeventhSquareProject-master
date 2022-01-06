@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import "./Body.css";
+
 export default class ProductImageIndividual extends Component {  
 
     
@@ -12,7 +13,30 @@ export default class ProductImageIndividual extends Component {
         loggedin:false
       };
     }
+    
+  
+    updatesells = async (props) => {
+      // console.log(users);
+      const config = {
+        method: "PUT",
+        headers: {
+  
+          "Content-Type": "application/json",
+        },
+  
+        body: JSON.stringify({
+          sells: 1
+        }),
+      };
+      console.log(config);
 
+      const res = await fetch(
+        "https://seller.seventhsq.com/inventory/api/inventory_detail/" + props.id.toString(),
+        config
+      );
+      window.alert("updated sells");
+    };
+  
     addtolocal=async(users)=>{
       const body={
         "title": users.name,
@@ -25,6 +49,7 @@ export default class ProductImageIndividual extends Component {
         "gst":users.gstRate
         
       }
+
       var localcart=[]
       var storedcart = await JSON.parse(localStorage.getItem("localcart"));
       console.log(storedcart)
@@ -36,13 +61,16 @@ export default class ProductImageIndividual extends Component {
       console.log(localcart)
       localStorage.setItem('localcart',JSON.stringify(localcart))
       
+      this.updatesells(users)
       window.alert("Added to Cart");
+
     }
-  
+
   
   
      addtocart=async(users)=>{
-      window.alert("Added to Cart");
+
+
       const config = {
         method:'POST',
         headers: {
@@ -63,10 +91,12 @@ export default class ProductImageIndividual extends Component {
         
       };
       console.log(config);
+      this.updatesells(users)
       const res=await fetch('https://api.seventhsq.com/orders/add-to-cart/',config);
       
       const data= await res.json();
       console.log(data);
+      window.alert("Added to Cart");
       
       
       

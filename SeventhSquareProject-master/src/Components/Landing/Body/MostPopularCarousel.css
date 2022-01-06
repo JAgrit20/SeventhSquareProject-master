@@ -3,6 +3,9 @@
     overflow: hidden !important;
 
 }
+#prod{
+    width: 90% !important;
+}
 #ptitle:hover{
     overflow: visible !important;
     /* white-space: initial; */
@@ -13,4 +16,12 @@
     text-align: "left";
     text-overflow:none !important;
     white-space: none !important;
+}
+
+@media only screen and (min-width: 29.8125rem /*477px*/) {
+    .Mostpopulardiv{
+        width: 100% !important;
+        overflow: hidden !important;
+    
+    }
 }

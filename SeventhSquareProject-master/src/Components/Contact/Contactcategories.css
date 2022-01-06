@@ -46,6 +46,9 @@ color: black;
   }
 
   @media (max-width:920px) {
+    .topics{
+      display: none !important;
+  }
     .quotationwrapper{
         display: flex;
     }
@@ -68,7 +71,17 @@ color: black;
         width: 90px;
 
       }
+      .topics_m{    display: flex !important;
+        flex-direction: row;
+        padding-bottom: 5px;
+        flex: 1 1 25%;
+        }
+      
 
+  }
+
+  .topics_m{
+    display: none;
   }
   .topics{
     margin-top: 40px;

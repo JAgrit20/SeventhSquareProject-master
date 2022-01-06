@@ -14,19 +14,25 @@
       padding-bottom: 20px !important;
      
     }
+    #indi {
+      background-color: #9FB4C7 !important;
+      color: #000 !important;
+    }
     .loginPanel .pushcontainer{
       display: flex;
       justify-content: center;
       flex-direction: column;
-      width: 300px !important;
-      background-color: silver !important;
-      height: 250px !important;
+      width: 400px !important;
+      background-color: #28587B !important;
+      color:wheat;
+    
+      height: 400px !important;
       text-align: center;
       box-shadow: rgb(0, 0, 0);
 
     }
     .loginPanel .pushcontainer:hover{
-      height: 255px !important;
+      box-shadow: 0px 10px 0px 0px   #000000;
       
     }
     .form_f {
@@ -129,7 +135,7 @@
     clear: both; }
   
     .loginPanel .container {
-    width: 60%;
+    /* width: 60%; */
     background: #fff;
     margin: 0 auto;
     box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
@@ -200,7 +206,7 @@
       background: #2A2F33;
       color: #fff;
       border-bottom: none;
-      width: 100px;
+      /* width: 100px; */
       margin-top: 15px;
       font-size: 12px;
       cursor: pointer;
@@ -485,9 +491,19 @@ flex-direction: row;
     margin-top: 10px; }
   
   @media screen and (max-width: 1200px) {
-    .loginPanel .container {
-      width: calc( 100% - 30px);
-      max-width: 100%; } }
+    .loginPanel .pushcontainer {
+      width: 150px !important;
+      height: 150px !important;
+      /* width: calc( 100% - 30px);  */
+    } 
+    #bishead{font-size: 15px !important;}
+    #indhead{font-size: 15px !important;}
+    #bisbody{font-size: 10px !important;}
+    #indbody{font-size: 10px !important;}
+      .loginPanel .coverbox {
+        width: 300px !important;
+      }
+      }
   @media screen and (min-width: 1024px) {
     .loginPanel .container {
       max-width: 1200px; } }

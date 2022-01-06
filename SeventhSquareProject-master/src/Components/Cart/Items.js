@@ -20,7 +20,12 @@ removecart,
 gst,
 seller,
 Category,
-subCategory
+subCategory,
+incl_gst,
+brand,
+category,
+subcategory
+
 
 }) => {
   
@@ -31,10 +36,8 @@ subCategory
   
   const getimages=async()=>{
       const res=await fetch(`https://seller.seventhsq.com/inventory/api/picture/${item}`);
-      const data= await res.json();
-     
-      setimage(data[0].picture);
-      
+      const data= await res.json(); 
+      setimage(data[0].picture); 
   }
   const invalid=()=>{
     window.alert('Login First!')
@@ -46,8 +49,16 @@ useEffect(()=>{
   getimages();
   const token= localStorage.getItem('token')
   setusertoken(token)
-  let j=parseFloat(price)+parseFloat( (price*gst)/100)
-  setprice(j)
+  if(incl_gst){
+    console.log(incl_gst)
+    // console.log("gst true run")
+    let j=parseFloat(price)
+    setprice(j)
+  }else{
+
+    let j=parseFloat(price)+parseFloat( (price*gst)/100)
+    setprice(j)
+  }
 },[])
 
   return (
@@ -67,32 +78,32 @@ useEffect(()=>{
              
             </div>
 
-            <div class="col-md-8 col-11  px-2 ">
+            <div class="col-md-8 col-8  px-2 mb-2 ">
               <div class="row">
                 <div class="col-6 card-title">
                 <Link  to={"/product/"   + item.toString()} >
-                  <h5 class="h5 mb-3 product_name">{title}</h5>
-                  </Link>
+                  <h5 class="h5 mb-3 product_name" style={{fontWeight:"200",fontFamily:"open sans"}}>{title}</h5>
+                  </Link>    
+                                <p class="mb-1"style={{fontWeight:"200",fontFamily:"open sans"}}>
+                   
+                    <span class="text-success"style={{fontWeight:"200",fontFamily:"open sans"}}>{brand} </span>{" "}
+                  </p>
+                
+                  <p class="mb-1"style={{fontWeight:"200",fontFamily:"open sans"}}>Product Type : {category} {'>'} {subcategory} </p>
+                
                   <p class="mb-1">
                     Price :{" "}
-                    <span class="text-underline text-danger">₹{oldprice}</span>{" "}
-                    <span class="text-success">₹{price}</span>
-                  </p>
-                  <p class="mb-1">Category : {Category} pcs.</p>
-                  <p class="mb-1">
-                    Sub-Category :{" "}
-                    <span class="text-success">{subCategory} </span>{" "}
-                  </p>
-                  <p class="mb-1">
-                    Seller :{" "}
-                    <span class="text-success">{seller} </span>{" "}
+                    
+                    <span class="text-underline text-danger"style={{fontWeight:"200",fontFamily:"open sans"}}>₹{oldprice}</span>{" "}
+                    <span class="text-success"style={{fontWeight:"200",fontFamily:"open sans"}}>₹{price}</span>
+                    {incl_gst ? (
+                      <p>
+                        
+                      </p>
+                    ) :  <span style={{color:"#555555"}}>{" "}(GST {gst} % Extra) </span>}
                   </p>
 
-                  <button>
-                    <p>
-                      Move to Wishlist
-                    </p>
-                  </button>
+                
                   
                 </div>
 
@@ -112,8 +123,8 @@ useEffect(()=>{
                   </ul>
                 </div>
                 <div class="col-12 row deletePanel">
-                  <div class="col-8 d-flex justify-content-between remove_wish">
-                    <p>
+                  <div class="col-8 d-flex justify-content-between remove_wish mt-3">
+                    <p style={{"fontSize":"12px"}} >
                       <i
                         class="fas fa-trash-alt"
                         onClick={() =>usertoken? removecart(title,oldprice,pcksize,price,item) :invalid()}
@@ -121,15 +132,29 @@ useEffect(()=>{
                       Remove
                     </p>
                   </div>
-                  <div class="col-4 d-flex justify-content-end price_money">
-                    <h3>
-                    ₹<span id="itemval">{priceq} </span>
-                    </h3>
-                    <h6 className='ml-2 mr-1'>
-                    I.N.C of taxes
-                      </h6>
+                  <div class="col-5 d-flex justify-content-end price_money mt-3">
+                  <button>
+                    <p style={{"fontSize":"12px"}} >
+                  <i
+                        class="fa fa-heart"
+                        // onClick={() =>usertoken? removecart(title,oldprice,pcksize,price,item) :invalid()}
+                      ></i>{" "}
+                      Move to Wishlist 
+                    </p>
+                  </button>
                     
                   </div>
+                  <div>
+<hr/>
+                    <p id="total_cart_amt" style={{"fontSize":"14px",justifyContent: "end",display:"flex",paddingRight: "40px"}} > 
+                  
+  
+                    Item Total :    ₹<span id="itemval">{Number(priceq) * Number(quantity)}</span>
+                    </p>
+                  </div>
+                 
+            
+               
                 </div>
               </div>
             </div>

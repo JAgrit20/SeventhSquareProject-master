@@ -4,9 +4,17 @@ import Brands from "../Landing/Body/Brands";
 import Benefits from "../Landing/Body/Benefits/Benefits";
 import BenefitsItem from "../Landing/Body/Benefits/BenefitsItem";
 import aboutHome from "../../images/aboutHome.png"
+import { Helmet } from 'react-helmet';
+
+
+
 function About() {
   return (
     <div>
+        <Helmet>
+    <title>About Us | Seventh Square</title>
+    <meta name="description" content="About Seventh Square" />
+  </Helmet>
       <div class="container-fluid aboutMainBody">
         <div class="aboutText">
           <h1 className="my-4">

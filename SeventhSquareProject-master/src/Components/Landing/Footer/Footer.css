@@ -569,5 +569,21 @@ thead,tbody,th,tr {
   .footer-contacts {
     margin: 30px 0;
   }
+  .fist{
+    align-items: flex-start;
+    display: flex;
+    width: 100px;
+  }
+  .sec{
+    align-items: flex-start;
+    display: flex;
+    width: 200px;
+    padding:1px !important;
+  }
+  .thri{
+    align-items: flex-start;
+    display: flex;
+    width: 150px;
+  }
   
 }

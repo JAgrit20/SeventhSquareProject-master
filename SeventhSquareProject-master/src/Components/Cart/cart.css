@@ -104,7 +104,7 @@ flex-direction: row;
     flex-direction: column;
 }
   .price_indiv p:nth-child(2){
-      margin-right: 30px;
+      margin-right: 20px;
   }
   .cart-checkbox{
       display: flex;

@@ -73,7 +73,7 @@
   
   .Bestproduct .side-icons {
     position: absolute;
-    right: 0;
+    right: -4px;
     top: 30%;
     transform: translate(80%, -50%);
     display: flex;

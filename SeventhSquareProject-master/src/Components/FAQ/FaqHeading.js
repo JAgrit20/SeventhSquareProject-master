@@ -23,7 +23,8 @@ width: "100%",
 textAlign:"Center",
             }
     return (
-        <div>
+
+        <>
             <div className="faqHeading" style={faqHeading}>
                 <h1 style={faqHeadingH1}>How Can We Help You ?</h1>
                 {/* <div className="d-flex faqQuotation py-4" style={faqQuotation}>
@@ -31,7 +32,7 @@ textAlign:"Center",
             </div> */}
             </div>
             
-        </div>
+        </>
     )
 }
 

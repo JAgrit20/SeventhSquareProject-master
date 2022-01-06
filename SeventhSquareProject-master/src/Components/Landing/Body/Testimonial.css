@@ -2,7 +2,30 @@
 .customer-logos{
     display:flex;
     height: 150px!important;
+    
 }
+
+@media only screen and (min-width: 29.8125rem /*477px*/) {
+  .title .h1 {
+    padding-top: 30px;
+  }
+}
+
+.img-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.img-container img {
+
+  height: 250px;
+  width: 300px;
+  background-size: cover;
+  opacity: 1 !important;
+  border:#222
+}
+
+
 .slick-slide{
   width: 150px!important;
 
@@ -22,7 +45,7 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
-    height: 200px !important;
+    /* height: 200px !important; */
 }
 .slick-track{
     position: relative;

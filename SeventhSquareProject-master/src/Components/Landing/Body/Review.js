@@ -4,6 +4,7 @@
                     import { Button, Modal } from 'react-bootstrap';
                     import Form from 'react-bootstrap/Form'  
                     import Swal from 'sweetalert2'
+                    import { Helmet } from 'react-helmet';
                     function Review() {
                     
                       const [userdata, setuserdata] = useState([])
@@ -13,22 +14,7 @@
                       const [star, setstar] = useState('')
                       const [Reviews, setReviews] = useState("")
                       const [show, setModalShow] = useState(false);
-                    
-                     
-                    
-                       {/* <span
-                      className="rounded-circle p-5 bg-dark"
-                      style={{ color: "white" }}
-                    >
-                      
-                      <h1>
-                        {v?.username
-                          ? v?.username[0] + v?.username[1]
-                          : null}
-                      </h1>
-                    </span> */}
-
-                    
+                   
                       const getuser = async () => {
                         const config = {
                           headers: {
@@ -51,8 +37,7 @@
                         console.log(config);
                         const res = await fetch('https://api.seventhsq.com/review/companyreview/', config);
                         const data = await res.json();
-                        setreviewdata(data)
-                    
+                        setreviewdata(data)                   
                         console.log(data);
                       }
                     
@@ -88,6 +73,7 @@
                           text: 'Review Recorded',
                           
                         })
+                        window.location.reload()
                     
                       }
                     
@@ -100,8 +86,15 @@
                       }, [])
                       return (
                         <div className='container-lg'>
+                          {/* %Company% Review | Seventh Square */}
+                          <Helmet>
+    <title>Company Review | Seventh Square </title>
+    <meta name="description" content="Review of Seventh Square " />
+    {/* Review of Seventh Square */}
+  </Helmet>
                           <div className="d-flex justify-content-center my-5" style={{ flexDirection: 'column' }}>
-                            <h1 style={{fontFamily:"crimson text",fontSize:"50px"}}>Customer Reviews</h1>
+                            <h1 className="heading">Customer Reviews</h1>
+                            <h4  className="subheading" >What people are saying about us</h4>
                             <div className="grid_wrap_review">
                               {/* review card */}
                               {reviewdata?.map(v => {
@@ -121,7 +114,7 @@
                                   <span style={{ flex: 1 }}>
                                     <span className="review_card_1st_child mt-2">
                                      
-                                      <h2 style={{paddingTop:"10px"}}>{v?.title}</h2>
+                                      <h2 style={{paddingTop:"5px"}}>{v?.title}</h2>
                     
                                     {v.star > 0 && v.star <= 1 ?
                                         <span style={{
@@ -189,7 +182,7 @@
                                         : null
                                       }
                                     </span>
-                                    <p className="review_body">Review: {v?.review}</p>
+                                    <p className="review_body">{v?.review}</p>
                                     {/* <p className="review_body">{v?.review}</p> */}
                                      <h3>Posted By: {v?.username}</h3>
                                   </span>
@@ -203,12 +196,12 @@
                           <section class="review" id="review">
                             <div className='row'>
                               <div className='  col-pl-8 col-sm-12'>
-                                <h1 className='text-center'>What did You think of SeventhSquare</h1>
-                              <div class="container">
+                                <h1 className='text-center'>Have a feedback for us? Post your review here</h1>
+                              <div class="container" style={{justifyContent:"center",display:"flex"}}>
                                 <form class="">
-                                  <div class="card p-7">
+                                  <div class="card p-7" >
                                   <div class="form-group row">
-                                    <label for="inputEmail3" class="md-3 col-sm-1 col-form-label" style={{fontSize:"20px",paddingTop: "initial"}}>Title</label>
+                                    <label for="inputEmail3" class="md-3 col-sm-1 col-form-label" style={{fontSize:"18px",paddingTop: "initial"}}>Title</label>
                                     <div class="col-sm-10">
                                       <input type="text" class="form-control" id="inputEmail3" placeholder="Please Enter Title" name='title' value={title} onChange={(e) => settitle(e.target.value)} />
                                     </div>
@@ -216,13 +209,13 @@
                     
                     
                                   <div class="form-group row">
-                                    <label for="inputPassword3" class="md-3 col-sm-1 col-form-label" style={{fontSize:"20px",paddingTop: "initial"}}>Review</label>
+                                    <label for="inputPassword3" class="md-3 col-sm-1 col-form-label" style={{fontSize:"18px",paddingTop: "initial"}}>Review</label>
                                     <div class="col-sm-10">
                                       <textarea rows='5' class="form-control" id="inputPassword3" placeholder="Please Enter Review" name='review' value={review} onChange={(e) => setreview(e.target.value)} />
                                     </div>
                                   </div>
                                   <div class="form-group row">
-                                    <label for="inputPassword3" class="col-sm-1 col-form-label" style={{fontSize:"20px"}}>Stars</label>
+                                    <label for="inputPassword3" class="col-sm-1 col-form-label" style={{fontSize:"18px"}}>Stars</label>
                                     <div class="md-6 col-sm-10">
                                       <div class="d-flex justify-content-space-between ">
                     
@@ -252,7 +245,7 @@
                                   </div>
                                   <div class="form-group row">
                                     <div class="d-flex justify-content-center col-md-12">
-                                      <button class="btn btn-dark btn-lg" onClick={postreview}>Request</button>
+                                      <button class="btn btn-dark btn-lg" onClick={postreview}>Post Review</button>
                                     
                                     </div>
                                     </div>

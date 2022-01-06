@@ -16,6 +16,7 @@
   
   @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
   
+ 
   html {
     box-sizing: border-box;
     font-size: 60.5%;
@@ -173,7 +174,7 @@
   
   .product .side-icons {
     position: absolute;
-    right: 0;
+    right: -4px;
     top: 30%;
     transform: translate(80%, -50%);
     display: flex;
@@ -204,6 +205,10 @@
   @media only screen and (max-width: 996px) {
     .prodouct-layout {
       grid-template-columns: repeat(3, 1fr);
+    }
+    .products{
+      width: auto !important;
+      height: auto !important;
     }
   }
   

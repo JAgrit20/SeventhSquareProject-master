@@ -9,7 +9,7 @@ import Timer from "../../../../images/timer.png"
 function Benefits() {
     return (<div>
         <div class="title">
-          <span class="h1">
+          <span class="headingg">
           Why Buy with Seventh Square
           </span>
         </div>

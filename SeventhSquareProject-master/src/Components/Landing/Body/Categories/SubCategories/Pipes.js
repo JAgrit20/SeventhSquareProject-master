@@ -1,5 +1,10 @@
 import React from 'react'
 import "../Categories.css";
+import up from '../Sub Category Icons/upvc.jpg'
+import cp from '../Sub Category Icons/cpvc.jpg'
+import fit from '../Sub Category Icons/fit.jpg'
+import tank from '../Sub Category Icons/tank.jpg'
+import iron from '../Sub Category Icons/iron.jpg'
 function Pipes(props) {
     return (
         <div className="categorySection">
@@ -9,7 +14,38 @@ function Pipes(props) {
         <div className="categorySectionOptions ">
           <div className="categorySectionItems slide">
             <img
-              src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
+              src={up}
+              alt=""
+              onClick={()=>props.handletype('UPVC Pipe')}
+              
+            />
+            <h5> UPVC Pipe</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={cp}
+              alt=""
+              onClick={()=>props.handletype('CPVC Pipe')}
+              
+            />
+            <h5> CPVC Pipe</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={iron}
+              alt=""
+              onClick={()=>props.handletype('Iron & Steel Pipe')}
+              
+            />
+            <h5> Iron & Steel Pipe</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+         
+          <div className="categorySectionItems slide">
+            <img
+              src={fit}
               alt=""
               onClick={()=>props.handletype('Fittings')}
               
@@ -17,8 +53,30 @@ function Pipes(props) {
             <h5> Fittings</h5>
             {/* <p>1212 pieces</p> */}
           </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={tank}
+              alt=""
+              onClick={()=>props.handletype('Water Tank')}
+              
+            />
+            <h5> Water Tank</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={cp}
+              alt=""
+              onClick={()=>props.handletype('Pipe - Other')}
+              
+            />
+            <h5> Pipe - Other</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+
           
         </div>
+      
       </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Request.css"
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 function RequestQuotation() {
 
@@ -176,21 +177,28 @@ useEffect(()=>{
 
  
   
-    return (
-        <div className="container m-4 requestForQuote">
-        <h2>Request For Quotation</h2>
+    return (<>
+    {/* Request A Quote | Seventh Square */}
+    <Helmet>
+    <title>Request A Quote | Seventh Square</title>
+    <meta name="description" content="Request A Quotation on Seventh Square " />
+  </Helmet>
+        <div className="d-flex flex-column justify-content-center align-items-center requestForQuote ">
+        <h2>Request For Quotation</h2> 
+        </div>
         <hr/>
-        <form >
+        <div className="d-flex flex-column justify-content-center align-items-center requestForQuote ">
+        <form className="card" >
         <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Product Required</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputEmail3" placeholder="Mention Product Type with Basic Specifications" name='product' onChange={handlechange} />
+        <input type="text" class="form-control" id="inputEmail2" placeholder="Mention Product Type with Basic Specifications" name='product' onChange={handlechange} />
         </div>
         </div>
         <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Category</label>
         <div class="col-sm-10">
-        <select className="form-select" onChange={handlechange} name='category'>
+        <select className="form-select" onChange={handlechange} name='category' id="cat">
                       
                      <option id="Select Category" value='Select Categoty'>Select Category</option>
                       <option id="Andhra Pradesh" value='Cement'>Cement</option>
@@ -217,31 +225,31 @@ useEffect(()=>{
         <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Brand Preference</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Optional" name='brand' onChange={handlechange} />
+        <input type="text" class="form-control" id="inputPassword2" placeholder="Optional" name='brand' onChange={handlechange} />
         </div>
         </div>
         <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+        <label for="inputPassword3" class="col-sm-2 col-form-label" >Description</label>
         <div class="col-sm-10">
-        <textarea class="form-control" placeholder="Include Your Specifications, customisations, dimensions, etc." id="exampleFormControlTextarea1" rows="2" name='description' onChange={handlechange} ></textarea>
+        <textarea  id= "des" class="form-control" placeholder="Include Your Specifications, customisations, dimensions, etc." id="exampleFormControlTextarea1" rows="2" name='description' onChange={handlechange} ></textarea>
         </div>
         </div>
         <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Quantity Required</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Please Specify measurement unit too (For Ex. 150 Bags or 25 Tons )" name='quantity' onChange={handlechange} />
+        <input type="text" class="form-control" id="inputPassword2" placeholder="Please Specify measurement unit too (For Ex. 150 Bags or 25 Tons )" name='quantity' onChange={handlechange} />
         </div>
         </div>
         <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Delivery Location</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="City / District , if multiple please mention" name='location' onChange={handlechange} />
+        <input type="text" class="form-control" id="inputPassword2" placeholder="City / District , if multiple please mention" name='location' onChange={handlechange} />
         </div> 
         </div>
         <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Delivery Timeline</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Required Delivery Date / Range" name='time' onChange={handlechange} />
+        <input type="text" class="form-control" id="inputPassword2" placeholder="Required Delivery Date / Range" name='time' onChange={handlechange} />
         </div>
         </div>
         <div class="form-group row">
@@ -251,6 +259,7 @@ useEffect(()=>{
         </div>
         </form>
             </div>
+    </>
             )
 }
 

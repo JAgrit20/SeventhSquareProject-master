@@ -15,27 +15,45 @@ function Doors(props) {
             <img
               src={IS}
               alt=""
-              onClick={()=>props.handletype('Iron & Steel')}
+              onClick={()=>props.handletype('Metal')}
             />
-            <h5>Iron & Steel</h5>
+            <h5>Metal</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={PVC}
               alt=""
-              onClick={()=>props.handletype('PVC')}
+              onClick={()=>props.handletype('Wooden')}
             />
-            <h5>PVC</h5>
+            <h5>Wooden</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={WD}
               alt=""
-              onClick={()=>props.handletype('Wood')}
+              onClick={()=>props.handletype('Modular')}
             />
-            <h5>Wood</h5>
+            <h5>Modular</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={WD}
+              alt=""
+              onClick={()=>props.handletype('Glass')}
+            />
+            <h5>Glass </h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={WD}
+              alt=""
+              onClick={()=>props.handletype('UPVC')}
+            />
+            <h5>UPVC</h5>
             {/* <p>1212 pieces</p> */}
           </div>
          

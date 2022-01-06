@@ -16,23 +16,32 @@ function BuildingHardware(props) {
             <img
               src={LH}
               alt=""
-              onClick={()=>props.handletype('Locks & Handles')}
+              onClick={()=>props.handletype('Bath Hardware')}
             />
-            <h5>Locks & Handles</h5>
+            <h5>Bath Hardware</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={HI}
               alt=""
-              onClick={()=>props.handletype('Hinges')}
+              onClick={()=>props.handletype('Door & Window Hardware')}
             />
-            <h5>Hinges</h5>
+            <h5>Door & Window Hardware</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={RS}
+              alt=""
+              onClick={()=>props.handletype('Safe & Deposit Box')}
+            />
+            <h5>Safe & Deposit Box</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={DW}
               alt=""
               onClick={()=>props.handletype('Railing System')}
             />
@@ -41,29 +50,59 @@ function BuildingHardware(props) {
           </div>
           <div className="categorySectionItems slide">
             <img
-              src={DW}
+              src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
               alt=""
-              onClick={()=>props.handletype('Door & Window Fittings')}
+              onClick={()=>props.handletype('Nails, Screws, Nuts & Bolts')}
             />
-            <h5>Door & Window </h5>
+            <h5>Nails, Screws, Nuts & Bolts</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
               alt=""
+              onClick={()=>props.handletype('Curtain Rings & Rod')}
             />
-            <h5>Fittings</h5>
+            <h5>Curtain Rings & Rod</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
               alt=""
+              onClick={()=>props.handletype('Smoke Detector')}
             />
-            <h5>Others</h5>
+            <h5>Smoke Detector</h5>
             {/* <p>1212 pieces</p> */}
           </div>
+          <div className="categorySectionItems slide">
+            <img
+              src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
+              alt=""
+              onClick={()=>props.handletype('Security System')}
+            />
+            <h5>Security System</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
+              alt=""
+              onClick={()=>props.handletype('Ladder')}
+            />
+            <h5>Ladder</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
+              alt=""
+              onClick={()=>props.handletype('Drawer Channel / Slider')}
+            />
+            <h5>Drawer Channel / Slider</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+         
          
         </div>
       </div>

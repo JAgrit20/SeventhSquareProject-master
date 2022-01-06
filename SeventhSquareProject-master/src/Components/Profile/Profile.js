@@ -1,12 +1,14 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "./Profile.css";
 import axios from "axios";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
-import { useState, useEffect } from "react";
 import SavedAddress from "./SavedAddress";
+import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet';
 // import { Button, Modal } from 'react-bootstrap';
 // import Form from 'react-bootstrap/Form'
 function Profile() {
@@ -159,19 +161,30 @@ function Profile() {
       country: countryaddress,
       zip: zip,
       address_type: addresstype,
-      default: false,
+      default: defaulttype,
     };
     console.log(data);
     axios
       .post("https://api.seventhsq.com/orders/addresses/create/", data, config)
       .then((res) => {
         console.log(res);
-        window.alert("Added");
+        // window.alert("Added");
+        Swal.fire({
+          icon: "success",
+          title: "Thank you",
+          text: "Address Added successfully"
+        });
         window.location.reload();
       })
       .catch((err) => {
         console.log(err);
-        window.alert("Something went wrong");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Incomplete form',
+          // footer: '<a href="">Why do I have this issue?</a>'
+        })
+        // window.alert("Something went wrong");
       });
   };
 
@@ -242,6 +255,10 @@ function Profile() {
 
   return (
     <div className="profile">
+         <Helmet>
+    <title>Login | Seventh Square</title>
+    <meta name="description" content="Login Seventh Square" />
+  </Helmet>
       <div class="container">
         <div class="main-body">
           <h1
@@ -253,7 +270,7 @@ function Profile() {
           </h1>
           <div class="row">
             <div class="col-lg-4">
-              <div class="card">
+              <div class="cardMe">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <div
@@ -319,7 +336,7 @@ function Profile() {
                   </div>
                 </div>
               </div>
-              <div class="card">
+              <div class="cardMe">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <div
@@ -410,7 +427,7 @@ function Profile() {
             </div>
 
             <div class="col-lg-8">
-              <div class="card">
+              <div class="cardMe">
                 <div class="card-body">
                   <div class="row mb-3">
                     <div class="col-sm-3">
@@ -420,6 +437,7 @@ function Profile() {
                       <input
                         type="text"
                         class="form-control"
+                        style={{backgroundColor:"lightgrey"}}
                         value={userdata.first_name + " " + userdata.last_name}
                       />
                     </div>
@@ -430,14 +448,16 @@ function Profile() {
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <input
+                      readonly
                         type="text"
                         class="form-control"
-                        onChange={(e) => {
-                          setuserdata({
-                            ...userdata,
-                            email: e.target.value,
-                          });
-                        }}
+                        style={{backgroundColor:"lightgrey"}}
+                        // onChange={(e) => {
+                        //   setuserdata({
+                        //     ...userdata,
+                        //     email: e.target.value,
+                        //   });
+                        // }}
                         value={userdata.email}
                       />
                     </div>
@@ -449,15 +469,17 @@ function Profile() {
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <input
+                      readonly
                         type="text"
                         class="form-control"
+                        style={{backgroundColor:"lightgrey"}}
                         value={userdata.phone}
-                        onChange={(e) => {
-                          setuserdata({
-                            ...userdata,
-                            phone: e.target.value,
-                          });
-                        }}
+                        // onChange={(e) => {
+                        //   setuserdata({
+                        //     ...userdata,
+                        //     phone: e.target.value,
+                        //   });
+                        // }}
                       />
                     </div>
                   </div>
@@ -485,23 +507,13 @@ function Profile() {
 				  
                 </div>
 				<div>
-				<div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-9 text-secondary">
-                      <button
-                        class="btn btn-dark px-4 saveChanges"
-                        value="Save Changes"
-                      >
-                        Save Changes
-                      </button>
-                    </div>
-                  </div>
+			
 				</div>
 				
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <div class="card jay">
+                  <div class="cardMe jay">
                     <div class="card-body">
                       <h4 className="mt-4"> Add new Address</h4>
                       <form
@@ -510,7 +522,7 @@ function Profile() {
                         onSubmit={handleSubmit}
                         id="address-form"
                       >
-                        <div class="d-flex justify-content-evenly my-3">
+                        <div class="d-flex justify-content-evenly my-3 filterbutt">
                           <input
                             class="form-control mx-3"
                             type="text"
@@ -528,7 +540,7 @@ function Profile() {
                             onChange={callChange}
                           />
                         </div>
-                        <div class="d-flex justify-content-evenly my-3">
+                        <div class="d-flex justify-content-evenly my-3 filterbutt">
                           <input
                             class="form-control mx-3"
                             type="text"
@@ -546,7 +558,7 @@ function Profile() {
                             onChange={callChange}
                           />
                         </div>
-                        <div class="d-flex justify-content-evenly my-3">
+                        <div class="d-flex justify-content-evenly my-3 filterbutt">
                           <input
                             class="form-control mx-3"
                             type="text"
@@ -607,6 +619,7 @@ function Profile() {
                             class="custom-control-input"
                             id="default"
                             name="default"
+                            value="True"
                             onChange={callChange}
                           />
                           <label

@@ -13,7 +13,7 @@ function Cement(props) {
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('OPC 33')}
+              onClick={()=>props.handletype('Ordinary Portland Cement (OPC) 33')}
             />
             <h5>OPC 33</h5>
             {/* <p>1212 pieces</p> */}
@@ -22,7 +22,7 @@ function Cement(props) {
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('OPC 43')}
+              onClick={()=>props.handletype('Ordinary Portland Cement (OPC) 43')}
             />
             <h5> OPC 43</h5>
             {/* <p>1212 pieces</p> */}
@@ -31,7 +31,7 @@ function Cement(props) {
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('OPC 53')}
+              onClick={()=>props.handletype('Ordinary Portland Cement (OPC) 53')}
             />
             <h5>OPC 53</h5>
             {/* <p>1212 pieces</p> */}
@@ -40,25 +40,17 @@ function Cement(props) {
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('PCC')}
+              onClick={()=>props.handletype('Portland Composite Cement (PCC)')}
             />
             <h5>PCC</h5>
             {/* <p>1212 pieces</p> */}
           </div>
-          <div className="categorySectionItems slide">
-            <img
-              src={WC}
-              alt=""
-              onClick={()=>props.handletype('WHITE CEMENT')}
-            />
-            <h5>WHITE CEMENT</h5>
-            {/* <p>1212 pieces</p> */}
-          </div>
+         
           <div className="categorySectionItems slide">
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('PSC')}
+              onClick={()=>props.handletype('Portland Slag Cement (PSC)')}
             />
             <h5>PSC</h5>
             {/* <p>1212 pieces</p> */}
@@ -67,9 +59,18 @@ function Cement(props) {
             <img
               src={OPC}
               alt=""
-              onClick={()=>props.handletype('PPC')}
+              onClick={()=>props.handletype('Portland Pozzolana Cement (PPC)')}
             />
             <h5>PPC</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={WC}
+              alt=""
+              onClick={()=>props.handletype('White Cement')}
+            />
+            <h5>WHITE CEMENT</h5>
             {/* <p>1212 pieces</p> */}
           </div>
         </div>

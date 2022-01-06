@@ -1,8 +1,15 @@
 import React from "react";
 import "./OrderTrack.css";
+import { Helmet } from 'react-helmet';
 function OrderTrack() {
   return (
     <div class="orderTrack container">
+
+  <Helmet>
+    <title>Track Order | Seventh Square </title>
+    {/* Track Order on Seventh Square */}
+    <meta name="description" content="Track Order on Seventh Square" />
+  </Helmet>
       <div>
         <p className="h4">My orders / Tracking</p>
         <hr />

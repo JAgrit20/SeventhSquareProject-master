@@ -11,7 +11,8 @@ import "./ProductImage.css"
         
           const res=await fetch(`https://seller.seventhsq.com/inventory/api/picture/${props.image}`);
           const data= await res.json();
-          
+          console.log("data")
+          console.log(data)
           setimages(data)
           setbigimage(data[0].picture)
           

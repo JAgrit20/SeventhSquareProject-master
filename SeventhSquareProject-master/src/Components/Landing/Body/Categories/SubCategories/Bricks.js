@@ -19,36 +19,45 @@ function Bricks(props) {
             <img
               src={Red}
               alt=""
-              onClick={()=>props.handletype('Red Clay')}
+              onClick={()=>props.handletype('Red Clay Brick')}
             />
-            <h5>Red Clay</h5>
+            <h5>Red Clay Brick</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={AAC}
               alt=""
-              onClick={()=>props.handletype('Fly Ash (AAC)')}
+              onClick={()=>props.handletype('Fly Ash Brick')}
             />
-            <h5>Fly Ash (AAC)</h5>
+            <h5>Fly Ash  Brick</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={AAC}
+              alt=""
+              onClick={()=>props.handletype('AAC Block')}
+            />
+            <h5>AAC Block</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={Conc}
               alt=""
-              onClick={()=>props.handletype('Concrete Blocks')}
+              onClick={()=>props.handletype('Concrete Hollow Block')}
             />
-            <h5>Concrete Blocks</h5>
+            <h5>Concrete Hollow Blocks</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={REF}
               alt=""
-              onClick={()=>props.handletype('Refractory')}
+              onClick={()=>props.handletype('Refractory Brick')}
             />
-            <h5>Refractory</h5>
+            <h5>Refractory Brick</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
@@ -67,6 +76,15 @@ function Bricks(props) {
               onClick={()=>props.handletype('Engineering Brick')}
             />
             <h5>Engineering Brick</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={ENG}
+              alt=""
+              onClick={()=>props.handletype('Sand Lime Brick')}
+            />
+            <h5>Sand Lime Brick</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">

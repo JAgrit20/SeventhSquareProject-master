@@ -1,8 +1,16 @@
 import React from 'react'
 import "./Term.css";
+import { Helmet } from 'react-helmet';
 function Term() {
     return (
         <div className="termCondition">
+
+	
+  <Helmet>
+    <title>Terms & Conditions | Seventh Square</title>
+	<meta name="description" content="Terms & Conditions Seventh Square" />
+  </Helmet>
+
              <h1>Terms and conditions </h1><br/>
   <h3><span  >Of processing personal data of end users, serves also as</span><br/>
 <span  >“End User Agreement”</span><br/><br/></h3>

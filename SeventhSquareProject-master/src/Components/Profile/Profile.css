@@ -9,8 +9,8 @@
   font-family: crimson text !important;
   font-size: 40px;
 }
-.card {
-  position: relative;
+.cardMe {
+  position: relative ;
   display: flex;
   flex-direction: column;
   min-width: 0;

@@ -21,25 +21,34 @@ function Paints(props) {
               alt=""
               onClick={()=>props.handletype('Paint')}
             />
-            <h5>Paint</h5>
+            <h5>Interior</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={WP}
               alt=""
-              onClick={()=>props.handletype('Wall Putty')}
+              onClick={()=>props.handletype('Exterior')}
             />
-            <h5>Wall Putty</h5>
+            <h5>Exterior</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
             <img
               src={PR}
               alt=""
-              onClick={()=>props.handletype('Primer')}
+              onClick={()=>props.handletype('Wood & Metal Finishes')}
             />
-            <h5>Primer</h5>
+            <h5>Wood & Metal Finishes</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={PR}
+              alt=""
+              onClick={()=>props.handletype('Other')}
+            />
+            <h5>Other</h5>
             {/* <p>1212 pieces</p> */}
           </div>
          

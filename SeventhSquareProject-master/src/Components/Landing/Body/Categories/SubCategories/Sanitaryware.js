@@ -45,7 +45,7 @@ function Sanitaryware(props) {
             <img
               src={basin}
               alt=""
-              onClick={()=>props.handletype('Wash Basin')}
+              onClick={()=>props.handletype('Washbasin')}
             />
             <h5>Wash Basin</h5>
             {/* <p>1212 pieces</p> */}
@@ -54,9 +54,9 @@ function Sanitaryware(props) {
             <img
               src={closet}
               alt=""
-              onClick={()=>props.handletype('Water Closet')}
+              onClick={()=>props.handletype('Water Closet & Bidet')}
             />
-            <h5>Water Closet</h5>
+            <h5>Water Closet & Bidet</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
@@ -68,7 +68,55 @@ function Sanitaryware(props) {
             <h5>Bath Tub</h5>
             {/* <p>1212 pieces</p> */}
           </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={tub}
+              alt=""
+              onClick={()=>props.handletype('Urinal')}
+            />
+            <h5>Urinal</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={tub}
+              alt=""
+              onClick={()=>props.handletype('Flushing Cistern & Flush Tank')}
+            />
+            <h5>Flushing Cistern & Flush Tank</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={tub}
+              alt=""
+              onClick={()=>props.handletype('Fittings & Allied Product')}
+            />
+            <h5>Fittings & Allied Product</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
           {/* <div className="categorySectionItems slide">
+            <img
+              src={tub}
+              alt=""
+              onClick={()=>props.handletype('Bath Tub')}
+            />
+            <h5>Other</h5> */}
+            {/* <p>1212 pieces</p> */}
+          {/* </div> */}
+          {/* <div className="categorySectionItems slide">
+
+          Faucet
+Shower
+Sink 
+Washbasin
+Water Closet & Bidet
+Bath Tub
+Urinal
+Flushing Cistern & Flush Tank
+Fittings & Allied Product
+Other
+
             <img
               src="https://png.pngitem.com/pimgs/s/61-612316_transparent-red-brick-png-bricks-png-png-download.png"
               alt=""

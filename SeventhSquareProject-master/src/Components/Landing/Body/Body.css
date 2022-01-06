@@ -1,3 +1,6 @@
+.everything{
+    overflow:hidden;
+}
 .offerImage{
     width: 100%;
     margin: 10px 5px;
@@ -17,5 +20,34 @@
 .title .h1{
     font-size: 30px !important;
     color: rgb(83, 70, 73);
+    
    
 }
+
+@media (max-width: 920px) {
+
+.containerr {
+    /* border: 1px solid black; */
+    display: block !important;
+    padding:1em;
+  /*   background-color:red; */
+  }
+  
+  .cardicon > div {
+    min-width:7em;
+    text-align:center;
+  }
+  
+  .cardicon {
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    overflow-x:scroll;
+  }
+  }
+
+
+    .containerr{
+        display:none;
+          
+  }

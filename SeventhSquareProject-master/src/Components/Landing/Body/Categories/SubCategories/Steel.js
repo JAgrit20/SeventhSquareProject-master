@@ -14,7 +14,7 @@ function Steel(props) {
             <img
               src={TMT}
               alt=""
-              onClick={()=>props.handletype('TMT Bars')}
+              onClick={()=>props.handletype('TMT Bar')}
             />
             <h5>TMT Bars</h5>
             {/* <p>1212 pieces</p> */}
@@ -23,9 +23,9 @@ function Steel(props) {
             <img
               src={wire}
               alt=""
-              onClick={()=>props.handletype('Binding Wires')}
+              onClick={()=>props.handletype('Binding Wire & Stirrup')}
             />
-            <h5>Binding Wires</h5>
+            <h5>Binding Wires & Stirrup</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">

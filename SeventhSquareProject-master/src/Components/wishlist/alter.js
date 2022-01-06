@@ -143,12 +143,12 @@ function Wishlist() {
 
   //   const data = await response.json();
   //   console.log(data);
-  //   Swal.fire({
-  //     icon: 'success',
-  //     title: 'Thank you',
-  //     text: 'Review Recorded',
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Thank you',
+    //   text: 'Review Recorded',
       
-  //   })
+    // })
 
   // }
 

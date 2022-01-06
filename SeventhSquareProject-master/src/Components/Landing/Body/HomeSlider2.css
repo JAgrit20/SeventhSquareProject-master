@@ -1,0 +1,57 @@
+
+.slide1{ 
+    background-image:url('../Body/slider_images/Landing\ Page\ -\ Slider_1.png');
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity:1;
+    overflow: hidden;
+}
+.slide2{
+    background-image:url('../Body/slider_images/Landing\ Page\ -\ Slider_2.png');
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity:1;
+    overflow: hidden;
+}
+.slide3{
+    background-image:url('../Body/slider_images/Landing\ Page\ -\ Slider_3.png');
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity:1;
+    overflow: hidden;
+}
+
+.carousel-caption{
+    height: 100px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:80px;
+    margin-bottom: 4rem;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+}
+.carousel-caption h2,p{
+    color: white ;
+}
+.homeslider .carousel-inner .carousel-item{
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    transition: 0s !important;
+}
+

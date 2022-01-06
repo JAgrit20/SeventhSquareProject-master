@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useEffect,useContext, useState } from "react";
 
+import Cement from "../src/Components/Landing/Body/Categories/SubCategories/Hardware";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import OrderTrack from "./Components/OrderTrack/OrderTrack";
 import Landing from "./Components/Landing/Landing";
@@ -52,6 +53,8 @@ import SearchResult from "./Components/SearchResult";
 import success from "./Components/payu/success";
 import Success from "./Components/payu/success";
 import Failure from "./Components/payu/Failure";
+import Order_sum from "./Components/orders/Order_sum";
+import Order_sum_i from "./Components/orders/Order_sum_i";
 
 export const CartContext = createContext();
 const initialState = {
@@ -120,8 +123,14 @@ function App(props) {
             <Route  onClick={() => {window.location.reload()}} path={"/product/:id"}>
               <Product />
             </Route>
+            <Route  onClick={() => {window.location.reload()}} path={"/Order_sum_i/:id"}>
+              <Order_sum_i />
+            </Route>
             <Route  onClick={() => {window.location.reload()}} path="/cart">
             <ContextCart />
+            </Route>
+            <Route  onClick={() => {window.location.reload()}} path="/Order_sum">
+            <Order_sum />
             </Route>
             <Route  onClick={() => {window.location.reload()}} path="/login">
               <Login />
@@ -158,12 +167,15 @@ function App(props) {
             </Route>
             <Route  onClick={() => {window.location.reload()}} path="/requests">
               <Request/>
-            </Route>
+            </Route> 
             <Route  onClick={() => {window.location.reload()}} path="/wishlist">
               <Wishlist/>
             </Route>
             <Route  onClick={() => {window.location.reload()}} path="/requestQuotation">
               <RequestQuotation/>
+            </Route>
+            <Route  onClick={() => {window.location.reload()}} path="/Cement">
+            <Cement  />
             </Route>
             <Route  onClick={() => {window.location.reload()}} path="/payu">
               <Payumoney/>

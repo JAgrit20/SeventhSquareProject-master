@@ -2,6 +2,7 @@ import React from 'react'
 import "./Faq.css"
 import FaqHeading from './FaqHeading'
 import Accordion from './Accordion'
+
 function FaqAccount() {
   const topicsStyle = {
     marginTop : "3%",

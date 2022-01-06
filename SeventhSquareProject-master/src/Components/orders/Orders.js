@@ -6,6 +6,9 @@ import '../orders/orders.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Modal from 'react-bootstrap/Modal'
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import Table from 'react-bootstrap/Table'
+
 function Orders() {
   const[orderdata,setdata]=useState([]);
   const getdata=async()=>{
@@ -15,6 +18,7 @@ function Orders() {
         Authorization: "token " + localStorage.getItem("token"),
       },
     };
+   
     console.log(config);
     const res=await fetch('https://api.seventhsq.com/orders/orders/all/',config);
     const data= await res.json();
@@ -22,102 +26,125 @@ function Orders() {
     setdata(data);
     
   
-    
-    
 }
 useEffect(()=>{
   getdata();
 },[])
+   
     return (
-        <div>
-            
-            <div className='row'>
-            <div className='col-md-7 sm-12'>
-            <div className="d-flex justify-content-center my-5">
-            <h1 className='mx-2 my-2'>My Orders</h1>
-            </div>
-            {/* <div class="card mb-5 mx-5 px-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="card-img" alt="..."/>
-    </div>
-    <div class="col-md-4">
-      <div class="card-body">
-        <h3 class="card-title fw-bold">Order</h3>
-        <p class="mb-2 fw-bold">
-        Price :{" "}
-        <span class="text-underline text-danger text-decoration-line-through">10</span>{" "}
-        <span class="text-success">20</span>
-        </p>
-        <p class="mb-2  fw-bold">Description : Lorem Ipsum is simply dummy text of the 
-        printing and typesetting industry.
-         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-        
-        <p class="mb-2  fw-bold">
-        Seller :{" "}
-        <span >Seven Square</span>{" "}
-        </p>
-        <p class="mb-2 mx-1 fw-bold">
-        <a href="/">Product details</a>{" "}
-        </p>
-      </div>
-    </div>
+      <div style={{overflowX:"auto"}}>
+        {/* Customer Support Seventh Square */}
+        {/* <Helmet>
+    <title>Customer Support Seventh Square </title>
+    <meta name="description" content="Login Seventh Square" />
+  </Helmet> */}
 
-    <div class="col-md-4 mt-4">
-      <div class="card-body">
-       
-        <p class="mb-2 fw-bold">
-        Order no. :{" "}
-        <span class="text-underline ">1</span>{" "}
-       
-        </p>
-        <p class="mb-2  fw-bold">Invoice no. : 2 </p>
-        <p class="mb-2  fw-bold">Pck. Size : 2</p>
-        <p class="mb-2  fw-bold">
-         Delivery Date :{" "}
-        <span >1/3/2021</span>{" "}
-        </p>
-        <p class="mb-2  fw-bold">
-         Order Status :{" "}
-        <span >Delievered</span>{" "}
-        </p>
-        <p class="mb-2 mx-1 fw-bold">
-        <a href="/">Review</a>{" "}
-        </p>
-        
-      </div>
-    </div>
-  </div>
-</div> */}
-        
-        <div className="d-flex justify-content-center my-5">
-            
-            </div>
-      {
-                    orderdata.map((curr,index)=>{
-                    return(
-                     
+    <div style={{justifyContent: "center", alignItems:"center",display: "flex"}} className=" requestForQuote">
+      <div className="requests py-3">
+        <h1 className="mx-5 my-5 text-center" style={{fontFamily:"crimson text",fontSize:"35px"}}>MY ORDERS</h1>
+        <span
+                  style={{
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    marginLeft: "10px",
+                    marginRight: "4px",
+                    fontFamily: "open sans",
+                    clear: "both",
+                    display: "inline-block",
+                    overflow: "hidden",
+                    paddingRight: "45px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Sort By
+                </span>
+
+                <select
+                  id="htl"
+                  class="form-select"
+                  // onChange={handleorder}
+                  style={{ fontSize: "15px !important" }}
+                >
+                  {/* <select class="form-select" > */}
+                  <option
+                    value="date"
+                    name="date"
+                    style={{ fontSize: "15px !important" }}
+                  >
+                  date
+                  </option>
+                  <option
+                    value="Status"
+                    name="Status"
+                    style={{ fontSize: "15px !important" }}
+                  >
+           Status
+                  </option>
+                  <option
+                    value="Amount"
+                    name="Amount"
+                    style={{ fontSize: "15px !important" }}
+                  >
+                Amount
+                  </option>
+                </select>
+
+{/* style={{fontColor:"red",color:"black",fontWeight:"400",fontFamily:"open sans",fontSize:"15px"}} */}
+        <div className="">
+          <Table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"70px", height:"20px"}}>Order no.</th>
+                <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"250px"}}>Product Info</th>
+                <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"90px"}}>Price</th>
+
+                <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"70px"}}>Quantity</th>
+                <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"100px"}}>Purchase Date</th>
+                <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"70px"}}>Status </th>
+                <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"100px"}}>Amount Paid</th>
+                <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"100px"}}>Action </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {orderdata
+                ? orderdata.map((curr, index) => {
+                  if(curr.order_success){
+                    return (
+      
                          <Ordercard  title={curr.title} oldprice={curr.oldprice} price={curr.price}
                           pcksize={curr.pcksize} estdelivery={curr.estdelivery}  key={index} orderid={curr.id}
-                          items={curr.items} status={curr.order_success} />
-                     
-                      
-                    )
-                      
-                })
-            }
-      </div>
-      
-      <div className='col-md-6 sm-12'>
-      
-     
+                          items={curr.items} status={curr.order_success} datee={curr.created_at.slice(0,10)}/>
+              
+                                  
+                  );
+                  }
+                  })
+                : null}
+
+
+              {/*  */}
+            </tbody>
+          </Table>
+
         
-      </div>
-            </div>
-          
-            
         </div>
-    )
+      </div>
+    </div>
+    </div>
+    );
 }
 
 export default Orders
+
+// {props.brands
+//   ? props.brands.map((curr, index) => {
+//       return (
+//         <div>
+       
+
+    
+//         </div>
+//       );
+//     })
+//   : null}

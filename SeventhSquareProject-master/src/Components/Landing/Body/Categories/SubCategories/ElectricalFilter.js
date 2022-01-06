@@ -1,291 +1,131 @@
 import React from 'react'
 import "../Categories.css";
 function ElectricalFilter(props) {
-    return (
-        <div className="bodyLeft shadow">
-            <div className="leftFilterHeading">
-              <h1>Filter</h1>{" "}
-            </div>
-            <div className="filerBody">
-              <section>
-                <section>
-                  {/* <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Size</h6>
+  return (
+    <div
+      className="bodyLeft shadow"
+      style={{ padding: "10px 10px !important" }}
+    >
+      <div className="leftFilterHeading">
+        <h3 style={{fontFamily:"open sans"}}>FILTER PRODUCTS</h3>
+      </div>
+      <hr class="hrf"
+        style={{
+          color: "#000000",
+          backgroundColor: "#000000",
+          width: 200,
+          height: 2.0,
+          borderColor: "#000000",
+          margin: "auto",
+          marginBottom: 4,
+        }}
+      />
+      <div className="filerBody">
+        <section>
+          <section>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input
-                        type="checkbox"
-                        class="form-check-input filled-in"
-                        id="34"
-                      />
-                      <label
-                        class="form-check-label small text-uppercase card-link-secondary"
-                        for="34"
-                      >
-                        34
-                      </label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input
-                        type="checkbox"
-                        class="form-check-input filled-in"
-                        id="36"
-                      />
-                      <label
-                        class="form-check-label small text-uppercase card-link-secondary"
-                        for="36"
-                      >
-                        36
-                      </label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input
-                        type="checkbox"
-                        class="form-check-input filled-in"
-                        id="38"
-                      />
-                      <label
-                        class="form-check-label small text-uppercase card-link-secondary"
-                        for="38"
-                      >
-                        38
-                      </label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input
-                        type="checkbox"
-                        class="form-check-input filled-in"
-                        id="40"
-                      />
-                      <label
-                        class="form-check-label small text-uppercase card-link-secondary"
-                        for="40"
-                      >
-                        40
-                      </label>
-                    </div>
-                    <a
-                      class="btn btn-link text-muted p-0"
-                      data-toggle="collapse"
-                      href="#collapseExample"
-                      aria-expanded="false"
-                      aria-controls="collapseExample"
-                    >
-                      More
-                    </a> */}
-                    {/* <div class="collapse pt-3" id="collapseExample">
-                      <div class="form-check pl-0 mb-3">
-                        <input
-                          type="checkbox"
-                          class="form-check-input filled-in"
-                          id="42"
-                        />
-                        <label
-                          class="form-check-label small text-uppercase card-link-secondary"
-                          for="42"
-                        >
-                          42
-                        </label>
-                      </div>
-                      <div class="form-check pl-0 mb-3">
-                        <input
-                          type="checkbox"
-                          class="form-check-input filled-in"
-                          id="44"
-                        />
-                        <label
-                          class="form-check-label small text-uppercase card-link-secondary"
-                          for="44"
-                        >
-                          44
-                        </label>
-                      </div>
-                      <div class="form-check pl-0 mb-3">
-                        <input
-                          type="checkbox"
-                          class="form-check-input filled-in"
-                          id="46"
-                        />
-                        <label
-                          class="form-check-label small text-uppercase card-link-secondary"
-                          for="46"
-                        >
-                          46
-                        </label>
-                      </div>
-                      <div class="form-check pl-0 mb-3">
-                        <input
-                          type="checkbox"
-                          class="form-check-input filled-in"
-                          id="50"
-                        />
-                        <label
-                          class="form-check-label small text-uppercase card-link-secondary"
-                          for="50"
-                        >
-                          50
-                        </label>
-                      </div>
-                    </div>
-                  </section> */}
 
-                  {/* <section class="mb-4 ratingBlock">
-                    <h6 class="font-weight-bold mb-3">Avg. Customer Review</h6>
-
-                    <a href="#!" className="">
-                      <ul class="rating">
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                      </ul>
-                    </a>
-                    <a href="#!">
-                      <ul class="rating">
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                      </ul>
-                    </a>
-                    <a href="#!">
-                      <ul class="rating">
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                      </ul>
-                    </a>
-                    <a href="#!">
-                      <ul class="rating">
-                        <li className="py-2">
-                          <i class="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li className="py-2">
-                          <i class="far fa-star fa-sm text-primary"></i>
-                        </li>
-                      </ul>
-                    </a>
-                  </section> */}
-                  <h6 class="font-weight-bold mb-3">Brands</h6>
-                  {
-                      props.brands?
-                      props.brands.map((curr,index)=>{
-                        return(
-                          <div>
-                            {/* <button onClick={()=>props.handlebrands(curr)}>
-                              <p>
-                            {curr}
-                            </p>
-                            </button> */}
-                              <div class="form-check pl-0 mb-3 ml-4">
+            <h3 class="mb-3" style={{ fontWeight: 500 }}>
+              BRANDS
+            </h3>
+            {props.brands
+              ? props.brands.map((curr, index) => {
+                  return (
+                    <div>
+                      
+                      <div class="form-check pl-0 mb-3 mx-4">
+                          <div class="custom-control custom-checkbox mx-2">
                             <input
+                              style={{
+                                width: "15px !important",
+                                height: "15px !important",
+                                backgroundColor: "#D7B1D7",
+                                // paddingBottom: "10px",
+                              }}
                               type="checkbox"
-                              class="form-check-input filled-in"
+                              // class="form-check-input filled-in"
                               id={curr}
-                              onChange={()=>props.handlebrands(curr)}
-                              // defaultChecked={props.filterbrands.includes(curr)?true:false}
+                              onChange={() => props.handlebrands(curr)}
+                              class="custom-control-input"
+                              name="default"
+
                             />
                             <label
-                              class="form-check-label small text-uppercase card-link-secondary"
+                              style={{
+                                fontFamily:"open sans",
+                                fontSize: "15px",
+                                paddingLeft: "5px",
+                                justifyContent: "center",
+                                alignContent: "center",
+                              }}
+                              class="custom-control-label card-link-secondary lab2"
                               for={curr}
                             >
                               {curr}
                             </label>
-                            </div>
-                            </div>
-                          
-                        )
-                      }):null
-
-                    }
-                     
-                  <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Price</h6>
-
-                   
-                    <form>
-                      <div class="d-flex align-items-center mt-4 pb-1">
-                        <div class="md-form md-outline my-0">
-                          <input
-                            id="from"
-                            type="text"
-                            class="form-control mb-2"
-                            name='min'
-                            onChange={props.handlemin}
-                           
-                          />
-                          <label for="form">₹ Min</label>
+                          </div>
                         </div>
-                        <p class="px-2 mb-0 text-muted"> - </p>
-                        <div class="md-form md-outline my-0">
-                          <input
-                            id="to"
-                            type="text"
-                            class="form-control mb-2"
-                            name='max'
-                            onChange={props.handlemax}
-                          />
-                          <label for="to">₹ Max</label>
-                        </div>
-                      </div>
-                    </form>
-                  </section>
-                  <div class="d-flex justify-content-evenly my-3">
-                    <button type="button" class="btn btn-dark" onClick={props.handleapply}>
-                        Apply Filters
-                      </button>
-                      <button type="button" class="btn btn-dark" onClick={props.handleremove}>
-                        Remove Filters
-                      </button>
-
                     </div>
-                   
+                  );
+                })
+              : null}
+            <section class="mb-4">
+              <h3 class="mb-1" style={{ fontWeight: 500 }}>
+                PRICE
+              </h3>
 
-                  {/* <section class="mb-4">
-                    <h6 class="font-weight-bold mb-3">Price</h6>
+              <form>
+               <div class="d-flex align-items-center mt-1 pb-1 maxmin">
+                  <div class="md-form md-outline my-0">
+                    <input
+                      id="from"
+                      type="text"
+                      class="form-control mb-2"
+                      name="min"
+                      onChange={props.handlemin}
+                    />
+                    <label for="form" id="min">
+                      ₹ Min
+                    </label>
+                  </div>
+                  <p class="px-2 mb-0 text-muted"> - </p>
+                  <div class="md-form md-outline my-0">
+                    <input
+                      id="to"
+                      type="text"
+                      class="form-control mb-2"
+                      name="max"
+                      onChange={props.handlemax}
+                    />
+                    <label for="to" id="min">
+                      ₹ Max
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </section>
+
+            <div class="d-flex justify-content-evenly my-3 filterbutt">
+              <button
+                type="button"
+                class="btn btn-dark filterbuttt"
+                onClick={props.handleapply}
+                style={{ marginRight: "5%",fontSize: "10px" ,marginBotton:"10px"}}
+              >
+                Apply Filters
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark filterbuttt"
+                onClick={props.handleremove}
+              style={{ marginRight: "5%",fontSize: "10px" ,marginBotton:"10px"}}
+              >
+                Remove Filters
+              </button>
+            </div>
+
+            {/* <section class="mb-4">
+                    <h3 class="mb-3">Price</h3>
 
                     <div class="slider-price d-flex align-items-center my-4">
                       <span class="font-weight-normal small text-muted mr-2">
@@ -299,11 +139,11 @@ function ElectricalFilter(props) {
                       </span>
                     </div>
                   </section> */}
-                </section>
-              </section>
-            </div>
-          </div>
-    )
+          </section>
+        </section>
+      </div>
+    </div>
+  );
 }
 
 export default ElectricalFilter

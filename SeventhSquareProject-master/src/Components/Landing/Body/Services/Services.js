@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import "./Services.css";
 import Service1 from "../../../../images/service1.png";
 import Service2 from "../../../../images/service2.png";
 import Service3 from "../../../../images/service3.png";
 function Services() {
+ 
     return (
         <div>
         <div class="title">

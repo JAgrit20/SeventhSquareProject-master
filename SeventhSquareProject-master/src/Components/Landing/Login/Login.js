@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet';
 
 
 class Login extends Component {
@@ -49,6 +50,12 @@ class Login extends Component {
   render() {
     return (
       <div>
+
+  <Helmet>
+    <title>Login | Seventh Square</title>
+    {/* Login Seventh Square */}
+    <meta name="description" content="Login Seventh Square " />
+  </Helmet>
         <div className="loginPanel">
       <div class="main">
         <section class="sign-in">
@@ -94,7 +101,7 @@ class Login extends Component {
                   </div>
                   
                   <div class="form-group form-button">
-                    <button
+                    <button style={{width:"100px"}}
                       type="submit"
                       name="login"
                       id="login"

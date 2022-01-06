@@ -2,6 +2,15 @@ import React from 'react'
 import "./Blogs.css"
 import { BrowserRouter as Router, Link } from "react-router-dom";
 function Blogcontainer(props) {
+
+    function smallestToBiggest(a, b) {
+        return a.createdDate - b.createdDate;
+      }
+      
+      function biggestToSmallest(a, b) {
+        return b.createdDate - a.createdDate;
+      }
+      
     return (
           <Link  to={"/detail-blog/" + props.slug}>
           

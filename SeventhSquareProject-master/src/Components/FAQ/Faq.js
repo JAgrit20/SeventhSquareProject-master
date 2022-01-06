@@ -1,7 +1,9 @@
 import React from 'react'
+
 import "./Faq.css"
 import FaqHeading from './FaqHeading'
 import Accordion from './Accordion'
+import { Helmet } from 'react-helmet';
 function Faq() {
   const topicsStyle = {
     marginTop : "3%",
@@ -50,6 +52,13 @@ function Faq() {
   }
     return (
       <div>
+
+    
+        <Helmet>
+    <title> Frequently Asked Questions (FAQ) | Seventh Square  </title>
+    {/* FAQ regarding Seventh Square */}
+    <meta name="description" content="FAQ regarding Seventh Square " />
+  </Helmet>
       <FaqHeading />
         <div className="container faqPanel">
           
@@ -144,13 +153,13 @@ function Faq() {
       <h1 class="text-center"
         style={mainHeadingStyle}>Recent FAQs
       </h1>
-      <div class="accordion_bk">
+      <div class="accordion_bk" >
         <div class="mx-auto">
           
           <div id="accordionExample" class="accordion">
     
       
-            <div class="card">
+            <div class="card border-0"  style={{width:"100%",boxShadow:"0 1px 0px 0"}}>
              
               <Accordion tag=''/>
             </div>

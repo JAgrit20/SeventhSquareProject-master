@@ -27,9 +27,10 @@ function Accordion(props) {
 
    },[])
 
-   return Faqdata.slice(0,12).map((curr,index) => {
+   return Faqdata.slice(0,20).map((curr,index) => {
     return (
-        <div className="FaqAccordion">
+      <>
+        <div className="FaqAccordion" >
         <input
           className="FaqAccordionInput"
           type="checkbox"
@@ -54,6 +55,7 @@ function Accordion(props) {
        
         
       </div>
+      </>
     )
    
 })

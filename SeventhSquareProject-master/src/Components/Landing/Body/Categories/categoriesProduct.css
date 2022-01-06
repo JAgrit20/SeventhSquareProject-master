@@ -8,14 +8,15 @@ justify-content: space-evenly;
     margin: 50px 0;
     }
     .gallery h3{
-        text-align: center;
+        text-align: left;
         font-size: 12px;
-        margin: 0;
+        margin-left: 5px;
         padding-top: 5px;
         }
     .gallery .content{
         height: auto;
-    width: 24%;
+    width: 18%;
+    /* width: "30px !important"; */
     margin: 15px;
     box-sizing: border-box;
     float: left;
@@ -26,6 +27,7 @@ justify-content: space-evenly;
     padding-top: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: .4s;
+    border:2px solid rgba(149, 146, 146, 0.52)
     }
      .gallery .content:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2);
@@ -46,10 +48,10 @@ justify-content: space-evenly;
     padding: 0 8px;
     }
     .gallery h6{
-    font-size: 10px;
-    text-align: center;
+    font-size: 15px;
+    text-align: left;
     color: #222f3e;
-    margin: 0;
+    margin: 5px;
     }
     .gallery ul{
     list-style-type: none;
@@ -66,7 +68,7 @@ justify-content: space-evenly;
     font-size: 11px;
     color: #fff;
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border:0px;
     outline: none;
     cursor: pointer;
@@ -74,12 +76,31 @@ justify-content: space-evenly;
     border-bottom-right-radius: 1px;
     border-bottom-left-radius: 1px;
     background-color: #0b0b0b;
+    height: 60%;
     }
    
     @media(max-width: 1000px){
     .content{
     width: 46%;
+
     }
+    .gallery .content {
+        height: auto;
+        width: 90%;
+        margin: 15px;
+        box-sizing: border-box;
+        float: left;
+        text-align: center;
+        border-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 2px;
+        padding-top: 5px;
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+        transition: .4s;
+        border: 2px solid rgba(149, 146, 146, 0.52);
+    }
+    
+    
     }
     @media(max-width: 750px){
     .content{

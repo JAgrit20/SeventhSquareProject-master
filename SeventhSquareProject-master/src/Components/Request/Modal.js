@@ -40,6 +40,7 @@ function Popup(props) {
         res=>{
         
         window.alert("Request Sent");
+        window.location.reload()
         }
 
       ).catch(

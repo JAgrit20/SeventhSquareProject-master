@@ -13,7 +13,7 @@ function ReadyMixConcrete() {
               alt=""
               // onClick={()=>props.handletype('Fly Ash (AAC)')}
             />
-            <h5>Modular Kitchen</h5>
+            <h5>Kitchen</h5>
             {/* <p>1212 pieces</p> */}
           </div>
           <div className="categorySectionItems slide">
@@ -22,7 +22,16 @@ function ReadyMixConcrete() {
               alt=""
               // onClick={()=>props.handletype('Concrete Blocks')}
             />
-            <h5>Modular Wardrobe</h5>
+            <h5>Bath</h5>
+            {/* <p>1212 pieces</p> */}
+          </div>
+          <div className="categorySectionItems slide">
+            <img
+              src={AAC}
+              alt=""
+              // onClick={()=>props.handletype('Concrete Blocks')}
+            />
+            <h5>Wardrobe</h5>
             {/* <p>1212 pieces</p> */}
           </div>
         </div>
