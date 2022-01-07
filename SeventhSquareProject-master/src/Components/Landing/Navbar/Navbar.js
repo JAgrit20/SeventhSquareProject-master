@@ -718,12 +718,15 @@ function Navbar() {
                        
                       </div>
                     </li>
-                    <li class="header_li">
-                      <Link to="/catogoriesLanding/Pipes_&_Fittings">Plumbing and Electrical</Link>
-                      
+                    <li class="header_li"> 
+                    <Link to="/">
+                      Plumbing and Electrical
+                      </Link>
                       <div class="menu-sub hvac">
                         <div class="menu-col-1">
-                        <h4 class="menu-category">Pipes & Fittings</h4>                        
+                        <Link to="/catogoriesLanding/Pipes_&_Fittings">
+                        <h4 class="menu-category">Pipes & Fittings</h4>       
+                        </Link>                 
                         <ul>
                           <li   onClick={()=>handleClickpipes("UPVC Pipe")}>
                             <Link>UPVC Pipes</Link>
@@ -895,8 +898,11 @@ function Navbar() {
                     <Link to="/catogoriesLanding/Flooring_&_wall">Flooring & wall</Link>
                     <div class="menu-sub flooring">
                       <div class="menu-col-1">
+                        
                       <h4 class="menu-category">
-                           Tiles
+                        <li onClick={()=>handleClickfloor("Tiles")}  style={{cursor:"pointer !important"}}>
+                           Tiles  
+                        </li>
                           </h4>
                         <ul>
                             <li onClick={()=>handleClickfloor("Tiles - Ceramic")} >
@@ -932,7 +938,9 @@ function Navbar() {
                         </div>
                         <div class="menu-col-1">
                           <h4 class="menu-category">
+                          <li onClick={()=>handleClickfloor("Wooden Flooring")}  style={{cursor:"pointer !important"}}>
                          Wooden Flooring
+                          </li>
                           </h4>
                         <ul>
                         <li onClick={()=>handleClickfloor("Wooden Flooring - Hardwood")} >
@@ -964,7 +972,9 @@ function Navbar() {
                         </div>
                         <div class="menu-col-1">
                   <h4 class="menu-category">
+                  <li onClick={()=>handleClickfloor("Natural Stone")}  style={{cursor:"pointer !important"}}>
                           Natural Stone
+                          </li>
                           </h4>
 
                           <ul>
@@ -1741,11 +1751,13 @@ function Navbar() {
 </div>
 </li>
 <li class="header_li">
-<Link to="/catogoriesLanding/Pipes_&_Fittings">Plumbing and Electrical</Link>
+<Link to="/">Plumbing and Electrical</Link>
 
 <div class="menu-sub hvac">
 <div class="menu-col-1">
-<h4 class="menu-category">Pipes & Fittings</h4>                        
+<Link to="/catogoriesLanding/Pipes_&_Fittings">
+<h4 class="menu-category">Pipes & Fittings</h4> 
+</Link>edwwwwwwwww                 
 <ul>
 <li   onClick={()=>handleClickpipes("UPVC Pipe")}>
   <Link>UPVC Pipes</Link>
@@ -1918,7 +1930,9 @@ HVAC
 <div class="menu-sub flooring">
 <div class="menu-col-1">
 <h4 class="menu-category">
+<li onClick={()=>handleClickfloor("Tiles")}>
  Tiles
+</li>
 </h4>
 <ul>
   <li onClick={()=>handleClickfloor("Tiles - Ceramic")} >
@@ -1953,8 +1967,10 @@ HVAC
 </ul>
 </div>
 <div class="menu-col-1">
-<h4 class="menu-category">
+<h4 class="menu-category"  style={{cursor:"pointer !important"}}>
+<li onClick={()=>handleClickfloor("Wooden Flooring")}  style={{cursor:"pointer !important"}}>
 Wooden Flooring
+</li>
 </h4>
 <ul>
 <li onClick={()=>handleClickfloor("Wooden Flooring - Hardwood")} >
@@ -1977,7 +1993,7 @@ Wooden Flooring
 Flooring - Other 
       </p> 
 
-<p className="fw-bold fs-5" onClick={()=>handleClickfloor("Wooden Flooring - Hardwood")}  style={{cursor:"cursor"}}>
+<p className="fw-bold fs-5" onClick={()=>handleClickfloor("WallPaper, Mural & Panels")}  style={{cursor:"cursor"}}>
 
 WallPaper, Mural & Panels
 
@@ -1986,7 +2002,9 @@ WallPaper, Mural & Panels
 </div>
 <div class="menu-col-1">
 <h4 class="menu-category">
+<li onClick={()=>handleClickfloor("Natural Stone")}  style={{cursor:"pointer !important"}}>
 Natural Stone
+</li>
 </h4>
 
 <ul>
