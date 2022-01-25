@@ -10,7 +10,7 @@ function Wood(props) {
     return (
         <div className="categorySection">
          
-          <h1 className="text-center mt-5 pt-4">Wood</h1>
+          <h1 className="text-center mt-5 pt-4">Boards & Sheets</h1>
 
         <div className="categorySectionOptions">
           <div className="categorySectionItems slide">

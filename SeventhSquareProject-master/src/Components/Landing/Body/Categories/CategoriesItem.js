@@ -51,7 +51,7 @@ export const catItem = [
     {
         id: "9",
         image : require('./Categories_images/wood.jpg'),
-        title : "Boards & Sheets",
+        title : "Boards_&_Sheets",
 
     },
     {

@@ -519,7 +519,7 @@ function CategoriesLanding(props) {
           <Aggregates handletype={handletype} />
         ) : name == "Modular" ? (
           <ReadyMixConcrete handletype={handletype} /> //no page for rmx so swapped modular with it
-        ) : name == "Boards & Sheets" ? (
+        ) : name == "Boards_&_Sheets" ? (
           <Wood handletype={handletype} />
         ) : name == "Glass" ? (
           <Glass handletype={handletype} />
@@ -592,7 +592,7 @@ function CategoriesLanding(props) {
             />
           ) : name == "Modular" && showf ? (
             <ReadyMixConcreteFilter />
-          ) : name == "Boards & Sheets" && showf ? (
+          ) : name == "Boards_&_Sheets" && showf ? (
             <WoodFilter
               handlemin={handlemin}
               handlemax={handlemax}

@@ -149,6 +149,8 @@ function Checkout() {
         proName: item.title,
       });
     }
+
+    console.log("cartItems");
     console.log(cartItems);
 
     if (same == true) {
@@ -174,7 +176,7 @@ function Checkout() {
       };
       console.log(config.body);
       const res = await fetch(
-        "https://api.seventhsq.com/orders/orders/",
+        "http://127.0.0.1:8001/orders/orders/",
         config
       );
       window.alert("order placed");

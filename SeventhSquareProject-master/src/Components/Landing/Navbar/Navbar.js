@@ -189,7 +189,7 @@ function Navbar() {
   }
   const handleplywood = (value) =>{
     console.log(value)
-    history.push({pathname:'/catogoriesLanding/wood',state:value})
+    history.push({pathname:'/catogoriesLanding/Boards_&_Sheets',state:value})
   }
   const handledoors = (value) =>{
     console.log(value)
@@ -1121,14 +1121,14 @@ function Navbar() {
                             </li>
                           
                             </ul>
-                            <Link to="/catogoriesLanding/wood">
+                            <Link to="/catogoriesLanding/Boards_&_Sheets">
                             <h4 class="menu-category">Boards & Sheets</h4>                       
                                  </Link>
                           <ul>             
                           <li onClick={()=>handleplywood("Plywood")}>
                           <Link  >Plywood</Link>
                         </li>
-                        <li onClick={()=>handleplywood("High Density Fibreboard (HDF)")}>
+                        <li onClick={()=>handleplywood("Medium Density Fibreboard (MDF)")}>
                           <Link  >Medium Density Fibreboard (MDF)</Link>
                         </li>
                         <li onClick={()=>handleplywood("High Density Fibreboard (HDF)")}>
@@ -1757,7 +1757,7 @@ function Navbar() {
 <div class="menu-col-1">
 <Link to="/catogoriesLanding/Pipes_&_Fittings">
 <h4 class="menu-category">Pipes & Fittings</h4> 
-</Link>edwwwwwwwww                 
+</Link>          
 <ul>
 <li   onClick={()=>handleClickpipes("UPVC Pipe")}>
   <Link>UPVC Pipes</Link>
@@ -2151,14 +2151,14 @@ Roofing</h4>
   </li>
 
   </ul>
-  <Link to="/catogoriesLanding/wood">
+  <Link to="/catogoriesLanding/Boards_&_Sheets">
   <h4 class="menu-category">Boards & Sheets</h4>                       
        </Link>
 <ul>             
 <li onClick={()=>handleplywood("Plywood")}>
 <Link  >Plywood</Link>
 </li>
-<li onClick={()=>handleplywood("High Density Fibreboard (HDF)")}>
+<li onClick={()=>handleplywood("Medium Density Fibreboard (MDF)")}>
 <Link  >Medium Density Fibreboard (MDF)</Link>
 </li>
 <li onClick={()=>handleplywood("High Density Fibreboard (HDF)")}>

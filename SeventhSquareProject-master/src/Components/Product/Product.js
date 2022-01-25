@@ -369,7 +369,9 @@ function Product() {
 
         <div class="column">
           <div class="col-md-12">
-            <h2 class="product-title">{users.name}</h2>
+            
+        
+<h2 class="product-title">{users.name}</h2>
             <h3 className="mt-5 ">{users.brand_name}</h3>
             <div class="product-detail">
               <p>{users.description}</p>
@@ -377,7 +379,9 @@ function Product() {
 
             <div class="price-col">
               <div class="product-price">
-                <p class="last-price">
+              {users.Price_on_request != true ? (
+                <div>
+                 <p class="last-price"> 
                   Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
                 </p>
                 <p class="new-price">
@@ -386,6 +390,12 @@ function Product() {
                     {users.sellingPrice}/{users.qtyUnit}  ({users.discount}% OFF) 
                   </span>
                 </p>
+                  </div>
+              ) : (
+                <h6 style={{fontSize:"20px",color:"red"}} class="product-title">Price On Request </h6>
+              )}
+                
+                
               </div>
               <div class="product-rating">
                 {totalreview == 0 ? (
@@ -498,7 +508,9 @@ function Product() {
 <span style={{fontSize:"15px",fontWeight:700,paddingLeft:"2px"}}>{totalreview.toFixed(1)}/5</span>
             </div>
             <div class="exclusiveGst">
-              {users.incl_gst ? (
+              
+            
+              {users.incl_gst  ? (
                 <span> ( Inclusive of GST {users.gstRate}% )</span>
               ) : (
                 <span> ( Exclusive of GST {users.gstRate}% )</span>
@@ -634,12 +646,12 @@ function Product() {
 
                   {users.guarantee ? (
                     <p>
-                      Guarantee : <span>{users.guarantee} yr</span>
+                      Guarantee : <span>{users.guarantee} months </span>
                     </p>
                   ) : null}
                   {users.warranty ? (
                     <p>
-                      Warranty : <span>{users.warranty} yr</span>
+                      Warranty : <span>{users.warranty} months </span>
                     </p>
                   ) : null}
                   {users.packagingSize ? (
