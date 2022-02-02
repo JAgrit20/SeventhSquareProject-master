@@ -49,7 +49,7 @@ function Cat(props) {
       // "item": users.id,
       // "gst":users.gstRate
 
-      <CatItem sellerId={curr.account}category={curr.category} subcategory={curr.subCategory} brand={curr.brand_name} incl_gst={curr.incl_gst}name={curr.name} price={curr.sellingPrice} key={index} id={curr.id} oldp={curr.markedPrice} gst={curr.gstRate} handleapply={props.handleapply} />
+      <CatItem sellerId={curr.account}category={curr.category} subcategory={curr.subCategory} brand={curr.brand_name} incl_gst={curr.incl_gst}name={curr.name} price={curr.sellingPrice} key={index} id={curr.id} oldp={curr.markedPrice} gst={curr.gstRate} handleapply={props.handleapply}priceOnRequest={props.Price_on_request}  />
 
     );
   }));

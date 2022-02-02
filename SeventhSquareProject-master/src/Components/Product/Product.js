@@ -55,6 +55,7 @@ function Product() {
   const [BpomodalShow, setBpoModalShow] = useState(false);
   const [InfomodalShow, setInfoModalShow] = useState(false);
   const [usertoken, setusertoken] = useState();
+  const [variants, setvariants] = useState();
 
   const getreviews = async () => {
     const config = {
@@ -66,7 +67,7 @@ function Product() {
       `https://api.seventhsq.com/orders/review_get_by_product/${NewID}`
     );
     const data = await res.json();
-    console.log(`reviews${data}`);
+    // console.log(`reviews${data}`);
     let l = data.length;
     let s = 0;
     setreviews(data);
@@ -76,7 +77,7 @@ function Product() {
       s += item.star;
     }
     settotalreview(s / l);
-    console.log(totalreview);
+    // console.log(totalreview);
   };
 
   const get_logedin_user = async () => {
@@ -105,6 +106,11 @@ function Product() {
       "https://seller.seventhsq.com/inventory/api/inventory_detail/" + NewID
     );
     setUsers(await response.json());
+    console.log( "response.data");
+    // console.log(response.json());
+    // console.log("users");
+    // console.log(users['name']);
+    // setvariants(users['name']); 
     // console.log(await response.json())
     // settotalview( response.json()['views'])
   };
@@ -118,7 +124,8 @@ function Product() {
   // };
 
   const updateView = async () => {
-    console.log(users);
+
+
     const config = {
       method: "PUT",
       headers: {
@@ -129,19 +136,19 @@ function Product() {
         sells:0
       }),
     };
-    console.log(config);
-    console.log(users);
+    // console.log(config);
+    // console.log(users);
     const res = await fetch(
       "https://seller.seventhsq.com/inventory/api/inventory_detail/" + NewID,
       config
     );
      const data = await res.json();
-    console.log(data);
+    // console.log(data);
 
     // window.alert("updated views");
   };
   const updatesells = async () => {
-    console.log(users);
+    // console.log(users);
     const config = {
       method: "PUT",
       headers: {
@@ -153,8 +160,8 @@ function Product() {
         sells: 1
       }),
     };
-    console.log(config);
-    console.log(users);
+    // console.log(config);
+    // console.log(users);
     const res = await fetch(
       "https://seller.seventhsq.com/inventory/api/inventory_detail/" + NewID,
       config
@@ -178,13 +185,13 @@ function Product() {
     };
     var localcart = [];
     var storedcart = await JSON.parse(localStorage.getItem("localcart"));
-    console.log(storedcart);
+    // console.log(storedcart);
     if (storedcart != null || storedcart != undefined) {
       localcart = storedcart.slice();
-      console.log(localcart);
+      // console.log(localcart);
     }
     localcart.push(body);
-    console.log(localcart);
+    // console.log(localcart);
     localStorage.setItem("localcart", JSON.stringify(localcart));
 
     window.alert("Added to Cart");
@@ -192,7 +199,7 @@ function Product() {
 
   const addtocart = async () => {
     updatesells()
-    console.log(users);
+    // console.log(users);
     const config = {
       method: "POST",
       headers: {
@@ -216,7 +223,7 @@ function Product() {
         subcategory:users.subCategory
       }),
     };
-    console.log(config);
+    // console.log(config);
     console.log("users");
     const res = await fetch(
       "https://api.seventhsq.com/orders/add-to-cart/",
@@ -225,7 +232,7 @@ function Product() {
 
     window.alert("Added to Cart");
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
   };
 
   const buynow = async () => {
@@ -246,19 +253,19 @@ function Product() {
         sellerId: users.account,
       }),
     };
-    console.log(config);
+    // console.log(config);
     const res = await fetch(
       "https://api.seventhsq.com/orders/add-to-cart/",
       config
     );
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     history.push("/checkout");
   };
   const Verify = () => {
     const token = localStorage.getItem("token");
     setusertoken(token);
-    console.log(token);
+    // console.log(token);
   };
 
   useEffect(() => {
@@ -268,7 +275,7 @@ function Product() {
 
 
   }, []);
-  useEffect(() => {
+  useEffect(() => { 
 
     updateView();
     // postrecent();
@@ -379,11 +386,15 @@ function Product() {
 
             <div class="price-col">
               <div class="product-price">
-              {users.Price_on_request != true ? (
+              {users.Price_on_request == false ? (
                 <div>
                  <p class="last-price"> 
                   Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
                 </p>
+                 {/* <p class="new-price"> 
+               
+                  Price : <span>₹ {variants} </span>&nbsp;&nbsp; 
+                </p> */}
                 <p class="new-price">
                   <span>
                     <i class="fa-solid fa-indian-rupee-sign"></i> ₹
