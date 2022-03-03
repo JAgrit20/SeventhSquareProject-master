@@ -181,9 +181,9 @@ useEffect(()=>{
     {/* Request A Quote | Seventh Square */}
     <Helmet>
     <title>Request A Quote | Seventh Square</title>
-    <meta name="description" content="Request A Quotation on Seventh Square " />
+    <meta name="description" content="Request A Quotation on Seventh Square " /> 
   </Helmet>
-        <div className="d-flex flex-column justify-content-center align-items-center requestForQuote ">
+        <div className="d-flex flex-column justify-content-center align-items-center requestForQuote " >
         <h2>Request For Quotation</h2> 
         </div>
         <hr/>

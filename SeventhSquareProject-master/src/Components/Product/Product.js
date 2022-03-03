@@ -142,7 +142,7 @@ function Product() {
       "https://seller.seventhsq.com/inventory/api/inventory_detail/" + NewID,
       config
     );
-     const data = await res.json();
+    //  const data = await res.json();
     // console.log(data);
 
     // window.alert("updated views");

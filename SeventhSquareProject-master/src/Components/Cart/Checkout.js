@@ -176,7 +176,7 @@ function Checkout() {
       };
       console.log(config.body);
       const res = await fetch(
-        "http://127.0.0.1:8001/orders/orders/",
+        "https://api.seventhsq.com/orders/orders/",
         config
       );
       window.alert("order placed");

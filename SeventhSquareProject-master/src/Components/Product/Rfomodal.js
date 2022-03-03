@@ -3,26 +3,51 @@ import { Button, Modal } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, router } from "react-router-dom";
+import "./product.css"
+
+
 
 function Rfqmodal(props) {
 
   const [location, setlocation] = useState('')
-  const [time, settime] = useState('')
+  const [qty, setqty] = useState('')
   const [description, setdescription] = useState('')
+  const [plotno, setplotno] = useState('')
+  const [pincode, setpincode] = useState('')
+  const [statee, setstatee] = useState('')
+  const [city, setcity] = useState('')
   const [userdata, setuserdata] = useState([])
+  const [Fromdate, setFromDate] = useState(new Date());
+  const [Todate, setToDate] = useState(new Date());
   console.log(props?.users)
   const handlechange = (e) => {
     let name = e.target.name
     let value = e.target.value
-    if (name == 'location') {
+    if (name == 'del_loc') {
       setlocation(value)
 
     }
-    if (name == 'time') {
-      settime(value)
+    if (name == 'q_req') {
+      setqty(value)
+      
+
     }
+
     if (name == 'description') {
       setdescription(value)
+    }
+    if (name == 'statee') {
+      setstatee(value)
+    }
+    if (name == 'plotno') {
+      setplotno(value)
+    }
+    if (name == 'city') {
+      setcity(value)
+    }
+    if (name == 'pincode') {
+      setpincode(value)
     }
 
   }
@@ -38,14 +63,22 @@ function Rfqmodal(props) {
       },
 
       body: JSON.stringify({
+        "state":statee,
+        "city":city,
+        "plotno":plotno,
+        "pincode":pincode,
+        "Buyer_ID": userdata.id,
+        "Buyer_Type_corperate": userdata.is_corporate,
+        "Buyer_Name": userdata.first_name+" "+userdata.last_name,
         "product_id": props.id,
         "category": props.category,
         "phone": userdata.phone,
         "brand_preference": props?.users?.brand_name,
         "desc": description,
-        // "quantity_required": "0",
+        "Quantity_Required": qty,
         "delivery_location": location,
-        "delivery_timeline": time,
+        "delivery_from": Fromdate,
+        "delivery_to": Todate,
         "is_replyed": false,
         "email": userdata.email,
         "seller": props?.users?.account
@@ -62,6 +95,7 @@ function Rfqmodal(props) {
 
   }
 
+
   const getuser = async () => {
     const config = {
       headers: {
@@ -73,7 +107,9 @@ function Rfqmodal(props) {
     const data = await res.json();
 
     setuserdata(data.user);
+    console.log("userdata");
     console.log(userdata);
+
   }
 
   useEffect(() => {
@@ -83,23 +119,31 @@ function Rfqmodal(props) {
 
 
   return (
-    <div>
+    <div   >
+      <div>
+
+
       <Modal
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         animation={false}
+        dialogClassName="modal-width "
+    
       >
+        {/* <style>
+        .modal-dialog{
+          width:"400px" !important;
+        } 
+        </style> */}
 
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            RFQ Form
+           REQUEST FOR QUOTE
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <h4>Please fill the details</h4>
-        </Modal.Body>
+
         <Form.Group className='mx-3 my-2' >
           <Form onSubmit={handlerfq} >
             {/* <div class="d-flex justify-content-evenly">
@@ -113,20 +157,87 @@ function Rfqmodal(props) {
                 <Form.Control type="text"   placeholder="Quantity Required" />
                 </div> */}
 
-            <div class="d-flex justify-content-evenly mt-4">
+            <div class="col mt-4">
+            <h6 >Quantity Required</h6>
+
+              <Form.Control type="text" placeholder="Quantity Required" name='q_req' onChange={handlechange} />
+              {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
+
+            </div>
+            <div className="col mt-2">
+
+            <h5 >Delivery Timeline</h5>
+            </div>
+
+            <div class="d-flex justify-content-between ">
+            <h6 style={{margin:"10px", }}>Earliest By</h6>
+
+<h6 style={{margin:"10px", }}>Latest By</h6>
+            </div>
+            <div class="d-flex justify-content-evenly ">
+            {/* <Form.Group controlId="duedate"> */}
+            <Form.Control
+                type="date"
+                name="Todate"
+                placeholder="Due date"
+                value={Fromdate}
+                onChange={(e) => setFromDate(e.target.value)}
+                
+              />
+
+              <Form.Control
+                type="date"
+                name="Fromdate"
+                placeholder="Due date"
+                value={Todate}
+                onChange={(e) => setToDate(e.target.value)}
+              />
+             
+            {/* </Form.Group> */}
+            </div>
+            <h5 style={{margin:"10px", }}>Delivery Address</h5>
+
+            <div class="d-flex justify-content-evenly m-4">
+
+              <Form.Control type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{margin:"5px"}}/>
+              <Form.Control type="text" placeholder="Pincode" name='pincode' onChange={handlechange} />
+              {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
+
+            </div>
+           
+            <div class="d-flex justify-content-evenly m-4">
+
+              <Form.Control type="text" placeholder="Street Name / Locality" name='del_loc' onChange={handlechange} />
+              {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
+
+            </div>
+            <div class="d-flex justify-content-evenly m-4 ">
+
+<Form.Control type="text" placeholder="State." name='statee' onChange={handlechange}style={{margin:"5px"}} />
+<Form.Control type="text" placeholder="City" name='city' onChange={handlechange} />
+{/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
+
+</div>
+            {/* <div class="d-flex justify-content-evenly mt-4">
               <Form.Control type="text" placeholder="Delivery Location" name='location' onChange={handlechange} />
               <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} />
 
-            </div>
+            </div> */}
 
 
 
-            <Form.Label className='mt-4'>Description</Form.Label>
-            <Form.Control as="textarea" rows={5} placeholder="Description" name='description' onChange={handlechange} />
+            <Form.Label className='mt-4'>Comments</Form.Label>
+            <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} />
 
 
-
-            <Button className='mx-4 mt-4' type='submit' >SUBMIT</Button>
+            {userdata ? (
+              <Button className='mx-4 mt-4 btn-dark' type='submit' >SUBMIT</Button>
+              ) : (
+                <Link to="/login">
+                <Button className='mx-4 mt-4' >Need to login First</Button>
+                </Link>
+              )}
+            
           </Form>
         </Form.Group>
 
@@ -138,6 +249,7 @@ function Rfqmodal(props) {
         </Modal.Footer>
       </Modal>
 
+    </div>
     </div>
   )
 }

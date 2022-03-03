@@ -25,7 +25,7 @@ function Order_sum_i() {
 
     console.log(`id${NewID}`);
       await fetch(
-        `http://127.0.0.1:8001/orders/orders/${NewID}`, {
+        `https://api.seventhsq.com/orders/orders/${NewID}`, {
           method: 'GET',
           mode: 'cors', 
           cache: 'no-cache', 

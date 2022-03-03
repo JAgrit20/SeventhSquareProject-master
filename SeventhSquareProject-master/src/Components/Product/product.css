@@ -9,6 +9,7 @@ font-size: 12px;
     height: auto;
 }
 
+
 .column{ 
 	width: 600px;
 	padding: 10px;
@@ -24,6 +25,9 @@ font-size: 12px;
     border-radius: 10% !important;
    
 }
+.modal-width {
+    width: 400px !important;
+  }
 
 
 

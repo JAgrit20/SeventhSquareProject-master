@@ -80,7 +80,7 @@ function Brands() {
   };
 
   useEffect(()=>{
-    getreview();
+    // getreview();
 },[])
 
          return (

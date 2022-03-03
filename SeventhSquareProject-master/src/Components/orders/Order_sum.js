@@ -22,7 +22,7 @@ function Order_sum() {
 
   const getUserss = async () => {
     console.log(`id${NewID}`);
-    await fetch(`http://127.0.0.1:8001/orders/orders/${NewID}`, {
+    await fetch(`https://api.seventhsq.com/orders/orders/${NewID}`, {
       method: "GET",
       mode: "cors",
       cache: "no-cache",
