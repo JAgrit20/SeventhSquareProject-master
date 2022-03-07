@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 import '../Enquiry/Enquiry.css'
 import { useState, useEffect } from 'react';
 import View_details from "./View_details";
 import Send_message from "./Send_message";
+import Edit_enquiry from "./Edit_Enquiry";
+import Swal from 'sweetalert2'
+
 
 import Table from 'react-bootstrap/Table'
 
@@ -12,8 +15,13 @@ function Enquiry() {
   const[orderdata,setdata]=useState([]);
   const [RfqmodalShow, setRfqModalShow] = useState(false);
   const [MessageShow, setMessageShow] = useState(false);
+  const [EditMessageShow, setEditMessageShow] = useState(false);
+  const [isOpen, setisOpen] = useState(false);
   const [Message, setMessage] = useState("");
   const [now, setnow] = useState("");
+  const [rfid, setrfid] = useState("");
+  const [sellerid, setsellerid] = useState("");
+  const [detailss, setdetailss] = useState("");
   const [userdata, setuserdata] = useState("");
 
   
@@ -32,10 +40,78 @@ function Enquiry() {
     console.log(userdata);
 
   }
+  const Accept_quote = async (id) => {
+    console.log("yes accpet here")
+    const res = await fetch(`https://api.seventhsq.com/enquiry/buyer/accept/${id}`);
+    console.log(res.status)
 
-  const handlechange=(e,ok)=>{
+    // const data = await res.json();
+    
+    // console.log("accept data")
+    // console.log(data)
+    if(res.status=="200"){
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Done',
+        text: 'Quotation Accepted', 
+      }).then(() => {
+        window.location.reload();
+    });
+    }
+
+  }
+  const Reject_quote = async (id) => {
+    console.log("yes accpet here")
+    const res = await fetch(`https://api.seventhsq.com/enquiry/buyer/reject/${id}`);
+    console.log(res.status)
+
+    // const data = await res.json();
+    
+    // console.log("accept data")
+    // console.log(data)
+    if(res.status=="200"){
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Done',
+        text: 'Quotation Reject', 
+      }).then(() => {
+        window.location.reload();
+    });
+    }
+
+  }
+  const Delete_quote = async (id) => {
+    console.log("yes accpet here")
+    const res = await fetch(`https://api.seventhsq.com/enquiry/buyer/delete/${id}`);
+    console.log(res.status)
+
+    // const data = await res.json();
+    
+    // console.log("accept data")
+    // console.log(data)
+    if(res.status=="200"){
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Done',
+        text: 'Quotation Deleted', 
+      }).then(() => {
+        window.location.reload();
+    });
+    }
+
+  }
+
+
+
+  const handlechange=(e,ok,id,selerid)=>{
 		// let name=e.target.name 
-		let value=e.target.value 
+		let value=e.target.value  
+
+    console.log("ok")
+    console.log(ok)
 
     // console.log("value")
     // console.log(value)
@@ -43,26 +119,53 @@ function Enquiry() {
 		if(value=='sendm'){
       setMessageShow(true)
       setnow(ok)
+      console.log("send m")
       console.log(ok)
 		}
-		// if(name=='time'){
-		//    settime(value)
-	  //  }
-    //     if(name=='description'){
-    //     setdescription(value)
-    //     }
-    //     if(name=='product'){
-    //         setproduct(value)
-    //         }
-    //     if(name=='quantity'){
-    //         setquantity(value)
-    //         }
-    //     if(name=='category'){
-    //         setcategory(value)
-    //         }
-    //     if(name=='brand'){
-    //         setbrand(value)
-    //         }
+		if(value=='viewdetail'){
+      setRfqModalShow(true)
+      setdetailss(ok)
+      console.log(ok)
+      setsellerid(selerid)
+		}
+		if(value=='edit'){
+      setEditMessageShow(true)
+      setdetailss(ok)
+      console.log(ok)
+      setsellerid(selerid)
+      setrfid(id)
+
+		}
+		if(value=='chats'){
+      // get_chats(sellerid, id)
+      setEditMessageShow(true)
+      setdetailss(ok)
+      console.log(ok)
+      setsellerid(selerid)
+      setrfid(id)
+
+		}
+		if(value=='Accept'){
+      setrfid(id)
+      console.log("I am inside accept")
+
+      Accept_quote(id) 
+
+		}
+		if(value=='Reject'){
+      setrfid(id)
+      console.log("I am inside accept")
+
+      Reject_quote(id) 
+
+		}
+		if(value=='Delete'){
+      setrfid(id)
+      console.log("I am inside accept")
+
+      Delete_quote(id) 
+
+		}
 	  
 	 }
 
@@ -93,7 +196,7 @@ useEffect(()=>{
       <>
 
       <div style={{overflowX:"auto"}}>
-      {/* Customer Support Seventh Square */}
+
       {/* <Helmet>
   <title>Customer Support Seventh Square </title>
   <meta name="description" content="Login Seventh Square" />
@@ -102,52 +205,7 @@ useEffect(()=>{
   <div style={{justifyContent: "center", alignItems:"center",display: "flex"}} className=" requestForQuote">
     <div className="requests py-3">
       <h1 className="mx-5 my-5 text-center" style={{fontFamily:"crimson text",fontSize:"35px"}}>My Enquiries</h1>
-      {/* <span
-                style={{
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  marginLeft: "10px",
-                  marginRight: "4px",
-                  fontFamily: "open sans",
-                  clear: "both",
-                  display: "inline-block",
-                  overflow: "hidden",
-                  paddingRight: "45px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Sort By
-              </span>
 
-              <select
-                id="htl"
-                class="form-select"
-                style={{ fontSize: "15px !important" }}
-              >
-                <option
-                  value="date"
-                  name="date"
-                  style={{ fontSize: "15px !important" }}
-                >
-                date
-                </option>
-                <option
-                  value="Status"
-                  name="Status"
-                  style={{ fontSize: "15px !important" }}
-                >
-         Status
-                </option>
-                <option
-                  value="Amount"
-                  name="Amount"
-                  style={{ fontSize: "15px !important" }}
-                >
-              Amount
-                </option>
-              </select> */}
-
-{/* style={{fontColor:"red",color:"black",fontWeight:"400",fontFamily:"open sans",fontSize:"15px"}} */}
       <div className="">
         <Table class="table table-hover">
           <thead class="thead-dark">
@@ -172,37 +230,79 @@ useEffect(()=>{
                           <td> {curr.id}</td>
                           <td> Request for Quote</td>
                           <td> {curr.created_at.slice(0,10)},{curr.created_at.slice(11,19)}</td>
-                          <td> {curr.Status}</td>
-                          <td> <button className="btn btn-dark" onClick={() => setRfqModalShow(true)}>View Details</button></td>
+                          <td> {curr.Status_data}</td>
+                          <td> 
+                            <button className="btn btn-dark" value = "viewdetail"onClick={(e) => handlechange(e,curr,curr.id,curr.seller)}>View Details</button>
+                          
+                          </td>
 
-                          <td> <select onChange={(e) => handlechange(e,curr.id)}>
+                          <td> <select onChange={(e) => handlechange(e,curr,curr.id)}>
                             <option value = "choose">Choose Action</option>
-                            <option>Edit Enquiry,</option>
+                            <option value ="edit">Edit Enquiry,</option>
                             <option value ="sendm"> Send Message </option>
-                            <option>  Accept Quote </option>
-                            <option>Reject Quote </option>
-                            <option>Delete Enquiry</option>
+                            <option value ="Accept">  Accept Quote </option>
+                            <option value ="Reject">Reject Quote </option>
+                            <option value ="Delete">Delete Enquiry</option>
                             </select></td>
  
 
  
                         </tr>
-      
+                        {/* <View_details
+      show={RfqmodalShow}
+      alldata={detailss}
+      create= {curr.created_at.slice(0,10)}
+      users={userdata}
+      selid= {sellerid}
+      rfid= {rfid}
+      onHide={() => setRfqModalShow(false)}
+    /> */}
+
+    { 
+      RfqmodalShow &&
       <View_details
       show={RfqmodalShow}
       // users={users}
-      id={curr.id}
-      create= {curr.created_at.slice(0,10)}
-      alldata = {curr} 
+      alldata={detailss}
+
+
+
+      // create= {curr.created_at.slice(0,10)}
+      users={userdata}
+      selid= {sellerid}
+      rfid= {rfid}
+
+
 
       onHide={() => setRfqModalShow(false)}
     />
-      <Send_message
-      show={MessageShow}
-      id = {now}
+    }
+    {
+      EditMessageShow && 
+      <Edit_enquiry
+      show={EditMessageShow}
+      // users={users}
+      alldata={detailss}
       users={userdata}
+      selid= {sellerid}
+      rfid= {rfid}
+      onHide={() => setEditMessageShow(false)}
+    />
+    }
+
+    {
+       MessageShow && 
+
+      <Send_message
+      alldata={detailss}
+
+      show={MessageShow}
+      now = {now}
+      users={userdata}
+      
       onHide={() => setMessageShow(false)}
     />
+    }
          </>
                                 
                 );

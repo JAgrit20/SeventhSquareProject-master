@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, router } from "react-router-dom";
+import Swal from 'sweetalert2'
+
 // import "product.css" 
 
 
@@ -21,10 +23,12 @@ function Send_message(props) {
   const [users, setusers] = useState([])
   const [Fromdate, setFromDate] = useState(new Date());
   const [Todate, setToDate] = useState(new Date());
-  console.log("props?.user")
-  console.log(props?.users)
+  // console.log("props?.user")
+  // console.log(props?.users)
 
 
+  console.log("props");
+  console.log(props);
 
   const handlechange = (e) => {
     let name = e.target.name
@@ -67,38 +71,21 @@ function Send_message(props) {
         'Accept': 'application/json'
       },
 
-      body: JSON.stringify({
-        "state":statee,
-        "city":city,
-        "plotno":plotno,
-        "pincode":pincode,
-        "Buyer_ID": userdata.id,
-        "Buyer_Type_corperate": userdata.is_corporate,
-        "Buyer_Name": userdata.first_name+" "+userdata.last_name,
-        "product_id": props.id,
-        "category": props.category,
-        "phone": userdata.phone,
-        "brand_preference": props?.users?.brand_name,
-        "desc": description,
-        "Quantity_Required": qty,
-        "delivery_location": location,
-        "delivery_from": Fromdate,
-        "delivery_to": Todate,
-        "is_replyed": false,
-        "email": userdata.email,
-        "seller": props?.users?.account
-
-      })
     };
-    console.log(userdata);
-    console.log(config);
-    console.log((`https://api.seventhsq.com/enquiry/seller/get/response/${userdata?.id}/buyer/${description}/${props.id}`));
+    // console.log(config);
+    console.log((`https://api.seventhsq.com/enquiry/seller/get/response/${userdata?.id}/buyer/${description}/${props.now.id}`));
     
-    const res = await fetch(`https://api.seventhsq.com/enquiry/seller/get/response/${userdata?.id}/buyer/${description}/${props.id}`)
-    window.alert('Message Sent')
-    const data = await res.json();
-    console.log(data); 
-    setusers(data)
+    const res = await fetch(`https://api.seventhsq.com/enquiry/seller/get/response/${userdata?.id}/buyer/${description}/${props.now.id}`)
+    // window.alert('Message Sent')
+    // const data = await res.json();
+    Swal.fire({
+      icon: 'success',
+      title: 'Success',
+      text: 'Message Sent', 
+    }).then(() => {
+      window.location.reload();
+  });
+
 
 
   }

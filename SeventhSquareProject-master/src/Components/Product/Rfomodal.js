@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, router } from "react-router-dom";
 import "./product.css"
+import Swal from 'sweetalert2'
+
 
 
 
@@ -81,14 +83,23 @@ function Rfqmodal(props) {
         "delivery_to": Todate,
         "is_replyed": false,
         "email": userdata.email,
-        "seller": props?.users?.account
+        "seller": props?.users?.account,
+        "Status_data":"Raised"
+
 
       })
     };
     console.log(userdata);
     console.log(config);
     const res = await fetch('https://api.seventhsq.com/enquiry/request/', config);
-    window.alert('Request Sent')
+    // window.alert('Request Sent')
+    Swal.fire({
+      icon: 'success',
+      title: 'Success',
+      text: 'Request Sent', 
+    }).then(() => {
+      window.location.reload();
+  });
     const data = await res.json();
     console.log(data);
 
