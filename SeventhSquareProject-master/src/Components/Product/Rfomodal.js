@@ -97,9 +97,9 @@ function Rfqmodal(props) {
       icon: 'success',
       title: 'Success',
       text: 'Request Sent', 
-    }).then(() => {
+    })
       window.location.reload();
-  });
+
     const data = await res.json();
     console.log(data);
 
@@ -150,7 +150,7 @@ function Rfqmodal(props) {
         </style> */}
 
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id="contained-modal-title-vcenter" style={{fontFamily:"crimson text",fontWeight:"700"}}>
            REQUEST FOR QUOTE
           </Modal.Title>
         </Modal.Header>
@@ -169,7 +169,7 @@ function Rfqmodal(props) {
                 </div> */}
 
             <div class="col mt-4">
-            <h6 >Quantity Required</h6>
+            <h6 style={{fontSize:"14px",fontFamily:"open sans",fontWeight:"700"}} >Quantity Required</h6>
 
               <Form.Control type="text" placeholder="Quantity Required" name='q_req' onChange={handlechange} />
               {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
@@ -177,15 +177,15 @@ function Rfqmodal(props) {
             </div>
             <div className="col mt-2">
 
-            <h5 >Delivery Timeline</h5>
+            <h5 style={{fontSize:"14px",fontFamily:"open sans",fontWeight:"700"}} >Delivery Timeline</h5>
             </div>
 
             <div class="d-flex justify-content-between ">
-            <h6 style={{margin:"10px", }}>Earliest By</h6>
+            <h6 style={{margin:"12px",fontSize:"12px" ,fontFamily:"open sans"}}>Earliest By</h6>
 
-<h6 style={{margin:"10px", }}>Latest By</h6>
+<h6 style={{margin:"12px",fontSize:"12px",fontFamily:"open sans" }}>Latest By</h6>
             </div>
-            <div class="d-flex justify-content-evenly ">
+            <div class="d-flex justify-content-evenly col mt-1">
             {/* <Form.Group controlId="duedate"> */}
             <Form.Control
                 type="date"
@@ -206,9 +206,9 @@ function Rfqmodal(props) {
              
             {/* </Form.Group> */}
             </div>
-            <h5 style={{margin:"10px", }}>Delivery Address</h5>
+            <h5 style={{margin:"12px", fontSize:"14px",fontFamily:"open sans",fontWeight:"700"}}>Delivery Address</h5>
 
-            <div class="d-flex justify-content-evenly m-4">
+            <div class="d-flex justify-content-evenly m-4 ">
 
               <Form.Control type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{margin:"5px"}}/>
               <Form.Control type="text" placeholder="Pincode" name='pincode' onChange={handlechange} />
@@ -237,7 +237,7 @@ function Rfqmodal(props) {
 
 
 
-            <Form.Label className='mt-4'>Comments</Form.Label>
+            <Form.Label className='mt-1' style={{fontSize:"14px",fontWeight:"700",fontFamily:"open sans", color:"black"}}>Comments</Form.Label>
             <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} />
 
 

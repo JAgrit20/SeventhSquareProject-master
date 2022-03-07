@@ -210,7 +210,7 @@ useEffect(()=>{
         <Table class="table table-hover">
           <thead class="thead-dark">
             <tr>
-              <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"70px", height:"20px"}}>Order no.</th>
+              <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"70px", height:"20px"}}>Enquiry No.</th>
               <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"150px"}}> Enquiry Type</th>
               <th scope="col"style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"150px"}}>Enquiry Date</th>
               <th scope="col" style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"center",width:"120px"}}>Status </th>

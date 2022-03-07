@@ -174,7 +174,7 @@ function Edit_enquiry(props) {
         </style> */}
 
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title id="contained-modal-title-vcenter" style={{fontFamily:"crimson text"}}> 
            EDIT ENQUIRY
           </Modal.Title>
         </Modal.Header>
@@ -184,7 +184,7 @@ function Edit_enquiry(props) {
           
 
             <div class="col mt-4">
-            <h6 >Quantity Required</h6>
+            <h6  style={{fontSize:"14px"}}>Quantity Required</h6>
 
               <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Quantity Required" name='q_req' defaultValue ={props.alldata.Quantity_Required} onChange={handlechange} />
               {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
@@ -192,13 +192,18 @@ function Edit_enquiry(props) {
             </div>
             <div className="col mt-2">
 
-            <h5 >Delivery Timeline</h5>
+            <h5 style={{fontSize:"14px"}}>Delivery Timeline</h5>
             </div>
-            <div class="d-flex justify-content-between ">
-            <h6 style={{margin:"3px", }}>Previous Earliest By</h6>
+            <div className="col mt-2">
 
-<h6 style={{margin:"3px", }}> Previous Latest By</h6>
+            <div class="d-flex justify-content-between ">
+            <h6 style={{margin:"3px", fontSize:"12px"}}>Previous Earliest By</h6>
+
+<h6 style={{margin:"3px",fontSize:"12px" }}> Previous Latest By</h6>
             </div>
+            </div>
+            <div className="col mt-2">
+
             <div class="d-flex justify-content-evenly">
 
 <Form.Control value ={props.alldata.delivery_from.slice(0,10)} type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{margin:"5px",background:"#bebebe"}} />
@@ -206,11 +211,17 @@ function Edit_enquiry(props) {
 {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
 </div>
-            <div class="d-flex justify-content-between ">
-            <h6 style={{margin:"10px", }}>Earliest By</h6>
+</div>
+<div className="col mt-1">
 
-<h6 style={{margin:"10px", }}>Latest By</h6>
+            <div class="d-flex justify-content-between ">
+            <h6 style={{margin:"12px",fontSize:"12px" }}>Earliest By</h6>
+
+<h6 style={{margin:"12px",fontSize:"12px" }}>Latest By</h6>
             </div>
+            </div>
+            <div className="col mt-1">
+
             <div class="d-flex justify-content-evenly ">
             {/* <Form.Group controlId="duedate"> */}
             <Form.Control value ={props.alldata.delivery_from}
@@ -232,7 +243,12 @@ function Edit_enquiry(props) {
              
             {/* </Form.Group> */}
             </div>
-            <h5 style={{margin:"10px", }}>Delivery Address</h5> 
+            </div>
+            <div className="col mt-2">
+
+            <h5 style={{margin:"12px", fontSize:"14px"}}>Delivery Address</h5> 
+</div>
+<div className="col mt-2">
 
             <div class="d-flex justify-content-evenly m-4">
 
@@ -241,6 +257,9 @@ function Edit_enquiry(props) {
               {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
             </div>
+            </div>
+            <div className="col mt-2">
+
            
             <div class="d-flex justify-content-evenly m-4">
 
@@ -255,17 +274,19 @@ function Edit_enquiry(props) {
 {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
 </div>
+</div>
             {/* <div class="d-flex justify-content-evenly mt-4">
               <Form.Control type="text" placeholder="Delivery Location" name='location' onChange={handlechange} />
               <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} />
 
             </div> */}
 
+<div className="col mt-1">
 
 
-            <Form.Label className='mt-4'>Comments</Form.Label>
+            <Form.Label className='mt-1' style={{fontSize:"14px",fontWeight:"700"}}>Comments</Form.Label>
             <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} defaultValue ={props.alldata.desc}/>
-
+</div>
 
             {userdata ? (
               <Button className='mx-4 mt-4 btn-dark' type='submit' >SUBMIT</Button>

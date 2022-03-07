@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, router } from "react-router-dom";
 import axios from "axios";
+import "./cart.css";
+
 
 // import "product.css" 
 
@@ -14,11 +16,15 @@ function View_details(props) {
 
   const [location, setlocation] = useState('')
   const [qty, setqty] = useState('')
+  const[imagedata,setimage]=useState([]);
+
   const [description, setdescription] = useState('')
   const [plotno, setplotno] = useState('')
   const [pincode, setpincode] = useState('')
   const [statee, setstatee] = useState('')
   const [city, setcity] = useState('')
+  const [users, setUsers] = useState([]);
+
   const [userdata, setuserdata] = useState([])
   const [chatdata, setchatdata] = useState([])
   const [Fromdate, setFromDate] = useState(new Date());
@@ -45,6 +51,20 @@ function View_details(props) {
     
   };
 
+  const getimages=async()=>{
+    const res=await fetch(`https://seller.seventhsq.com/inventory/api/picture/${props.alldata.product_id}`);
+    const data= await res.json(); 
+    setimage(data[0].picture); 
+}
+
+const getUsers = async () => {
+  // console.log(`id${NewID}`);
+  const response = await fetch(
+    `https://seller.seventhsq.com/inventory/api/inventory_detail/${props.alldata.product_id}`
+  );
+  setUsers(await response.json());
+  console.log( "response.data");
+}
 
   const getuser = async () => {
     const config = {
@@ -64,7 +84,10 @@ function View_details(props) {
 
   useEffect(() => {
     getuser();
-    setchatdata(null)
+    getUsers();
+    get_chats();
+  getimages();
+
   //   axios.get(`https://api.seventhsq.com/enquiry/seller/get/response/chats/${props.selid}/${props.rfid}`).then(res=>{
   //     console.log("res.data")
   //     console.log(res.data)
@@ -123,12 +146,80 @@ function View_details(props) {
         "seller": props?.users?.account */}
             <div class="col mt-4">
             <h6 ></h6>
-            <h4 > <span style={{fontWeight:"700"}}> Quantity Required: </span> {props.alldata.Quantity_Required}</h4>
-            {/* <h4 > <span style={{fontWeight:"700"}}>Delivery Timeline:</span> Earliest By: {props.alldata.delivery_from.slice(0,10)}  Latest By: {props.alldata.delivery_to.slice(0,10)} </h4> */}
-            <h4 > <span style={{fontWeight:"700"}}>Delivery Address: </span> {props.alldata.delivery_location}</h4>
-            <h4 >  <span style={{fontWeight:"700"}}>Comments:  </span>{props.alldata.desc}</h4>
-            <button onClick={() => get_chats()} className="btn btn-dark">SHow chats</button>
-           <div style={{justifyContent:"center",alignItems:"center"}}> 
+            <h4 >  <span style={{fontWeight:"700",textDecoration: "underline",fontFamily:"open sans"}} >Enquiry Details:  </span></h4>
+
+            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}> Quantity Required: </span> {props.alldata.Quantity_Required}</h4>
+            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery Timeline:</span> Earliest By: {props.alldata.delivery_from.slice(0,10)}  Latest By: {props.alldata.delivery_to.slice(0,10)} </h4>
+            {/* <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery TImeline: </span> {props.alldata.delivery_location}</h4> */}
+            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery Address: </span> {props.alldata.plotno},{props.alldata.delivery_location},{props.alldata.city},{props.alldata.state},{props.alldata.pincode}</h4>
+            <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Comments:  </span>{props.alldata.desc}</h4>
+            <h4 style={{fontWeight:"700",fontFamily:"open sans",textDecoration: "underline", marginTop:"10px", marginBottom:"10px"}}  >  <span style={{fontWeight:"700",fontFamily:"open sans",textDecoration: "underline", marginTop:"20px"}} >Product Details:  </span></h4>
+
+            <div
+              class="
+                col-md-4 col-11
+                mx-auto
+                d-flex
+                justify-content-center
+                product_img"
+            >
+              <img  src={'https://seller.seventhsq.com/'+imagedata} class="img-fluid shadow-sm" alt="cart img" />
+             
+            </div>
+              
+            <div class="row">
+                <div class="col-12 card-title">
+
+                                <p class="mb-1"style={{fontWeight:"200",fontFamily:"open sans"}}>
+            <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>{users.name}</span></h4>
+            <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>{users.brand_name}</span></h4>
+
+                   
+                  </p>
+                
+       
+
+                  
+                </div>
+                </div>
+          <h4>
+              <p style={{fontWeight:"700",textDecoration: "underline",fontFamily:"open sans"}} > &nbsp; </p>
+            </h4>
+            {
+              props.alldata.Seller_MRP?
+            <div class="row">
+            <p style={{fontWeight:"700",textDecoration: "underline" ,fontSize:"14px", color:"black",fontFamily:"open sans"}} >Quote & Comments  </p>
+                <div class="col-12 card-title">
+
+                                <p class="mb-1"style={{fontWeight:"200",fontFamily:"open sans"}}>
+              <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px", color:"black"}}>MRP:</span>
+              <span style={{fontWeight:"100",fontFamily:"open sans",marginLeft:"10px",fontSize:"14px"}}>INR {props.alldata.Seller_MRP}</span>
+          <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px",marginLeft:"100px", color:"black"}}>Sale Price: </span>
+          <span style={{fontWeight:"100",fontFamily:"open sans",marginLeft:"10px",fontSize:"14px"}}>INR {props.alldata.Seller_Sale_Price}</span>
+          <p>
+          <span style={{fontWeight:"700",fontSize:"14px", color:"black",fontFamily:"open sans"}}>Tax Code:  </span>
+
+          <span style={{fontWeight:"100",fontSize:"14px",fontFamily:"open sans"}}>{props.alldata.Seller_tax_code} % </span>
+          </p>
+          <span style={{fontWeight:"100",fontSize:"14px",fontFamily:"open sans"}}>(Sale rice is{props.alldata.Seller_tax_inclusive? <span  style={{fontWeight:"700",fontSize:"14px", color:"black"}}> Inclusive</span>  :<span  style={{fontWeight:"700",fontSize:"14px", color:"black"}}>  Exclusive </span> }  of  Taxes and{props.alldata.Seller_ship_inclusive? <span  style={{fontWeight:"700",fontSize:"14px", color:"black"}}>  Inclusive  </span> : <span  style={{fontWeight:"700",fontSize:"14px", color:"black"}}>  Exclusive </span> }   of shipping) </span>
+
+                   
+                  </p>
+       
+                </div>
+                </div>:<div></div>
+            }
+{
+  chatdata?
+  <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Responses:  </span></h4>
+
+  :<div> </div>
+}
+
+            {/* <img  src={'https://seller.seventhsq.com/'+imagedata} class="img-fluid shadow-sm" alt="cart img" /> */}
+
+            {/* <button onClick={() => get_chats()} className="btn btn-dark">SHow chats</button> */}
+           <div style={{justifyContent:"center",alignItems:"center",fontFamily:"open sans"}}> 
            {chatdata
               ? chatdata.map((curr, index) => {
          
@@ -136,16 +227,19 @@ function View_details(props) {
                     <>
 {
 curr.replyed_by_buyer?
-<div className="row" style={{background:"grey" , borderRadius:"10px",color:"white", padding:"10px", margin:"10px",justifyContent:"space-between"}}>
-<h3>Sent By You</h3>
+<div className="row" >
+<div class="col-12 card-title">
 
-<h4>{curr.message}</h4>
-<h4>{curr.sent_at.slice(0,10)},{curr.sent_at.slice(11,19)}</h4>
-</div>:<div className="row" style={{background:"grey" ,   borderRadius:"10px",  textAlign: "right",right:"0",color:"white", padding:"10px", margin:"10px",justifyContent:"space-between"}}>
-<h3>Sent By Seller</h3>
+ <span style={{fontWeight:"700",fontSize:"14px"}}>You:</span> <span style={{fontWeight:"200",fontSize:"14px"}}>&nbsp;{curr.message} </span>
+</div>
+</div>:<div className="row" >
+<div class="col-12 card-title">
 
-<h4>{curr.message}</h4>
-<h4>{curr.sent_at.slice(0,10)},{curr.sent_at.slice(11,19)}</h4>
+<span style={{fontWeight:"700",fontSize:"14px"}}>Seller:</span> <span style={{fontWeight:"200",fontSize:"14px"}}> &nbsp;{curr.message}</span>
+</div>
+
+{/* <h4>{curr.message}</h4>
+<h4>{curr.sent_at.slice(0,10)},{curr.sent_at.slice(11,19)}</h4> */}
 </div>
 }
          </>
@@ -169,7 +263,7 @@ curr.replyed_by_buyer?
 
 
         <Modal.Footer>
-
+{/* <button>CLose</button> */}
 
         </Modal.Footer>
       </Modal>
