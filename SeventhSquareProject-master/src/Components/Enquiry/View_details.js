@@ -207,13 +207,10 @@ const getUsers = async () => {
                   </p>
        
                 </div>
-                </div>:<div></div>
-            }
-{
-  chatdata?
-  <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Responses:  </span></h4>
+                </div>:<div></div> 
 
-  :<div> </div>
+            }
+{chatdata.length? <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Responses:  </span></h4>:null
 }
 
             {/* <img  src={'https://seller.seventhsq.com/'+imagedata} class="img-fluid shadow-sm" alt="cart img" /> */}
@@ -229,6 +226,7 @@ const getUsers = async () => {
 curr.replyed_by_buyer?
 <div className="row" >
 <div class="col-12 card-title">
+
 
  <span style={{fontWeight:"700",fontSize:"14px"}}>You:</span> <span style={{fontWeight:"200",fontSize:"14px"}}>&nbsp;{curr.message} </span>
 </div>

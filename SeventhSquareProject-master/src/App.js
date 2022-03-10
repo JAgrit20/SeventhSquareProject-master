@@ -31,6 +31,7 @@ import Request from "./Components/Request/Request";
 import Profile from "./Components/Profile/Profile";
 import Summery from "./Components/PaymentSummery/Summery"
 import Checkout from "./Components/Cart/Checkout";
+import Checkout_po from "./Components/Cart/Checkout_po";
 import DetailBlog from "./Components/Blog/DetailBlog";
 import ForgotPassword from "./Components/Landing/Login/ForgotPassword";
 import Review from "./Components/Landing/Body/Review";
@@ -242,6 +243,9 @@ function App(props) {
             </Route>
             <Route  onClick={() => {window.location.reload()}} path="/checkout">
               <Checkout/>
+            </Route>
+            <Route  onClick={() => {window.location.reload()}} path="/checkout_po">
+              <Checkout_po/>
             </Route>
             
             <Route  onClick={() => {window.location.reload()}} path="/">

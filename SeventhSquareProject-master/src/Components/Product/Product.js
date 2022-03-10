@@ -57,6 +57,13 @@ function Product() {
   const [usertoken, setusertoken] = useState();
   const [variants, setvariants] = useState();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
+
   const getreviews = async () => {
     const config = {
       headers: {
@@ -170,7 +177,6 @@ function Product() {
   };
 
  
-
   const addtolocal = async () => {
     const body = {
       title: users.name,
@@ -269,6 +275,7 @@ function Product() {
   };
 
   useEffect(() => {
+    window.history.scrollRestoration = 'manual';
     getUsers();
     Verify();
     getreviews();
@@ -953,6 +960,7 @@ function Product() {
         show={RfqmodalShow}
         id={users.id}
         category={users.category}
+        name={users.name}
         users={users}
         onHide={() => setRfqModalShow(false)}
       />
