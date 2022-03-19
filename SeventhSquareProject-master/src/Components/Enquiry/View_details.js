@@ -99,7 +99,7 @@ const getUsers = async () => {
   }, [])
 
   return (
-    <div   >
+    <div style={{position:"fixed"}}  >
       <div>
 
 
@@ -148,11 +148,56 @@ const getUsers = async () => {
             <h6 ></h6>
             <h4 >  <span style={{fontWeight:"700",textDecoration: "underline",fontFamily:"open sans"}} >Enquiry Details:  </span></h4>
 
-            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}> Quantity Required: </span> {props.alldata.Quantity_Required}</h4>
-            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery Timeline:</span> Earliest By: {props.alldata.delivery_from.slice(0,10)}  Latest By: {props.alldata.delivery_to.slice(0,10)} </h4>
+          <div className="row" style={{display:"flex",justifyContent:"center",alignItems:"baseline"}}> 
+          <div className="col-sm-6">
+          <h5 > <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px"}}> Quantity Required: </span> </h5>
+
+          </div>
+          <div className="col-sm-6">
+          <h6 ><span style={{fontWeight:"200",fontFamily:"open sans",fontSize:"14px"}}>{props.alldata.Quantity_Required} &nbsp; {props.alldata.Quantity_Unit}</span></h6>
+
+          </div>
+          </div>
+          <div className="row" style={{display:"flex",justifyContent:"center",alignItems:"baseline"}}> 
+          <div className="col-sm-6">
+          <h5 >
+          <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px"}}>Delivery Timeline:</span>  </h5>
+
+          </div>
+          <div className="col-sm-6">
+          <h6 ><span style={{fontWeight:"200",fontFamily:"open sans",fontSize:"14px"}}>Earliest By: {props.alldata.delivery_from.slice(0,10)}  Latest By: {props.alldata.delivery_to.slice(0,10)} </span></h6>
+
+
+          </div>
+          </div>
+          <div className="row" style={{display:"flex",justifyContent:"center",alignItems:"baseline"}}> 
+          <div className="col-sm-6">
+          <h5 >
+             <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px"}}>Delivery Address: </span>
+            </h5>
+
+          </div>
+          <div className="col-sm-6">
+          <h6 ><span style={{fontWeight:"200",fontFamily:"open sans",fontSize:"14px",wordWrap: "break-word"}}>{props.alldata.plotno}, {props.alldata.delivery_location}, {props.alldata.city}, {props.alldata.state}, {props.alldata.pincode} </span></h6>
+          </div>
+          </div>
+          <div className="row" style={{display:"flex",justifyContent:"center",alignItems:"baseline"}}> 
+          <div className="col-sm-6">
+
+          <h5 >  
+
+          <span style={{fontWeight:"700",fontFamily:"open sans",fontSize:"14px"}}>Comments: </span>
+          </h5>
+
+          </div>
+          <div className="col-sm-6">
+          <h6 ><span style={{fontWeight:"200",fontFamily:"open sans",fontSize:"14px"}}>{props.alldata.desc} </span></h6>
+          </div>
+          </div>
+            {/* <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}> Quantity Required: </span> {props.alldata.Quantity_Required}</h4> */}
             {/* <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery TImeline: </span> {props.alldata.delivery_location}</h4> */}
-            <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}>Delivery Address: </span> {props.alldata.plotno},{props.alldata.delivery_location},{props.alldata.city},{props.alldata.state},{props.alldata.pincode}</h4>
-            <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Comments:  </span>{props.alldata.desc}</h4>
+            {/* <h4 > <span style={{fontWeight:"700",fontFamily:"open sans"}}></span> </h4> */}
+            {/* <h4 >  <span style={{fontWeight:"700",fontFamily:"open sans"}}>Comments:  </span>{props.alldata.desc}</h4> */}
             <h4 style={{fontWeight:"700",fontFamily:"open sans",textDecoration: "underline", marginTop:"10px", marginBottom:"10px"}}  >  <span style={{fontWeight:"700",fontFamily:"open sans",textDecoration: "underline", marginTop:"20px"}} >Product Details:  </span></h4>
 
             <div
@@ -224,13 +269,13 @@ const getUsers = async () => {
                     <>
 {
 curr.replyed_by_buyer?
-<div className="row" >
+<div className="row" style={{display:"flex",justifyContent:"center",alignItems:"center"}} >
 <div class="col-12 card-title">
 
 
  <span style={{fontWeight:"700",fontSize:"14px"}}>You:</span> <span style={{fontWeight:"200",fontSize:"14px"}}>&nbsp;{curr.message} </span>
 </div>
-</div>:<div className="row" >
+</div>:<div className="row" style={{display:"flex",justifyContent:"center",alignItems:"center"}} >
 <div class="col-12 card-title">
 
 <span style={{fontWeight:"700",fontSize:"14px"}}>Seller:</span> <span style={{fontWeight:"200",fontSize:"14px"}}> &nbsp;{curr.message}</span>

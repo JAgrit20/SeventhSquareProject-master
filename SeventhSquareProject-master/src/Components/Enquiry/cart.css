@@ -22,6 +22,9 @@ i{
     width: 80%;
     height: 80%;
   }
+  .modal-width{
+    width: 400px !important;
+  }
   .cartcard .product_name {
     color: black;
     font-size: 1.4rem;

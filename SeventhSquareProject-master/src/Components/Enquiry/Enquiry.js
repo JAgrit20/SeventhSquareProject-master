@@ -323,6 +323,20 @@ useEffect(()=>{
       onHide={() => setRfqModalShow(false)}
     /> */}
 
+         </>
+                                
+                );
+                
+                })
+              : null}
+
+
+            {/*  */}
+          </tbody>
+        </Table> 
+        </div>
+      </div>
+      
     { 
       RfqmodalShow &&
       <View_details
@@ -336,8 +350,6 @@ useEffect(()=>{
       users={userdata}
       selid= {sellerid}
       rfid= {rfid}
-
-
 
       onHide={() => setRfqModalShow(false)}
     />
@@ -368,19 +380,6 @@ useEffect(()=>{
       onHide={() => setMessageShow(false)}
     />
     }
-         </>
-                                
-                );
-                
-                })
-              : null}
-
-
-            {/*  */}
-          </tbody>
-        </Table> 
-        </div>
-      </div>
 
       {/* <Helmet>
   <title>Customer Support Seventh Square </title>

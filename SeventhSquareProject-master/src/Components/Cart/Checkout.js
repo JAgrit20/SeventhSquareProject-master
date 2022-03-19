@@ -147,6 +147,7 @@ function Checkout() {
         gst: item.gst,
         sellerId: item?.sellerId,
         proName: item.title,
+        GST_included:item.incl_gst,
       });
     }
 

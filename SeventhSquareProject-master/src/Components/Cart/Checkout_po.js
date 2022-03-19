@@ -229,7 +229,7 @@ function Checkout_po() {
     };
 
 
-    axios.get(`http://127.0.0.1:8001/enquiry/get_rfq_address/${id}`, config).then(
+    axios.get(`https://api.seventhsq.com/enquiry/get_rfq_address/${id}`, config).then(
       (res) => {
         setaddress(res.data[0]);
         setplotno(res.data[0].plotno);

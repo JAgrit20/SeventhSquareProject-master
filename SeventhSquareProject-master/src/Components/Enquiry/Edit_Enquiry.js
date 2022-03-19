@@ -19,6 +19,8 @@ function Edit_enquiry(props) {
   const [plotno, setplotno] = useState('')
   const [pincode, setpincode] = useState('') 
   const [statee, setstatee] = useState('')
+  const [quantunit, setquantunit] = useState('')
+
   const [city, setcity] = useState('')
   const [userdata, setuserdata] = useState([])
   const [propsdata, setpropsdata] = useState([])
@@ -53,6 +55,9 @@ function Edit_enquiry(props) {
     if (name == 'pincode') {
       setpincode(value)
     }
+    if (name == 'q_unit') {
+      setquantunit(value)
+    }
 
   }
 
@@ -86,7 +91,9 @@ function Edit_enquiry(props) {
         "is_replyed": false,
         "email": userdata.email,
         "seller": props.alldata.seller,
-        "rfq_id":props.alldata.id
+        "rfq_id":props.alldata.id,
+        "Quantity_Unit":quantunit ?quantunit: props.alldata.Quantity_Unit
+
 
       })
     }; 
@@ -183,12 +190,57 @@ function Edit_enquiry(props) {
           <Form onSubmit={handlerfq} >
           
 
-            <div class="col mt-4">
+            {/* <div class="col mt-4">
             <h6  style={{fontSize:"14px",fontFamily:"open sans",fontWeight:"700"}}>Quantity Required</h6>
 
               <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Quantity Required" name='q_req' defaultValue ={props.alldata.Quantity_Required} onChange={handlechange} />
-              {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
+            </div> */}
+            <div class="d-flex justify-content-between mt-4 ">
+            <h6 style={{marginLeft:"15px",fontSize:"14px",fontFamily:"open sans",fontWeight:"700"}}>Quantity Required</h6>
+
+<h6 style={{marginRight:"15px",fontSize:"14px",fontFamily:"open sans",fontWeight:"700" }}>Quantity Unit</h6>
+            </div>
+            <div class="d-flex justify-content-evenly col mt-1">
+
+              <Form.Control type="number" placeholder="Quantity Required" name='q_req' defaultValue ={props.alldata.Quantity_Required} onChange={handlechange} style={{marginRight:"10px"}} required />
+
+
+              <Form.Control as="select" placeholder="Quantity Required" name='q_unit' onChange={handlechange}   >
+                                
+                                            <option value={props.alldata.Quantity_Unit} >{props.alldata.Quantity_Unit}</option>
+                                            <option value="Bag">Bag</option>
+                                            <option value="Piece">Piece</option>
+                                            <option value="Metric Tonne">Metric Tonne</option>
+                                            <option value="Kilogram">Kilogram</option>
+                                            <option value="Cubic Foot">Cubic Foot</option>
+                                            <option value="Square Foot">Square Foot</option>
+                                            <option value="Cubic Meter">Cubic Meter</option>
+                                            <option value="Meter">Meter</option>
+                                            <option value="Set">Set</option>
+                                            <option value="Litre">Litre</option>
+                                            <option value="Foot">Foot</option>
+                                            <option value="Bundle">Bundle</option>
+        </Form.Control>
+             
+              {/* <Form.Group controlId="formBasicSelect">
+        <Form.Label>Select Norm Type</Form.Label>
+        <Form.Control
+          as="select"
+          // value={type}
+          // onChange={e => {
+          //   console.log("e.target.value", e.target.value);
+          //   setType(e.target.value);
+          // }}
+        >
+          <option value="DICTUM">Dictamen</option>
+          <option value="CONSTANCY">Constancia</option>
+          <option value="COMPLEMENT">Complemento</option>
+        </Form.Control>
+      </Form.Group> */}
+
+             
+            {/* </Form.Group> */}
             </div>
             <div className="col mt-2">
 
