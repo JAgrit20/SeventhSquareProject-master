@@ -28,6 +28,7 @@ function Rfqmodal(props) {
   console.log(props?.users)
   console.log("props")
   console.log(props)
+  var qunty=1
   const handlechange = (e) => {
     let name = e.target.name
     let value = e.target.value
@@ -35,23 +36,95 @@ function Rfqmodal(props) {
       setlocation(value)
 
     }
+
     if (name == 'q_req') {
       const re = /^[0-9\b]+$/;
 
       // if value is not blank, then test the regex
   
       if (value === '' || re.test(value)) {
+        console.log("qunty",qunty)
+
+        qunty=value
+        console.log("qunty",qunty)
+
       setqty(value)
 
-      }else{
-        alert("Please add a number")
+      // if(qty==1){
+
+      //   console.log("qty",qty)
+      //   console.log("unit",quantunit)
+      //   setquantunit(value)
+      // }else if(quantunit=="Cubic Foot"){
+      //   console.log("qty",qty)
+
+      //   value = "Cubic Feet"
+      //   console.log("unit",value)
+      //   setquantunit(value)
+      // }
+      // else if(quantunit=="Square Foot"){
+      //   console.log("qty",qty)
+
+      //   value = "Square Feet"
+      //   console.log("unit",value)
+      //   setquantunit(value)
+      // }
+      // else if(quantunit=="Foot"){
+      //   console.log("qty",qty)
+
+      //   value = "Feet"
+      //   console.log("unit",value)
+      //   setquantunit(value)
+      // }else{
+      //   console.log("qunty",qty)
+
+      //   value = quantunit+'s'
+
+      //   console.log("unit",value)
+      //   setquantunit(value)
+
+      // }
+
       }
       
 
     }
     if (name == 'q_unit') {
-      console.log("unit",value)
-      setquantunit(value)
+      console.log("qunty top",qty)
+      if(qty==1){
+
+        console.log("qty",qty)
+        console.log("unit",value)
+        setquantunit(value)
+      }else if(value=="Cubic Foot"){
+        console.log("qty",qty)
+
+        value = "Cubic Feet"
+        console.log("unit",value)
+        setquantunit(value)
+      }
+      else if(value=="Square Foot"){
+        console.log("qty",qty)
+
+        value = "Square Feet"
+        console.log("unit",value)
+        setquantunit(value)
+      }
+      else if(value=="Foot"){
+        console.log("qty",qty)
+
+        value = "Feet"
+        console.log("unit",value)
+        setquantunit(value)
+      }else{
+        console.log("qunty",qty)
+
+        value = value+'s'
+
+        console.log("unit",value)
+        setquantunit(value)
+
+      }
       
 
     }
@@ -212,10 +285,10 @@ function Rfqmodal(props) {
             </div>
             <div class="d-flex justify-content-evenly col mt-1">
 
-              <Form.Control type="number" placeholder="Quantity Required" name='q_req' onChange={handlechange} style={{marginRight:"10px"}} required />
+              <Form.Control type="number" placeholder="Quantity Required" name='q_req' onChange={handlechange} style={{marginRight:"10px",fontSize:"12px",fontFamily:"open sans"}} required />
 
 
-              <Form.Control as="select" placeholder="Quantity Required" name='q_unit' onChange={handlechange}  >
+              <Form.Control as="select" placeholder="Quantity Required" name='q_unit' onChange={handlechange} style={{fontSize:"12px",fontFamily:"open sans"}}  >
                                 
                                             <option style={{fontSize:"14px"}}  value="">Choose Unit</option>
                                             <option style={{fontSize:"14px"}} value="Bag">Bag</option>
@@ -270,7 +343,7 @@ function Rfqmodal(props) {
                 placeholder="Due date"
                 value={Fromdate}
                 onChange={(e) => setFromDate(e.target.value)}
-                style={{marginRight:"10px"}}
+                style={{marginRight:"10px",fontSize:"12px",fontFamily:"open sans"}}
                 
               />
 
@@ -280,7 +353,7 @@ function Rfqmodal(props) {
                 placeholder="Due date"
                 value={Todate}
                 onChange={(e) => setToDate(e.target.value)}
-                
+                style={{fontSize:"12px",fontFamily:"open sans"}}
               />
              
             {/* </Form.Group> */}
@@ -292,22 +365,22 @@ function Rfqmodal(props) {
 
               <div class="d-flex justify-content-evenly   col mt-2">
 
-                <Form.Control type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{marginRight:"10px"}} />
-              <Form.Control type="text" placeholder="Pincode" name='pincode' onChange={handlechange}  />
+                <Form.Control type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{marginRight:"10px",fontSize:"12px",fontFamily:"open sans"}} />
+              <Form.Control type="text" placeholder="Pincode" name='pincode' onChange={handlechange} style={{fontSize:"12px",fontFamily:"open sans"}} />
               {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
             </div>
            
             <div class="col mt-2" >
 
-              <Form.Control type="text" placeholder="Street Name / Locality" name='del_loc' onChange={handlechange}  />
+              <Form.Control type="text" placeholder="Street Name / Locality" name='del_loc' onChange={handlechange}style={{fontSize:"12px",fontFamily:"open sans"}}  />
               {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
             </div>
             <div class="d-flex justify-content-evenly   col mt-2">
 
-<Form.Control type="text" placeholder="State." name='statee' onChange={handlechange}style={{marginRight:"10px"}}  />
-<Form.Control type="text" placeholder="City" name='city' onChange={handlechange} />
+<Form.Control type="text" placeholder="State." name='statee' onChange={handlechange}style={{marginRight:"10px",fontSize:"12px",fontFamily:"open sans"}}  />
+<Form.Control type="text" placeholder="City" name='city' onChange={handlechange} style={{fontSize:"12px",fontFamily:"open sans"}} />
 {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
 </div>
@@ -321,7 +394,7 @@ function Rfqmodal(props) {
             <div class="col mt-2">
 
             <Form.Label className='mt-1' style={{fontSize:"14px",fontWeight:"700",fontFamily:"open sans", color:"black",marginTop:"20px"}}>Comments</Form.Label>
-            <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange}  />
+            <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} style={{fontSize:"12px",fontFamily:"open sans"}} />
             </div>
 
 

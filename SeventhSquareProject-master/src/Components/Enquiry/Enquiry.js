@@ -229,7 +229,8 @@ function Enquiry() {
     console.log(config);
     const res=await fetch('https://api.seventhsq.com/orders/enquiry/all/',config);
     const data= await res.json();
-    console.log(data);
+    console.log(typeof(data));
+    
     setdata(data);
     
   

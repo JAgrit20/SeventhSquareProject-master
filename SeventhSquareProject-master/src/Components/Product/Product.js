@@ -55,7 +55,19 @@ function Product() {
   const [BpomodalShow, setBpoModalShow] = useState(false);
   const [InfomodalShow, setInfoModalShow] = useState(false);
   const [usertoken, setusertoken] = useState();
-  const [variants, setvariants] = useState();
+  const [var_sp, setvar_sp] = useState();
+  const [var_mp, setvar_mp] = useState();
+  const [final_mrp, setfinal_mrp] = useState();
+  const [def_mrp, setdef_mrp] = useState();
+  const [def_sp, setdef_sp] = useState();
+  const [def_var, setdef_var] = useState();
+  const [final_sp, setfinal_sp] = useState();
+  const [variants, setvariants] = useState([]);
+  const [variants_selected, setvariants_selected] = useState([]);
+  const [variants_select, setvariants_select] = useState([]);
+  const [variants_tag, setvariants_tag] = useState([]);
+  const [variants_mrp, setvariants_mrp] = useState([]);
+  const [variants_sp, setvariants_sp] = useState([]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -86,7 +98,22 @@ function Product() {
     settotalreview(s / l);
     // console.log(totalreview);
   };
+  const handlechange = (e) => {
+    let value = e.target.value
+    
+    function myReplaceFunction(element) {
+      // console.log("replace is run")
+      element = element.replace(/[\[\]']+/g, ' ');
+      console.log("replace is run",element)
+     }
+    //  variantMp_data.forEach(myReplaceFunction)
 
+    setvar_mp(variants_mrp[value].replace(/[\[\]']+/g, ''))
+    setvar_sp(variants_sp[value].replace(/[\[\]']+/g, ''))
+    setfinal_mrp(parseInt(variants_mrp[value].replace(/[\[\]']+/g, '')))
+    setfinal_sp(parseInt(variants_sp[value].replace(/[\[\]']+/g, '')))
+    
+ }
   const get_logedin_user = async () => {
     const token = localStorage.getItem("token");
 
@@ -107,19 +134,60 @@ function Product() {
     // console.log(users.id)
   };
 
+
   const getUsers = async () => {
     console.log(`id${NewID}`);
     const response = await fetch(
       "https://seller.seventhsq.com/inventory/api/inventory_detail/" + NewID
     );
-    setUsers(await response.json());
+
+    var  data =  await response.json();
+    setUsers(data);
+
     console.log( "response.data");
     // console.log(response.json());
     // console.log("users");
     // console.log(users['name']);
-    // setvariants(users['name']); 
-    // console.log(await response.json())
-    // settotalview( response.json()['views'])
+    console.log('variant')
+    setvar_mp(parseInt(data['defaultMP']))
+    setfinal_mrp(parseInt(data['defaultMP']))
+    setvar_sp(parseInt(data['defaultSP']))
+    setfinal_sp(parseInt(data['defaultSP']))
+    setdef_var(parseInt(data['defaultVar']))
+    if(data['variant'] != null){
+      let selectVariant_data = data['selectVariant_data'].split(', ');
+      let tag_Variant = data['tag_Variant'].split(',');
+      let selectedVariant_data = data['selectedVariant_data'].split(', ');
+      let variantMp_data = data['variantMp_data'].split(',');
+      let variantSp_data = data['variantSp_data'].split(',');
+      let Variant_Onrequest_all_data = data['Variant_Onrequest_all_data'].split(',');
+
+
+      console.log("selectVariant_data",selectVariant_data)
+      console.log("tag_Variant",tag_Variant)
+      console.log("selectedVariant_data",selectedVariant_data)
+      console.log("variantMp_data",variantMp_data)
+      console.log("variantSp_data",variantSp_data)
+
+  
+      setvariants_selected(selectedVariant_data)
+      setvariants_select(selectVariant_data)
+      setvariants_tag(tag_Variant)
+      setvariants_mrp(variantMp_data)
+      setvariants_sp(variantSp_data)
+      
+    }
+    
+    // var varr = data['variant']
+    // console.log(typeof(JSON.parse(varr)))
+    // var ans = JSON.parse(JSON.stringify(varr)) 
+    // console.log("typeof")
+    // console.log(typeof(ans))
+    // console.log((ans))
+    // console.log("ok")
+    // console.log(typeof(JSON.parse(ans)))
+    // console.log((ans))
+    // setvariants((ans))  
   };
   // const updateView = async () => {
   //   console.log(`id${NewID}`);
@@ -180,10 +248,10 @@ function Product() {
   const addtolocal = async () => {
     const body = {
       title: users.name,
-      oldprice: users.markedPrice,
+      oldprice: final_mrp? final_mrp :users.markedPrice,
       pcksize: "3",
       estdelivery: "1",
-      price: users.sellingPrice,
+      price: final_sp? final_sp :users.sellingPrice,
       quantity: quantity,
       item: users.id,
       gst: users.gstRate,
@@ -204,6 +272,9 @@ function Product() {
   };
 
   const addtocart = async () => {
+    console.log("final_sp",final_sp)
+
+
     updatesells()
     // console.log(users);
     const config = {
@@ -215,10 +286,12 @@ function Product() {
 
       body: JSON.stringify({
         title: users.name,
-        oldprice: users.markedPrice,
+        oldprice: final_mrp? final_mrp :users.markedPrice,
+
         pcksize: "3",
         estdelivery: "1",
-        price: users.sellingPrice,
+        price: final_sp? final_sp :users.sellingPrice,
+
         quantity: quantity,
         item: users.id,
         gst: users.gstRate,
@@ -242,6 +315,7 @@ function Product() {
   };
 
   const buynow = async () => {
+    console.log("final_sp",final_sp)
     const config = {
       method: "POST",
       headers: {
@@ -249,10 +323,10 @@ function Product() {
       },
       body: JSON.stringify({
         title: users.name,
-        oldprice: users.markedPrice,
+        oldprice: final_mrp? final_mrp :users.markedPrice,
         pcksize: "3",
         estdelivery: "1",
-        price: users.sellingPrice,
+        price: final_sp? final_sp :users.sellingPrice,
         quantity: quantity,
         item: users.id,
         gst: users.gstRate,
@@ -392,28 +466,59 @@ function Product() {
             </div>
 
             <div class="price-col">
-              <div class="product-price">
+              <div class="product-price" style={{alignItems:"baseline"}}>
               {users.Price_on_request == false ? (
-                <div>
-                 <p class="last-price"> 
-                  Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
-                </p>
-                 {/* <p class="new-price"> 
-               
-                  Price : <span>₹ {variants} </span>&nbsp;&nbsp; 
-                </p> */}
-                <p class="new-price">
-                  <span>
-                    <i class="fa-solid fa-indian-rupee-sign"></i> ₹
-                    {users.sellingPrice}/{users.qtyUnit}  ({users.discount}% OFF) 
-                  </span>
-                </p>
-                  </div>
+               [ users.Price_on_request? 
+               <div>
+                <p class="last-price"> 
+                 Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
+               </p>
+            
+               <p class="new-price">
+                 <span>
+                   <i class="fa-solid fa-indian-rupee-sign"></i> ₹
+                   {users.sellingPrice}/{users.qtyUnit}  ({users.discount}% OFF) 
+
+
+                 </span>
+               </p>
+                 </div>:[  
+                   <>
+                   <p class="last-price"> 
+                   Price : <span>₹ {var_mp} </span>&nbsp;&nbsp;
+                 </p>
+              
+                 <p class="new-price">
+                   <span>
+                     <i class="fa-solid fa-indian-rupee-sign"></i> ₹
+                     {var_sp}
+              
+                   </span>
+                 </p>
+                 <span style={{marginLeft:"10px",marginRight:"10px"}}>Variant</span>
+                   
+                   <select onChange={handlechange}>
+
+{variants_selected? variants_selected.map((curr, index) => {
+return (
+<>
+{/* <option value="" selected disabled> </option> */}
+<option value={index}> {curr.slice(1, -1)}</option>
+</>
+)
+}
+)
+: null}
+</select>
+                   </>
+]]
               ) : (
                 <h6 style={{fontSize:"20px",color:"red"}} class="product-title">Price On Request </h6>
               )}
                 
-                
+                <p>
+     
+                </p>
               </div>
               <div class="product-rating">
                 {totalreview == 0 ? (
