@@ -290,7 +290,7 @@ useEffect(()=>{
                           <td>{curr.created_at.slice(8,10)}-{curr.created_at.slice(5,7)}-{curr.created_at.slice(0,4)}</td>
                           {/* <td><Link to='checkout_po' state={{name:'75'}}> Make Payment</Link></td> */}
 
-                          <td style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"left",whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}> {curr.product_name}</td>
+                          <td style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"left",wordBreak: "normal"}}> {curr.product_name}</td>
                          { curr.Seller_tax_inclusive?
                          <td> {Number(curr.Quantity_Required) * Number(curr.Seller_Sale_Price)}</td>:
                          <td> {Number(curr.Quantity_Required*Number(curr.Seller_Sale_Price)) *  (Number(1)+(Number(curr.Seller_tax_code)/100)) }</td>
