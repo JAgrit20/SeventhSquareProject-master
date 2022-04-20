@@ -292,10 +292,10 @@ useEffect(()=>{
 
                           <td style={{fontWeight:"400",fontFamily:"open sans",fontSize:"15px",textAlign:"left",wordBreak: "normal"}}> {curr.product_name}</td>
                          { curr.Seller_tax_inclusive?
-                         <td> {Number(curr.Quantity_Required) * Number(curr.Seller_Sale_Price)}</td>:
-                         <td> {Number(curr.Quantity_Required*Number(curr.Seller_Sale_Price)) *  (Number(1)+(Number(curr.Seller_tax_code)/100)) }</td>
+                         <td> ₹{((Number(curr.Quantity_Required) * Number(curr.Seller_Sale_Price))).toFixed(2)}</td>:
+                         <td>₹ {(Number(curr.Quantity_Required*Number(curr.Seller_Sale_Price)) *  (Number(1)+(Number(curr.Seller_tax_code)/100))).toFixed(2)}</td>
                         }
-                          <td> {curr.id}</td>
+                          <td>{curr.po_expiring_at.slice(8,10)}-{curr.po_expiring_at.slice(5,7)}-{curr.po_expiring_at.slice(0,4)} 11:59 PM</td>
 
                         {!curr.PO_success?
 
@@ -314,16 +314,7 @@ useEffect(()=>{
  
                         </tr>
                       
-                        {/* <View_details
-      show={RfqmodalShow}
-      alldata={detailss}
-      create= {curr.created_at.slice(0,10)}
-      users={userdata}
-      selid= {sellerid}
-      rfid= {rfid}
-      onHide={() => setRfqModalShow(false)}
-    /> */}
-
+                     
          </>
                                 
                 );
@@ -338,49 +329,7 @@ useEffect(()=>{
         </div>
       </div>
       
-    { 
-      RfqmodalShow &&
-      <View_details
-      show={RfqmodalShow}
-      // users={users}
-      alldata={detailss}
-
-
-
-      // create= {curr.created_at.slice(0,10)}
-      users={userdata}
-      selid= {sellerid}
-      rfid= {rfid}
-
-      onHide={() => setRfqModalShow(false)}
-    />
-    }
-    {
-      EditMessageShow && 
-      <Edit_enquiry
-      show={EditMessageShow}
-      // users={users}
-      alldata={detailss}
-      users={userdata}
-      selid= {sellerid}
-      rfid= {rfid}
-      onHide={() => setEditMessageShow(false)}
-    />
-    }
-
-    {
-       MessageShow && 
-
-      <Send_message
-      alldata={detailss}
-
-      show={MessageShow}
-      now = {now}
-      users={userdata}
-      
-      onHide={() => setMessageShow(false)}
-    />
-    }
+   
 
       {/* <Helmet>
   <title>Customer Support Seventh Square </title>
@@ -433,15 +382,7 @@ useEffect(()=>{
 
  
                         </tr>
-                        {/* <View_details
-      show={RfqmodalShow}
-      alldata={detailss}
-      create= {curr.created_at.slice(0,10)}
-      users={userdata}
-      selid= {sellerid}
-      rfid= {rfid}
-      onHide={() => setRfqModalShow(false)}
-    /> */}
+                
 
     { 
       RfqmodalShow &&
@@ -449,16 +390,9 @@ useEffect(()=>{
       show={RfqmodalShow}
       // users={users}
       alldata={detailss}
-
-
-
-      // create= {curr.created_at.slice(0,10)}
       users={userdata}
       selid= {sellerid}
       rfid= {rfid}
-
-
-
       onHide={() => setRfqModalShow(false)}
     />
     }

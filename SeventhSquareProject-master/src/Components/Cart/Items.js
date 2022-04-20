@@ -24,7 +24,8 @@ subCategory,
 incl_gst,
 brand,
 category,
-subcategory
+subcategory,
+var_id
 
 
 }) => {
@@ -112,12 +113,12 @@ useEffect(()=>{
                     <div className="add-minus-quantity">
                       <i
                         className="fas fa-minus minus"
-                        onClick={() =>usertoken? decrementcart(title,oldprice,pcksize,price,item):invalid()}
+                        onClick={() =>usertoken? decrementcart(title,oldprice,pcksize,price,item,var_id):invalid()}
                       ></i>
                       <input type="text" placeholder={quantity} disabled />
                       <i
                         className="fas fa-plus add"
-                        onClick={() => usertoken?incrementcart(title,oldprice,pcksize,price,item) :invalid()}
+                        onClick={() => usertoken?incrementcart(title,oldprice,pcksize,price,item,var_id) :invalid()}
                       ></i>
                     </div>
                   </ul>
@@ -127,7 +128,7 @@ useEffect(()=>{
                     <p style={{"fontSize":"12px"}} >
                       <i
                         class="fas fa-trash-alt"
-                        onClick={() =>usertoken? removecart(title,oldprice,pcksize,price,item) :invalid()}
+                        onClick={() =>usertoken? removecart(title,oldprice,pcksize,price,item,var_id) :invalid()}
                       ></i>{" "}
                       Remove
                     </p>

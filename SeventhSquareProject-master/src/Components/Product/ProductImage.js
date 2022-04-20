@@ -52,11 +52,11 @@ import "./ProductImage.css"
         return(
           <div className="app">
             <div class="slider">
-                    <div class="product">
-                    { images.map(curr =>(
+                    <div class="product" style={{overflow:"auto !important"}}>
+                    { images.map((curr,index) =>(
               <div className="details">
               <div className="big-img">
-              <img src= { "https://seller.seventhsq.com" + curr["picture"]} onClick={()=>setbigimage(curr["picture"])} alt=""  />
+              <img value={index} src= { "https://seller.seventhsq.com" + curr["picture"]} onClick={()=>setbigimage(curr["picture"])} alt=""  />
                    
                   </div>
                   

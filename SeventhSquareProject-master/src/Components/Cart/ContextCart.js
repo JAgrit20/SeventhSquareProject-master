@@ -68,6 +68,7 @@ const ContextCart = () => {
       console.log(config);
       const res=await fetch('https://api.seventhsq.com/orders/add-to-cart/',config);
       const data= await res.json();
+      console.log("cart data");
       console.log(data);
       setdata(data);
       let s=0
@@ -91,7 +92,8 @@ const ContextCart = () => {
     
   }
  
-  const incrementcart=useCallback(async(title,oldprice,pcksize,price,item)=>{
+  const incrementcart=useCallback(async(title,oldprice,pcksize,price,item,var_id)=>{
+    console.log("var_id",var_id)
     
     const config = {
       method:'POST',
@@ -107,7 +109,7 @@ const ContextCart = () => {
           "price": price ,
           "quantity": 1,
           "item": item,
-        
+          "var_id":var_id?var_id:null
       })
     };
     console.log(config);
@@ -120,7 +122,8 @@ const ContextCart = () => {
     
   },[j])
   
-  const decrementcart=useCallback(async(title,oldprice,pcksize,price,item)=>{
+  const decrementcart=useCallback(async(title,oldprice,pcksize,price,item,var_id)=>{
+    console.log("var_id",var_id)
     const config = {
       method:'POST',
       headers: {
@@ -135,6 +138,8 @@ const ContextCart = () => {
         "price": price ,
         "quantity": -1,
         "item": item,
+          "var_id":var_id?var_id:null
+
       })
     };
     console.log(config);
@@ -146,7 +151,7 @@ const ContextCart = () => {
     
 },[j])
 
-const removecart=useCallback(async(title,oldprice,pcksize,price,item)=>{
+const removecart=useCallback(async(title,oldprice,pcksize,price,item,var_id)=>{
     
   const config = {
     method:'POST',
@@ -162,6 +167,8 @@ const removecart=useCallback(async(title,oldprice,pcksize,price,item)=>{
         "price": price ,
         "quantity": -10000,
         "item": item,
+           "var_id":var_id?var_id:null
+
       
     })
   };

@@ -13,6 +13,9 @@ import "./cart.css";
 
 
 function View_details(props) {
+  const style = {
+display:"contents"
+  }
 
   const [location, setlocation] = useState('')
   const [qty, setqty] = useState('')
@@ -99,17 +102,19 @@ const getUsers = async () => {
   }, [])
 
   return (
-    <div style={{position:"fixed"}}  >
-      <div>
+    <div style={style} >
+      <div >
 
 
       <Modal
+      // style={{display:"content"}}
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         animation={false}
         dialogClassName="modal-width"
+        
     
       >
         {/* <style>
@@ -125,25 +130,7 @@ const getUsers = async () => {
         </Modal.Header>
 
 
-          {/* "state":statee,
-        "city":city,
-        "plotno":plotno,
-        "pincode":pincode,
-        "Buyer_ID": userdata.id,
-        "Buyer_Type_corperate": userdata.is_corporate,
-        "Buyer_Name": userdata.first_name+" "+userdata.last_name,
-        "product_id": props.id,
-        "category": props.category,
-        "phone": userdata.phone,
-        "brand_preference": props?.users?.brand_name,
-        "desc": description, 
-        "Quantity_Required": qty,
-        "delivery_location": location,
-        "delivery_from": Fromdate,
-        "delivery_to": Todate,
-        "is_replyed": false,
-        "email": userdata.email, 
-        "seller": props?.users?.account */}
+       
             <div class="col mt-4">
             <h6 ></h6>
             <h4 >  <span style={{fontWeight:"700",textDecoration: "underline",fontFamily:"open sans"}} >Enquiry Details:  </span></h4>

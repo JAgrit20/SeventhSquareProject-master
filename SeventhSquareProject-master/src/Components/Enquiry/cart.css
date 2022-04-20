@@ -25,6 +25,9 @@ i{
   .modal-width{
     width: 400px !important;
   }
+  .modal{
+    display: contents;
+  }
   .cartcard .product_name {
     color: black;
     font-size: 1.4rem;

@@ -203,24 +203,24 @@ function Edit_enquiry(props) {
             </div>
             <div class="d-flex justify-content-evenly col mt-1">
 
-              <Form.Control type="number" placeholder="Quantity Required" name='q_req' defaultValue ={props.alldata.Quantity_Required} onChange={handlechange} style={{marginRight:"10px"}} required />
+              <Form.Control type="number" placeholder="Quantity Required" name='q_req' defaultValue ={props.alldata.Quantity_Required} onChange={handlechange} style={{marginRight:"10px",fontSize:"12px"}} required />
 
 
-              <Form.Control as="select" placeholder="Quantity Required" name='q_unit' onChange={handlechange}   >
+              <Form.Control as="select" placeholder="Quantity Required" name='q_unit' onChange={handlechange} style={{fontSize:"12px"}}  >
                                 
-                                            <option value={props.alldata.Quantity_Unit} >{props.alldata.Quantity_Unit}</option>
-                                            <option value="Bag">Bag</option>
-                                            <option value="Piece">Piece</option>
-                                            <option value="Metric Tonne">Metric Tonne</option>
-                                            <option value="Kilogram">Kilogram</option>
-                                            <option value="Cubic Foot">Cubic Foot</option>
-                                            <option value="Square Foot">Square Foot</option>
-                                            <option value="Cubic Meter">Cubic Meter</option>
-                                            <option value="Meter">Meter</option>
-                                            <option value="Set">Set</option>
-                                            <option value="Litre">Litre</option>
-                                            <option value="Foot">Foot</option>
-                                            <option value="Bundle">Bundle</option>
+                                            <option  hidden value={props.alldata.Quantity_Unit} >{props.alldata.Quantity_Unit}</option>
+                                            <option style={{fontSize:"12px"}} value="Bag">Bag</option>
+                                            <option style={{fontSize:"12px"}} value="Piece">Piece</option>
+                                            <option style={{fontSize:"12px"}} value="Metric Tonne">Metric Tonne</option>
+                                            <option style={{fontSize:"12px"}} value="Kilogram">Kilogram</option>
+                                            <option style={{fontSize:"12px"}} value="Cubic Foot">Cubic Foot</option>
+                                            <option style={{fontSize:"12px"}} value="Square Foot">Square Foot</option>
+                                            <option style={{fontSize:"12px"}} value="Cubic Meter">Cubic Meter</option>
+                                            <option style={{fontSize:"12px"}} value="Meter">Meter</option>
+                                            <option style={{fontSize:"12px"}} value="Set">Set</option>
+                                            <option style={{fontSize:"12px"}} value="Litre">Litre</option>
+                                            <option style={{fontSize:"12px"}} value="Foot">Foot</option>
+                                            <option style={{fontSize:"12px"}} value="Bundle">Bundle</option>
         </Form.Control>
              
               {/* <Form.Group controlId="formBasicSelect">
@@ -257,8 +257,8 @@ function Edit_enquiry(props) {
 
             <div class="d-flex justify-content-evenly col mt-1 mb-2">
 
-<Form.Control value ={props.alldata.delivery_from.slice(0,10)} type="text"  onChange={handlechange}  style={{marginRight:"10px",background:"#bebebe"}} />
-<Form.Control value ={props.alldata.delivery_to.slice(0,10)} type="text" onChange={handlechange} style={{background:"#bebebe"}}/>
+<Form.Control value ={props.alldata.delivery_from.slice(0,10)} type="text"  onChange={handlechange}  style={{marginRight:"10px",background:"#bebebe",fontSize:"12px",}} />
+<Form.Control value ={props.alldata.delivery_to.slice(0,10)} type="text" onChange={handlechange} style={{background:"#bebebe",fontSize:"12px",}}/>
 {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
 </div>
@@ -277,7 +277,7 @@ function Edit_enquiry(props) {
                 placeholder="Due date"
                 value={Fromdate}
                 onChange={(e) => setFromDate(e.target.value)}
-                style={{marginRight:"10px"}}
+                style={{marginRight:"10px",fontSize:"12px"}}
                 
               />
 
@@ -287,6 +287,8 @@ function Edit_enquiry(props) {
                 placeholder="Due date"
                 value={Todate}
                 onChange={(e) => setToDate(e.target.value)}
+                style={{fontSize:"12px"}}
+
               />
              
             {/* </Form.Group> */}
@@ -300,9 +302,9 @@ function Edit_enquiry(props) {
 
 
 
-            <Form.Control defaultValue ={props.alldata.plotno} type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{marginRight:"10px"}}/>
+            <Form.Control defaultValue ={props.alldata.plotno} type="text" placeholder="Plot No." name='plotno' onChange={handlechange}  style={{marginRight:"10px",fontSize:"12px"}}/>
 
-              <Form.Control defaultValue ={props.alldata.pincode} type="text" placeholder="Pincode" name='pincode' onChange={handlechange} setvalue={props.alldata.pincode} />
+              <Form.Control defaultValue ={props.alldata.pincode} type="text" placeholder="Pincode" name='pincode' onChange={handlechange} setvalue={props.alldata.pincode} style={{fontSize:"12px"}} />
               {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
             </div>
@@ -312,14 +314,14 @@ function Edit_enquiry(props) {
            
      
 
-              <Form.Control defaultValue ={props.alldata.delivery_location} type="text" placeholder="Street Name / Locality" name='del_loc' onChange={handlechange} />
+              <Form.Control defaultValue ={props.alldata.delivery_location} type="text" placeholder="Street Name / Locality" name='del_loc' onChange={handlechange} style={{fontSize:"12px"}} />
               {/* <Form.Control defaultValue ={props.alldata.Quantity_Required} type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
               </div>
             <div class="d-flex justify-content-evenly   col mt-2">
 
 
-<Form.Control defaultValue ={props.alldata.state} type="text" placeholder="State." name='statee' onChange={handlechange}style={{marginRight:"10px"}}  />
-<Form.Control defaultValue ={props.alldata.city} type="text" placeholder="City" name='city' onChange={handlechange} />
+<Form.Control defaultValue ={props.alldata.state} type="text" placeholder="State." name='statee' onChange={handlechange}style={{marginRight:"10px",fontSize:"12px"}}  />
+<Form.Control defaultValue ={props.alldata.city} type="text" placeholder="City" name='city' onChange={handlechange} style={{fontSize:"12px"}}  />
 {/* <Form.Control type="text" placeholder="Delivery Timeline" name='time' onChange={handlechange} /> */}
 
 </div>
@@ -333,7 +335,7 @@ function Edit_enquiry(props) {
 <div class="col mt-2">
 
 <Form.Label className='mt-1' style={{fontSize:"14px",fontWeight:"700",fontFamily:"open sans", color:"black",marginTop:"20px"}}>Comments</Form.Label>
-            <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} defaultValue ={props.alldata.desc}/>
+            <Form.Control as="textarea" rows={5} placeholder="Comments" name='description' onChange={handlechange} defaultValue ={props.alldata.desc} style={{fontSize:"12px"}} />
 </div>
 
             {userdata ? (

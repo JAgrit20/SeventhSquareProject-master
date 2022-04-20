@@ -98,10 +98,24 @@
     padding: 0 1.6rem;
   }
   
+  .product::-webkit-scrollbar:vertical {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+  
+  .product::-webkit-scrollbar-thumb:vertical {
+    display: none;
+  }
+
   .product {
-    overflow: hidden;
+    overflow: auto;
     
   }
+  .product::-webkit-scrollbar {
+    display: none;
+  }
+  
   
   .product .img-container {
     position: relative;

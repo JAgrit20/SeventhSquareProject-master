@@ -54,20 +54,26 @@ function Product() {
   const [RfpmodalShow, setRfpModalShow] = useState(false);
   const [BpomodalShow, setBpoModalShow] = useState(false);
   const [InfomodalShow, setInfoModalShow] = useState(false);
+  const [vari_drop, setvari_drop] = useState(false);
   const [usertoken, setusertoken] = useState();
+  const [var_id, setvar_id] = useState();
   const [var_sp, setvar_sp] = useState();
   const [var_mp, setvar_mp] = useState();
   const [final_mrp, setfinal_mrp] = useState();
   const [def_mrp, setdef_mrp] = useState();
+  const [def_type, setdef_type] = useState();
   const [def_sp, setdef_sp] = useState();
   const [def_var, setdef_var] = useState();
+  const [def_prod_index, setdef_prod_index] = useState();
   const [final_sp, setfinal_sp] = useState();
   const [variants, setvariants] = useState([]);
   const [variants_selected, setvariants_selected] = useState([]);
   const [variants_select, setvariants_select] = useState([]);
   const [variants_tag, setvariants_tag] = useState([]);
+  const [Var_poq, setVar_poq] = useState([]);
   const [variants_mrp, setvariants_mrp] = useState([]);
   const [variants_sp, setvariants_sp] = useState([]);
+  const [check_poq, setcheck_poq] = useState([]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -107,8 +113,11 @@ function Product() {
       console.log("replace is run",element)
      }
     //  variantMp_data.forEach(myReplaceFunction)
-
+    setvar_id(value)
     setvar_mp(variants_mrp[value].replace(/[\[\]']+/g, ''))
+    console.log("check poq")
+    console.log("see spacing",Var_poq[value].replace(/[\[\]']+/g, '',"see spacing"))
+    setcheck_poq(Var_poq[value].replace(/[\[\]']+/g, ''))
     setvar_sp(variants_sp[value].replace(/[\[\]']+/g, ''))
     setfinal_mrp(parseInt(variants_mrp[value].replace(/[\[\]']+/g, '')))
     setfinal_sp(parseInt(variants_sp[value].replace(/[\[\]']+/g, '')))
@@ -149,18 +158,24 @@ function Product() {
     // console.log("users");
     // console.log(users['name']);
     console.log('variant')
+    console.log(data['defaultPOQ'])
+    setcheck_poq((data['defaultPOQ']))
     setvar_mp(parseInt(data['defaultMP']))
     setfinal_mrp(parseInt(data['defaultMP']))
     setvar_sp(parseInt(data['defaultSP']))
     setfinal_sp(parseInt(data['defaultSP']))
-    setdef_var(parseInt(data['defaultVar']))
-    if(data['variant'] != null){
+    setdef_type((data['selectVariant_data'].replace(/[\[\]']+/g, '')))
+    setdef_var((data['defaultVar']))
+    if(data['variant']){
+      console.log("yes vari")
       let selectVariant_data = data['selectVariant_data'].split(', ');
+      setvari_drop(true)
       let tag_Variant = data['tag_Variant'].split(',');
       let selectedVariant_data = data['selectedVariant_data'].split(', ');
       let variantMp_data = data['variantMp_data'].split(',');
       let variantSp_data = data['variantSp_data'].split(',');
       let Variant_Onrequest_all_data = data['Variant_Onrequest_all_data'].split(',');
+      let Var_isDefault_all_data = data['Var_isDefault_all_data'].split(', ');
 
 
       console.log("selectVariant_data",selectVariant_data)
@@ -168,8 +183,20 @@ function Product() {
       console.log("selectedVariant_data",selectedVariant_data)
       console.log("variantMp_data",variantMp_data)
       console.log("variantSp_data",variantSp_data)
+      console.log("Var_isDefault_all_data",Var_isDefault_all_data)
 
-  
+      Var_isDefault_all_data.forEach(myFunction);
+
+      function myFunction(item, index) {
+        console.log("check index", index+item.replace(/[\[\]']+/g, ''))
+
+     if ((item.replace(/[\[\]']+/g, '')) == "True"){
+      setvar_id(index)
+        console.log("final index", index+item)
+     }
+      }
+
+      setVar_poq(Variant_Onrequest_all_data)
       setvariants_selected(selectedVariant_data)
       setvariants_select(selectVariant_data)
       setvariants_tag(tag_Variant)
@@ -256,6 +283,7 @@ function Product() {
       item: users.id,
       gst: users.gstRate,
       sellerId: users.account,
+      var_id:var_id?var_id:null,
     };
     var localcart = [];
     var storedcart = await JSON.parse(localStorage.getItem("localcart"));
@@ -299,7 +327,8 @@ function Product() {
         brand:users.brand_name,
         incl_gst:users.incl_gst,
         category:users.category,
-        subcategory:users.subCategory
+        subcategory:users.subCategory,
+        var_id:var_id?var_id:null,
       }),
     };
     // console.log(config);
@@ -331,6 +360,7 @@ function Product() {
         item: users.id,
         gst: users.gstRate,
         sellerId: users.account,
+        var_id:var_id?var_id:null,
       }),
     };
     // console.log(config);
@@ -467,25 +497,34 @@ function Product() {
 
             <div class="price-col">
               <div class="product-price" style={{alignItems:"baseline"}}>
-              {users.Price_on_request == false ? (
-               [ users.Price_on_request? 
-               <div>
-                <p class="last-price"> 
-                 Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
-               </p>
-            
-               <p class="new-price">
-                 <span>
-                   <i class="fa-solid fa-indian-rupee-sign"></i> ₹
-                   {users.sellingPrice}/{users.qtyUnit}  ({users.discount}% OFF) 
+
+              {(() => {
+        if (users.Price_on_request == false && vari_drop == false && users.markedPrice != 0) {
+          return (
+            <div>
+            <p class="last-price"> 
+             Price : <span>₹ {users.markedPrice} </span>&nbsp;&nbsp;
+           </p>
+        
+           <p class="new-price">
+             <span>
+               <i class="fa-solid fa-indian-rupee-sign"></i> ₹
+               {users.sellingPrice}/{users.qtyUnit}  ({users.discount}% OFF) 
 
 
-                 </span>
-               </p>
-                 </div>:[  
-                   <>
-                   <p class="last-price"> 
-                   Price : <span>₹ {var_mp} </span>&nbsp;&nbsp;
+             </span>
+           </p>
+             </div>
+          )
+        } else if (setvar_mp) {
+          return (
+            <>
+             {(() => {
+            if(check_poq==" False" || check_poq=="False" || check_poq=="false" || check_poq==" false" ){
+              return (  
+                <>
+            <p class="last-price"> 
+                Price : <span>₹ {var_mp} </span>&nbsp;&nbsp;
                  </p>
               
                  <p class="new-price">
@@ -495,32 +534,56 @@ function Product() {
               
                    </span>
                  </p>
-                 <span style={{marginLeft:"10px",marginRight:"10px"}}>Variant</span>
-                   
-                   <select onChange={handlechange}>
+                 </>
+              )
+            }
+            else{
+              return (
+                <>
+            <h6 style={{fontSize:"15px",color:"red"}} class="product-title">Price On Request </h6>
+                
+                </>
+                )
+            }
+          })()}
+          {
+            
+            vari_drop &&
+
+
+                 <select onChange={handlechange}>
+
 
 {variants_selected? variants_selected.map((curr, index) => {
 return (
 <>
-{/* <option value="" selected disabled> </option> */}
-<option value={index}> {curr.slice(1, -1)}</option>
+<option value={index}> {curr.replace(/['"\[\]']+/g, '')}</option>
 </>
 )
 }
 )
 : null}
 </select>
-                   </>
-]]
-              ) : (
-                <h6 style={{fontSize:"20px",color:"red"}} class="product-title">Price On Request </h6>
-              )}
-                
+          }
+            </>
+          )
+        } else {
+          return (
+            <h6 style={{fontSize:"20px",color:"red"}} class="product-title">Price On Request </h6>
+
+          )
+        }
+      })()}
+                         
                 <p>
+                  {
+vari_drop &&
+                <span style={{marginRight:"10px",marginLeft:"10px"}}> Variant: {def_type} </span>
+                  }
      
                 </p>
               </div>
-              <div class="product-rating">
+              <div class="product-ratin">
                 {totalreview == 0 ? (
                   <>
                     <i class="far fa-star"></i>
@@ -666,6 +729,8 @@ return (
                   Min quantity: {users.qty}{" "}
               </span>
               </div>
+              {
+                !users.Price_on_request &&
               <button
                 onClick={usertoken ? addtocart : addtolocal}
                 class="btn btn-light btn-md mr-1 mb-2"
@@ -676,7 +741,20 @@ return (
                 ></i>
                 Add to Cart
               </button>
+              }
+              {
+                users.Price_on_request &&
+              <button
+              onClick={() => setRfqModalShow(true)}
+                class="btn btn-light btn-md mr-1 mb-2"
+              >
+
+                Request For Quotation
+              </button>
+              }
                 <div style={{display:"flex"}}>
+                  {
+          !users.Price_on_request &&
               <button
                 type="button"
                 class="btn btn-light btn-md mr-1 mb-2"
@@ -684,6 +762,7 @@ return (
               >
                 &nbsp;Buy Now
               </button>
+                  }
               <button
                 class="btn btn-light btn-md mr-1 mb-2"
                 onClick={get_logedin_user}

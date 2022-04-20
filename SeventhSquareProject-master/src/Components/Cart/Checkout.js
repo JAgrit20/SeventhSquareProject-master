@@ -528,7 +528,7 @@ function Checkout() {
               {/* <img  style={{height:"35px",width:"35px",paddingTop:"10px"}} src={tick}/> */}
 
               <h3>CART SUMMARY</h3>
-              <h3>Number of Items: {cartdata.length}_</h3>
+              <h3>Number of Items: {cartdata.length} {" "} &nbsp;</h3>
             </div>
 
             {cartdata.map((curr, index) => {
@@ -556,7 +556,7 @@ function Checkout() {
                       {!curr.incl_gst?(
                         <p>
 
-                          Price: ₹ {Number(curr.price)+Number ((curr.price*curr.gst)/100)}
+                          Price: ₹ {(Number(curr.price)+Number ((curr.price*curr.gst)/100)).toFixed(2)}
                         </p>
                       ):(
 <p>
@@ -576,12 +576,12 @@ Price: ₹ {(curr.price)}
                     <h5 key={index} style={{ fontFamily: "open sans",wordBreak: "break-word"  }}>
                     {!curr.incl_gst?(
                         <p>
-Total: ₹ {Number(curr.quantity) * Number(Number(curr.price)+Number ((curr.price*curr.gst)/100))} 
+Total: ₹ {(Number(curr.quantity) * Number(Number(curr.price)+Number ((curr.price*curr.gst)/100))).toFixed(2)} 
                       
                         </p>
                       ):(
 <p>
-Total: ₹ {Number(curr.quantity) * Number(Number(curr.price))} 
+Total: ₹ {(Number(curr.quantity) * Number(Number(curr.price))).toFixed(2)} 
 </p>
                       )
                     }
@@ -603,7 +603,7 @@ Total: ₹ {Number(curr.quantity) * Number(Number(curr.price))} 
                   marginTop: "auto"
               }}
             >
-              <h4 style={{ fontWeight: "bold",wordBreak: "break-word"}}>Total: ₹{total} </h4>{" "}
+              <h4 style={{ fontWeight: "bold",wordBreak: "break-word"}}>Total: ₹{total}  &nbsp; {" "} </h4>
             </div>
           </div>
         </div>

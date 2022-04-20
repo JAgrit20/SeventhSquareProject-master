@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import "./categoriesProduct.css";
+import Rfqmodal from "../../../Product/Rfomodal";
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -18,6 +20,11 @@ import GlassFilter from "./SubCategories/GlassFilter";
 
 
 function CatItem(props) {
+  console.log("props",props)
+  console.log("props",props.sellerId)
+  // console.log("props",props?.users?.account)
+  const [RfqmodalShow, setRfqModalShow] = useState(false);
+
 
   const [state, setState] = React.useState({
     top: false,
@@ -210,17 +217,33 @@ function CatItem(props) {
 
       {/* <p>{curr.description}</p> */}
       <div className="row d-flex my-2">
-
-        <h6 style={{marginleft:"5px"}}>INR {props.price}</h6>
-        {/* <h6>{curr.category}</h6> */}
+      {props.price != "0"?
+          
+        <h6 style={{marginleft:"5px"}}>INR {props.price}</h6>:
+        <h6 style={{marginleft:"5px"}}>Price on Request</h6>
+       }
       </div>
       <div >
         <div class="d-flex justify-content-start">
+          {!props.Price_on_request && props.defaultMP?
+          <>
           <button class="buy-3" onClick={usertoken ? buynow : invalid}> <span style={{paddingBottom:"10px ",fontFamily:"open sans"}}> BUY NOW </span></button>
           <button class="buy-3" onClick={usertoken ? addtocart : addtolocal}style={{fontFamily:"open sans"}} >ADD TO CART</button>
+          </>:
+          <button class="buy-3" onClick={() => setRfqModalShow(true)} style={{fontFamily:"open sans"}} >Request for Quotation</button>
+          // <div>hi</div>
+          }
         </div>
         
       </div>
+      <Rfqmodal
+        show={RfqmodalShow}
+        id={props.id}
+        category={props.category}
+        name={props.name}
+        sel_id={props.sellerId}
+        onHide={() => setRfqModalShow(false)}
+      />
 
     </div>
 
