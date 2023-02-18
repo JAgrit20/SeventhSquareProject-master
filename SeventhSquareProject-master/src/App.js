@@ -56,6 +56,8 @@ import Success from "./Components/payu/success";
 import Failure from "./Components/payu/Failure";
 import Order_sum from "./Components/orders/Order_sum";
 import Order_sum_i from "./Components/orders/Order_sum_i";
+import FirstLook from "./Components/LandingNow/FirstLook"; 
+
 
 export const CartContext = createContext();
 const initialState = {
@@ -103,20 +105,21 @@ function App(props) {
     dispatch({ type: "GET_TOTAL" });
     // console.log("Awesome");
   }, [state.item]);
-
+  const showNavbar = window.location.pathname !== '/';
+  const showFooter = window.location.pathname !== '/';
 
   return (
     <div className="App">
      
       <Router forceRefresh={true}>
         <div>
-          <Navbar />
+        {showNavbar && <Navbar />}
 
           <Switch>
             <Route  onClick={() => {window.location.reload()}} path="/track-order">
               <OrderTrack />
             </Route>
-          
+            <Route path="/" render={() => <FirstLook />} />
             <Route  onClick={() => {window.location.reload()}} path="/catogoriesLanding/:name">
               <CategoriesLanding />
             </Route>
@@ -200,6 +203,7 @@ function App(props) {
             </Route>
 
             {/* all faq links are starts from here */}
+
             <Route  onClick={() => {window.location.reload()}} path="/faq">
               <FAQ />
             </Route>
@@ -248,11 +252,12 @@ function App(props) {
               <Checkout_po/>
             </Route>
             
-            <Route  onClick={() => {window.location.reload()}} path="/">
+            <Route  onClick={() => {window.location.reload()}} path="/landing">
               <Landing />
             </Route>
           </Switch>
-          <Footer />
+          {showFooter && <Footer />}
+
         </div>
       </Router>
      

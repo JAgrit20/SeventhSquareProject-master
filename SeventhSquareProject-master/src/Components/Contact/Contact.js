@@ -141,7 +141,7 @@ console.log(message)
               <form>
                 <input type="text" name="name" id="name" placeholder="Full Name" />
                 <input type="email" name="email" id="email" placeholder="Example@gmail.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onChange={(e)=>{ onChangeHandler("email",e.target.value)}}  required />
-                <textarea name="message" name="message" id="message" placeholder="Write Message"></textarea>
+                <textarea name="message" id="message" placeholder="Write Message"></textarea>
 
                 <button onClick={contact_request}>SEND</button>
                 {/* <button onClick={notify}>Click Me!</button> */}
